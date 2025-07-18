@@ -7,6 +7,13 @@ function id(j0::Float64, j1::Float64, k::Float64)
     return 1.0
 end
 
+function trap(j0::Float64, j1::Float64, k::Float64)
+    """
+    Trapezoid area of 4-frustum as a function of the square areas j0 and j1 and the trapezoid area k.
+    """
+    return k
+end
+
 function height(j0::Float64, j1::Float64, k::Float64)
     """
     Height of 4-frustum as a function of the square areas j0 and j1 and the trapezoid area k.
@@ -186,12 +193,12 @@ function μ_toy(j0::Float64, j1::Float64, k::Float64, α::Float64)
     return k  / ((j0 - j1)^2 + 8 * k^2)^(α)
 end
 
-function periodicity(j0, j1, Λ)
+function periodicity(j0::Float64, j1::Float64, Λ::Float64, V::Int64)
     """
     Periodicity of oscillations of Regge action from linearization.
     Use to determine necessary refinement of the spectrum of k to resolve oscillations and stationary points.
     """
-    return 4*pi / (Λ * (j0 +  j1))
+    return 4*pi / (V^3 * Λ * (j0 +  j1))
 end
 
 function linear_k_sol(j0, j1, Λ)
@@ -223,15 +230,15 @@ function trans_mat(O::Function, N::Int64, γ::Float64, Λ::Float64, rtol::Float6
         - The measure is defined spatially 'non-local' and takes the full boundary spinss j0 and j1 into account.
     """
     mat = zeros(ComplexF64, N, N)
-    k_spec = periodicity()
+    k_spec = ref_tl * 0.5 / V^2
     for i0 in 1:N
-        for i1 in 1:j0
-            kmax = (ref_tl / V^2 * 10 * abs(j0 - j1) + 50)
-            kvals = (ref_tl / V^2 * 0.5):(ref_tl / V^2 * 0.5):kmax
-            amplitudes = [O(ref_sl * γ * 0.5 * j0 / V^2, ref_sl * γ * 0.5 * j1 / V^2, k) * μ_toy(ref_sl * γ * 0.5 * j0, ref_sl * γ * 0.5 * j1, k, α) *  exp(V^3 * im * S_III(ref_sl * γ * 0.5 * j0 / V^2, ref_sl * γ * 0.5 * j1 / V^2, k, Λ)) for k in kvals]
+        for i1 in 1:i0
+            kmax = max(100 * k_spec, 3 * linear_k_sol(ref_sl * γ * 0.5 * i0 / V^2, ref_sl * γ * 0.5 * i1 / V^2, 0.1))
+            kvals = k_spec:k_spec:kmax
+            amplitudes = [O(ref_sl * γ * 0.5 * i0 / V^2, ref_sl * γ * 0.5 * i1 / V^2, k) * μ_toy(ref_sl * γ * 0.5 * i0, ref_sl * γ * 0.5 * i1, k, α) *  exp(V^3 * im * S_III(ref_sl * γ * 0.5 * i0 / V^2, ref_sl * γ * 0.5 * i1 / V^2, k, Λ)) for k in kvals]
             mat_element = wynn(accumulate(+, amplitudes)[end - 50:end], rtol)[1]
-            mat[j0, j1] = mat_element
-            mat[j1, j0] = mat_element
+            mat[i0, i1] = mat_element
+            mat[i1, i0] = mat_element
         end
     end
     return mat
