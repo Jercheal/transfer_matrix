@@ -65,6 +65,15 @@ end
 
 ### Solving the equations of motion
 
+function j_evol_class_cont(j0::Float64, j1::Float64, T::Float64, Λ::Float64)
+    """
+    Solution of the continuum Friedmann equation for the evolution of the squared scale factor.
+    T: proper time
+    """
+    T0 = log(sqrt(j1 / j0)) * sqrt(3 / Λ)
+    return j0 * exp(log(j1 / j0) * T / T0)
+end
+
 function dS_IIIdk(j0::Float64, j1::Float64, k::Float64, Λ::Float64)
     """
     Derivative of 4-frustum Regge action S_III with respect to trapezoid area for equations of motion.
@@ -83,6 +92,19 @@ function dS_IIIdj1(j0::Float64, j1::Float64, j2::Float64, k0::Float64, k1::Float
     dS1dj1 = -6  * asinh((j1 - j2) / (sqrt(complex(16 * k1^2 + (j1 - j2)^2)))) - Λ * (j1 * (j1 - j2) + 4 * k1^2) / (2 * sqrt(2) * sqrt((j1 - j2)^2 + 8 * k1^2))
     return real(dS0dj1 + dS1dj1)
 end
+
+function eom_1slice(j0::Float64, j1::Float64, Λ::Float64, γ::Float64)
+    """
+    Generate the area Regge equations of motion for a single 4-frustum.
+    Input:
+        j0: initial square area.
+        j1: final square area.
+        Λ: cosmological constant.
+        γ: Barbero-Immirzi parameter.
+    """
+    return blk_spins -> [dS_IIIdk(γ * j0, γ * j1, blk_spins[1], Λ)]
+end
+
 
 function eom_nslice(j0::Float64, jf::Float64, Λ::Float64, γ::Float64, V::Int64)
     """
@@ -175,10 +197,10 @@ function solve_eom(j0::Float64, jf::Float64, Λ::Float64, γ::Float64, V::Int64,
         Hs: heights of the 4-frusta.
         prop_time: accumulated height of 4-frusta.
     """
-    discr_sols = nlsolve(eom_nslice(j0, jf, Λ, γ, V), generate_initguess(j0, jf, k_guess, Λ, γ, V), iterations=iterations, xtol=xtol, ftol=ftol).zero
-    js = vcat([j0], discr_sols[2:2:end], [jf])
+    discr_sols = nlsolve(eom_nslice(j0 / V^2, jf / V^2, Λ, γ, V), generate_initguess(j0 / V^2, jf / V^2, k_guess, Λ, γ, V), iterations=iterations, xtol=xtol, ftol=ftol).zero
+    js = V^2 .* vcat([j0 / V^2], discr_sols[2:2:end], [jf / V^2])
     ks = discr_sols[1:2:end]
-    Hs = [height(js[n], js[n+1], ks[n]) for n in 1:V]
+    Hs = [height(js[n] / V^2, js[n+1] / V^2, ks[n]) for n in 1:V]
     prop_time = vcat([0.0], accumulate(+, Hs))
     return (js, ks, Hs, prop_time)
 end
