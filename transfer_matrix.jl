@@ -265,3 +265,39 @@ function trans_mat(O::Function, N::Int64, γ::Float64, Λ::Float64, rtol::Float6
     end
     return mat
 end
+
+function trans_mat_v2(O::Function, a_max::Float64, γ::Float64, Λ::Float64, V::Int64, rtol::Float64=1e-10, ref_sl::Float64=1.0, ref_tl::Float64=1.0, α::Float64=2.5)
+    """
+    Compute the transfer matrix, with indices corresponding to boundary areas. For every component, perform a summation over the timelike trapezoid areas via Wynn's epsilon algorithm.
+    Input:
+        O: operator as a function of (j0, j1, k) to be inserted into the path integral.
+        a_max: determines the range of square areas j0 and j1, which are in the range [amin, amax].
+        γ: Barbero-Immirzi parameter.
+        Λ: cosmological constant.
+        rtol: relative tolerance for convergence of Wynn's epsilon algorithm.
+        V: number of building blocks in temporal direction (V) and spatial direction (V^3).
+        ref_sl: refinement factor for spectrum of spacelike area.
+        ref_tl: refinement factor for spectrum of timelike area.
+        α: parameter of the measure.
+    Output:
+        mat: transfer matrix with general operator insertion O.
+    N.B.: 
+        - A refinement of the spectrum by 1/V^3 is already included.
+        - Wynn's algorithm is cut off at kmax 
+        - The measure is defined spatially 'non-local' and takes the full boundary spinss j0 and j1 into account.
+    """
+    N = Int(2 * a_max * V / γ) # maximum index of mat
+    mat = zeros(ComplexF64, N, N)
+    k_spec = ref_tl * 0.5 / V^3
+    for i0 in 1:N
+        for i1 in 1:i0
+            kmax = max(100 * k_spec, 3 * linear_k_sol(ref_sl * γ * 0.5 * i0 / V^3, ref_sl * γ * 0.5 * i1 / V^3, Λ))
+            kvals = k_spec:k_spec:kmax
+            amplitudes = [O(ref_sl * γ * 0.5 * i0 / V^2, ref_sl * γ * 0.5 * i1 / V^2, k) * μ_toy(ref_sl * γ * 0.5 * i0, ref_sl * γ * 0.5 * i1, k, α) *  exp(V^3 * im * S_III(ref_sl * γ * 0.5 * i0 / V^2, ref_sl * γ * 0.5 * i1 / V^2, k, Λ)) for k in kvals]
+            mat_element = wynn(accumulate(+, amplitudes)[end - 50:end], rtol)[1]
+            mat[i0, i1] = mat_element
+            mat[i1, i0] = mat_element
+        end
+    end
+    return mat
+end
