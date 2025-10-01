@@ -352,3 +352,34 @@ function trans_mat_v3(O::Function, a_max::Float64, γ::Float64, Λ::Float64, V::
     end
     return mat
 end
+
+function rel_MSE(eval_j, eval_k, Λ::Float64, γ::Float64)
+    """
+    adapted to a_max = 300, (j, 2j) transitions, and steps of 10 in area
+    """
+    V = length(eval_j[1,1]) - 1
+    rel_MSE_j = zeros(Float64, 15)
+    rel_MSE_k = zeros(Float64, 15)
+    for i in 1:15
+        sols = solve_eom(10.0 * i, 20.0 * i, Λ, γ, V, 6.0 + i)
+        j_sols = sols[1]
+        k_sols = sols[2]
+        rel_MSE_j[i] = sum((V^2 .* eval_j[Int(2 * 10 * V * i),Int(4 * 10 * V * i)] - j_sols).^2 ./ (j_sols .^ 2)) / (V - 1)
+        rel_MSE_k[i] = sum((eval_k[Int(2 * 10 * V * i),Int(4 * 10 * V * i)] - k_sols).^2 ./ (k_sols .^ 2)) / V
+    end
+    return rel_MSE_j, rel_MSE_k
+end
+
+function rel_Var(eval_j, eval_j_sq, eval_k, eval_k_sq)
+    """
+    adapted to a_max = 300, (j, 2j) transitions, and steps of 10 in area
+    """
+    V = length(eval_j[1,1]) - 1
+    rel_Var_j = zeros(Float64, 15)
+    rel_Var_k = zeros(Float64, 15)
+    for i in 1:15
+        rel_Var_j[i] = sum(sqrt.(abs.((V^4 .* eval_j_sq[Int(2 * 10 * V * i),Int(4 * 10 * V * i)] - (V^2 .* eval_j[Int(2 * 10 * V * i),Int(4 * 10 * V * i)]) .^ 2))) ./ (V^2 .* eval_j[Int(2 * 10 * V * i),Int(4 * 10 * V * i)])) / (V - 1)
+        rel_Var_k[i] = sum(sqrt.(abs.(eval_k_sq[Int(2 * 10 * V * i),Int(4 * 10 * V * i)] - (eval_k[Int(2 * 10 * V * i),Int(4 * 10 * V * i)]) .^ 2)) ./ (eval_k[Int(2 * 10 * V * i),Int(4 * 10 * V * i)])) / V
+    end
+    return rel_Var_j, rel_Var_k
+end
