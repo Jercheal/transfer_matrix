@@ -13,6 +13,9 @@ S.K.~Asante, B.~Dittrich and J.~Padua-Arguelles, \emph{{Effective spin foam mode
 \bibitem{Asante:2021phx}
 S.K.~Asante, B.~Dittrich and J.~Padua-Arg\"uelles, \emph{{Complex actions and causality violations: applications to Lorentzian quantum cosmology}}, \href{https://doi.org/10.1088/1361-6382/accc01}{\emph{Class. Quant. Grav.} {\bfseries 40} (2023) 105005} [\href{https://arxiv.org/abs/2112.15387}{{\ttfamily 2112.15387}}].
 
+\bibitem{Barrett:1994nn}
+J.W.~Barrett, \emph{{First order Regge calculus}}, \href{https://doi.org/10.1088/0264-9381/11/11/013}{\emph{Class. Quant. Grav.} {\bfseries 11} (1994) 2723} [\href{https://arxiv.org/abs/hep-th/9404124}{{\ttfamily hep-th/9404124}}].
+
 \bibitem{Dittrich:2008va}
 B.~Dittrich and S.~Speziale, \emph{{Area-angle variables for general relativity}}, \href{https://doi.org/10.1088/1367-2630/10/8/083006}{\emph{New J. Phys.} {\bfseries 10} (2008) 083006} [\href{https://arxiv.org/abs/0802.0864}{{\ttfamily 0802.0864}}].
 
@@ -25,22 +28,31 @@ J.~Makela and R.M.~Williams, \emph{{Constraints on area variables in Regge calcu
 \bibitem{Barrett:1997tx}
 J.W.~Barrett, M.~Rocek and R.M.~Williams, \emph{{A Note on area variables in Regge calculus}}, \href{https://doi.org/10.1088/0264-9381/16/4/025}{\emph{Class. Quant. Grav.} {\bfseries 16} (1999) 1373} [\href{https://arxiv.org/abs/gr-qc/9710056}{{\ttfamily gr-qc/9710056}}].
 
-\bibitem{Feldbrugge:2017kzv}
-J.~Feldbrugge, J.-L.~Lehners and N.~Turok, \emph{{Lorentzian Quantum Cosmology}}, \href{https://doi.org/10.1103/PhysRevD.95.103508}{\emph{Phys. Rev. D} {\bfseries 95} (2017) 103508} [\href{https://arxiv.org/abs/1703.02076}{{\ttfamily 1703.02076}}].
+\bibitem{Bahr:2017bn}
+B.~Bahr, S.~Kl{\"o}ser and G.~Rabuffo, \emph{{Towards a Cosmological subsector of Spin Foam Quantum Gravity}}, {\emph{Phys. Rev. D} {\bfseries 96} (2017) 086009} [\href{https://arxiv.org/abs/1704.03691}{{\ttfamily 1704.03691}}].
 
-\bibitem{Conrady:2010vx}
-F.~Conrady, \emph{{Spin foams with timelike surfaces}}, \href{https://doi.org/10.1088/0264-9381/27/15/155014}{\emph{Class. Quant. Grav.} {\bfseries 27} (2010) 155014} [\href{https://arxiv.org/abs/1003.5652}{{\ttfamily 1003.5652}}].
+\bibitem{Jercher:2023csk}
+A.F.~Jercher and S.~Steinhaus, \emph{{Cosmology in Lorentzian Regge calculus: causality violations, massless scalar field and discrete dynamics}}, \href{https://doi.org/10.1088/1361-6382/ad37e9}{\emph{Class. Quant. Grav.} {\bfseries 41} (2024) 105008} [\href{https://arxiv.org/abs/2312.11639}{{\ttfamily 2312.11639}}].
 
-\bibitem{Conrady:2010kc}
-F.~Conrady and J.~Hnybida, \emph{{A spin foam model for general Lorentzian 4-geometries}}, \href{https://doi.org/10.1088/0264-9381/27/18/185011}{\emph{Class. Quant. Grav.} {\bfseries 27} (2010) 185011} [\href{https://arxiv.org/abs/1002.1959}{{\ttfamily 1002.1959}}].
+\bibitem{Dittrich:2021gww}
+B.~Dittrich, S.~Gielen and S.~Schander, \emph{{Lorentzian quantum cosmology goes simplicial}}, \href{https://doi.org/10.1088/1361-6382/ac42ad}{\emph{Class. Quant. Grav.} {\bfseries 39} (2022) 035012} [\href{https://arxiv.org/abs/2109.00875}{{\ttfamily 2109.00875}}].
 
-\bibitem{Simao:2021qno}
-J.D.~Sim\~ao and S.~Steinhaus, \emph{{Asymptotic analysis of spin-foams with timelike faces in a new parametrization}}, \href{https://doi.org/10.1103/PhysRevD.104.126001}{\emph{Phys. Rev. D} {\bfseries 104} (2021) 126001} [\href{https://arxiv.org/abs/2106.15635}{{\ttfamily 2106.15635}}].
+\bibitem{Dittrich:2023rcr}
+B.~Dittrich and J.~Padua-Arg\"uelles, \emph{{Lorentzian Quantum Cosmology from Effective Spin Foams}}, \href{https://doi.org/10.3390/universe10070296}{\emph{Universe} {\bfseries 10} (2024) 296} [\href{https://arxiv.org/abs/2306.06012}{{\ttfamily 2306.06012}}].
+
+\bibitem{Jercher:2024kig}
+A.F.~Jercher, J.D.~Sim\~ao and S.~Steinhaus, \emph{{Partial absence of cosine problem in 3d Lorentzian spin foams}},  \href{https://arxiv.org/abs/2404.16943}{{\ttfamily 2404.16943}}.
+
+\bibitem{Jercher:2024hlr}
+A.F.~Jercher, J.D.~Sim{\~a}o and S.~Steinhaus, \emph{{$(2+1)$ Lorentzian quantum cosmology from spin-foams: opportunities and obstacles for semi-classicality}}, \href{https://doi.org/10.1088/1361-6382/adc8f1}{\emph{Class. Quant. Grav.} {\bfseries 42} (2025) 085015} [\href{https://arxiv.org/abs/2411.08109}{{\ttfamily 2411.08109}}].
+
+\bibitem{Horowitz:1990qb}
+G.T.~Horowitz, \emph{{Topology change in classical and quantum gravity}}, \href{https://doi.org/10.1088/0264-9381/8/4/007}{\emph{Class. Quant. Grav.} {\bfseries 8} (1991) 587}.
 
 \bibitem{Louko:1995jw}
 J.~Louko and R.D.~Sorkin, \emph{{Complex actions in two-dimensional topology change}}, \href{https://doi.org/10.1088/0264-9381/14/1/018}{\emph{Class. Quant. Grav.} {\bfseries 14} (1997) 179} [\href{https://arxiv.org/abs/gr-qc/9511023}{{\ttfamily gr-qc/9511023}}].
 
-\bibitem{Jercher:2023csk}
-A.F.~Jercher and S.~Steinhaus, \emph{{Cosmology in Lorentzian Regge calculus: causality violations, massless scalar field and discrete dynamics}}, \href{https://doi.org/10.1088/1361-6382/ad37e9}{\emph{Class. Quant. Grav.} {\bfseries 41} (2024) 105008} [\href{https://arxiv.org/abs/2312.11639}{{\ttfamily 2312.11639}}].
+\bibitem{Dowker:1999wu}
+H.F.~Dowker, R.S.~Garcia and S.~Surya, \emph{{Morse index and causal continuity: A Criterion for topology change in quantum gravity}}, \href{https://doi.org/10.1088/0264-9381/17/3/308}{\emph{Class. Quant. Grav.} {\bfseries 17} (2000) 697} [\href{https://arxiv.org/abs/gr-qc/9910034}{{\ttfamily gr-qc/9910034}}].
 
 \end{thebibliography}\endgroup

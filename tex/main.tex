@@ -5,10 +5,7 @@
 \usepackage{graphicx, color}
 \usepackage{tikz,pgf,tikz-cd,float}
 \usepackage{physics,tensor,subcaption,multirow}
-\usepackage[scr=boondox]{mathalfa}
 \usepackage{enumitem}
-\usepackage{todonotes}
-\frenchspacing
 
 \newcommand{\diff}{\text{d}}
 \newcommand{\R}{\mathbb{R}}
@@ -23,40 +20,6 @@
 \newcommand{\bi}{\gamma_{\textsc{bi}}}
 \newcommand{\defeq}{\vcentcolon=}
 \newcommand{\eqdef}{=\vcentcolon}
-\usepackage{braket}
-\usepackage{dsfont}
-
-%%%%%%%%%%%% tikzit %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{tikzit}
-\input{Style.tikzstyles}
-\usetikzlibrary{shapes.geometric}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{manfnt}
-\newcommand*\cube{\mbox{\mancube}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% better brakets %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\bra[1]{{\langle{#1}|}}
-\makeatletter
-\renewcommand\ket[1]{%
-  \@ifnextchar\bra{\k@t{#1}\!}{\k@t{#1}}%
-}
-\newcommand\k@t[1]{{|{#1}\rangle}}
-\makeatother
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% for matrix annotations
-\usetikzlibrary{patterns}
-\usetikzlibrary{matrix,decorations.pathreplacing}
-\pgfkeys{tikz/mymatrixenv/.style={decoration={brace},every left delimiter/.style={xshift=8pt},every right delimiter/.style={xshift=-8pt}}}
-\pgfkeys{tikz/mymatrix/.style={matrix of math nodes,nodes in empty cells,left delimiter={(},right delimiter={)},inner sep=1pt,outer sep=4pt,column sep=8pt,row sep=8pt,nodes={minimum width=20pt,minimum height=10pt,anchor=center,inner sep=0,outer sep=0}}}
-\pgfkeys{tikz/mymatrixbrace/.style={decorate, thick, decoration={raise=3pt}}} 
-\newcommand*\mymatrixbraceright[4][m]{
-    \draw[mymatrixbrace] (#1.west|-#1-#3-1.south west) -- node[left=5pt] {#4} (#1.west|-#1-#2-1.north west);}
-\newcommand*\mymatrixbraceleft[4][m]{
-    \draw[mymatrixbrace] (#1.east|-#1-#3-1.north east) -- node[right=5pt] {#4} (#1.east|-#1-#3-1.south east);}
-\newcommand*\mymatrixbracetop[4][m]{
-    \draw[mymatrixbrace] (#1.north-|#1-1-#2.north west) -- node[above=5pt] {#4} (#1.north-|#1-1-#3.north east);}
-\newcommand*\mymatrixbracebottom[4][m]{
-    \draw[mymatrixbrace] (#1.south-|#1-1-#2.north east) -- node[below=5pt] {#4} (#1.south-|#1-1-#3.north west);}
-%% for matrix annotations
 
 \DeclareMathOperator*{\sumint}{%
 \mathchoice%
@@ -66,22 +29,11 @@
   {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
 }
 
-\newlength{\boxsize}
-\settowidth{\boxsize}{$\Box$}
-
-\newcommand{\trap}{%
-  \begin{tikzpicture}[baseline=-0.05ex]
-    \draw (0,0) -- (0.8\boxsize,0) -- (0.5\boxsize,0.8\boxsize) -- (0.3\boxsize,0.8\boxsize) -- cycle;
-  \end{tikzpicture}%
-}
-
-
 \begin{document}
 
 \title{Title}
 
-
-\author{Alexander F. Jercher\footnote{blablabla}}
+\author{Alexander F. Jercher}
 \email{alexander.jercher@uni-jena.de}
 \affiliation{Theoretisch-Physikalisches Institut, Friedrich-Schiller-Universit\"{a}t Jena,\\ Max-Wien-Platz~1, 07743 Jena, Germany, EU
 }
@@ -101,14 +53,91 @@
 
 \maketitle
 
-\input{chapters/intro}
-\input{chapters/sec2}
-\input{chapters/outro}
+\section{Introduction}
+
+\section{Setup}
+
+\subsection{Lorentzian Regge calculus}
+
+Regge calculus~\cite{Regge:1961ct} is a discrete gravitational theory on simplicial manifolds $\Delta$ with the length of edges $\{l_e\}$ dynamical.
+In a Lorentzian setting, a simplicial manifold consists of intrinsically flat Lorentzian $4$-simplices $\sigma\in\Delta$. Curvature is located at triangles $t\in\Delta$ and captured by deficit angles $\delta_t(\{l_e\})$, lying in the space orthogonal to $t$.
+For $t$ spacelike (timelike), this space is isomorphic to $\R^{1,1}$ ($\R^2$).\footnote{For the remainder, we neglect lightlike edges, triangles and tetrahedra.
+See~\cite{Sorkin:2019llw} for the definition of deficit angles associated to $(d-1)$-dimensional null cells.} 
+Lorentzian deficit angles are defined as $\delta_t^{\mathrm{L},\pm} = \mp i 2\pi  -\sum_{\sigma\supset t}\psi_{\sigma,t}^{\mathrm{L},\pm}$, following the conventions of~\cite{Sorkin:2019llw,Asante:2021zzh}, where the $\psi_{\sigma,t}$ are dihedral angles.
+\enquote{$\pm$} indicates a choice of sign which becomes important for causally irregular configurations~\cite{Sorkin:2019llw,Asante:2021zzh,Asante:2021phx} discussed below.
+The bulk action of Lorentzian Regge calculus is given by~\cite{Asante:2021zzh,Sorkin:2019llw,Regge:1961ct}
+%
+\begin{equation}\label{eq:general Regge action}
+\begin{aligned}
+\Sreg[\{l_e\}] =& \sum_{t\in\Delta:\text{ tl}}\abs{A_t(\{l_e\})}\delta_t^{\mathrm{E}}(\{l_e\})\\
++&\sum_{t\in\Delta:\text{ sl}}\abs{A_t(\{l_e\})}\delta_t^{\mathrm{L},\pm}(\{l_e\})\,,
+\end{aligned}
+\end{equation}
+%
+with $\abs{A_t}$ the absolute value of the triangle area. 
+In the presence of a boundary, $\partial\Delta\neq\emptyset$, $\Sreg$ attains boundary terms such that overall additivity is ensured.
+The equations of motion are given by $\pdv{\Sreg}{l_e} = 0$ supplemented by the Schl\"{a}fli identity, $\sum_t \abs{A_t}\pdv{\delta_t}{l_e} = 0$. 
+
+Regge calculus can be formulated in terms of different variables~\cite{Barrett:1994nn,Dittrich:2008va}, with area variables~\cite{Asante:2018wqy,Makela:2000ej,Barrett:1997tx} playing a particularly important role here due to their connection to LQG and spin-foams. 
+The relation between area and length variables is in general not invertible, and area variables need to be further constrained to yield the dynamical equations of length Regge calculus~\cite{Barrett:1997tx,Dittrich:2008va,Asante:2021zzh}.
+However, in the symmetry reduced setting introduced below, the relation of area and length is globally invertible and the aforementioned constraints trivialize.
+For the remainder, we study the classical dynamics of area Regge calculus which will be used in future work as a comparison to results of the effective spin-foam path integral.
+
+\subsection{Lorentzian 4-frusta}\label{sec:Lorentzian frustum}
+
+Lorentzian $4$-dimensional frusta are ideal to capture spatially flat, homogeneous and isotropic discrete geometries~\cite{Bahr:2017bn,Jercher:2023csk}.
+The boundary of $4$-frusta, depicted in Fig.~\ref{fig:4frustum}, contains two spacelike $3$-cubes and six $3$-frusta that are either spacelike or timelike.
+Its entire geometry is captured by the area of squares contained in the $3$-cubes, $j_0$ and $j_1$, and the area of the trapezoids contained in the $3$-frusta, $k$.
+The general notions of Regge calculus introduced above are straightforwardly adapted to this setting.
+Gluing $4$-frusta along boundary $3$-frusta in spatial direction and along boundary $3$-cubes in temporal direction, one obtains an extended cosmological spacetime of hypercubical combinatorics $\mathcal{X}^{(4)}_\mathcal{V}$ with slices labelled by $n\in\{0,...,\mathcal{V}_T\}$ discretized by $\mathcal{V}_S^3$ spacelike $3$-cubes.
+We say that a $4$-frustum lies in a \enquote{slab} between slices $n$ and $n+1$.
+
+\begin{figure}
+\includegraphics[width=0.28\textwidth]{figures/4frustum_high_res}
+\caption{Boundary of a $4$-frustum given by two $3$-cubes and six equal $3$-frusta.}
+\label{fig:4frustum}
+\end{figure}
+
+The squared volume of subcells connecting neighboring slices, i.e. 3-frusta, trapezoids and edges, which are detailed in Appendix~\ref{tab:}, carries information on the causal structure.
+If it is positive (negative), the corresponding subcell is timelike (spacelike).
+In the symmetry reduced setting, the ratio $\frac{\abs{j_n-j_{n+1}}}{4k_n}$ fully characterizes the causal character of subcells suggesting separating the $4$-frusta configurations into three sectors summarized in Tab.~\ref{tab:}.
+
+As discussed in~\cite{Dittrich:2021gww,Dittrich:2023rcr,Jercher:2023csk,Jercher:2024kig,Jercher:2024hlr}, two of these sectors I and II exhibit an irregular light cone structure, also referred to as causality violations, located at spacelike sub-cells.
+Examples of such irregularities are given by the trouser singularity and the yarmulke singularity associated to spatial topology change~\cite{Horowitz:1990qb,Louko:1995jw,Dowker:1999wu}. 
+For causality violations at $(d-2)$-dimensional spacelike hinges the imaginary parts of the dihedral angles do not sum up to $\mp i2\pi$, leading to a complex valued Regge action.
+Choosing \enquote{$+$} in the convention of Lorentzian angles, the amplitude $\e^{i\Sreg}$ is exponentially suppressed for trouser and exponentially enhanced for yarmulke configurations, vice versa for \enquote{$-$}~\cite{Asante:2021zzh}.%\footnote{It has been shown in~\cite{Jercher:2024kig,Jercher:2024hlr} that such an exponential suppression does not arise from the semi-classical limit of a single spin-foam frustum amplitude.}
+Without a complexification of the variables, the Regge equations of motion for causality violating configurations are complex equations with real variables and therefore overconstrained.
+Moreover, the results of~\cite{Jercher:2023csk,Dittrich:2021gww} show that in the respective settings, no real solutions exist.
+Since this applies also to the setting used in this work we henceforth focus on the causally regular sector III.
+
+\subsection{Lorentzian Regge action for spatially flat cosmology}\label{sec:Lorentzian Regge action for spatially flat cosmology}
+
+For a single $4$-frustum between, say slice $n$ and $n+1$, the causally regular Regge action is given by
+%
+\begin{widetext}
+\begin{equation}\label{eq:regular Regge action}
+\begin{aligned}
+S_{\textsc{iii}}^{(n)} & = 6(j_n-j_{n+1})\sinh^{-1}\left(\frac{j_{n+1}-j_n}{\sqrt{16k_n^2+(j_n-j_{n+1})^2}}\right) + 12k_n\left[\frac{\pi}{2}-\cos^{-1}\left(\frac{(j_n-j_{n+1})^2}{16k_n^2+(j_n-j_{n+1})^2}\right)\right] - \Lambda V^{(4)}\,,
+\end{aligned}
+\end{equation}  
+\end{widetext}
+%
+where $\Lambda$ is a cosmological constant and $V^{(4)}$ is the $4$-volume defined in Eq.~\eqref{} as an equation of $(j_n,j_{n+1},k_n)$.
+By construction, the $4$-frustum action is additive such that on a discretization $\mathcal{X}^{(4)}_{\mathcal{V}}$ with $\mathcal{V}_S^3$ vertices in spatial direction and $\mathcal{V}_T+1$ spatial slices, the action is given by $S_{\mathrm{R}} = \mathcal{V}_S^3\sum_{n=0}^{\mathcal{V}_T-1}S_{\mathrm{R}}^{(n)}$.
+Additivity of the action per slab implies that the equations of motion for a given geometric quantity, being either $j_n$ or $k_n$, will only depend on neighboring geometric labels.
+
+In the following, we study the discrete dynamics of spatially flat cosmology as governed by the Regge equations. To that end, we consider first the case of a single time step, $\mathcal{V}_T = 1$, in Sec.~\ref{sec:recap} and generalize then to an arbitrary number of time steps in Sec.~\ref{sec:more time steps}.
+
+\section{Recap: One time step}\label{sec:recap}
+
+...
+
+\section{Conclusion}
 
 \paragraph{Acknowledgements}  The authors thank Seth Asante, Bianca Dittrich and Steffen Gielen for helpful discussions and Tim St\"{o}tzel for support with the numerical implementation. AFJ, JDS and SSt gratefully acknowledge support by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) Grant No 422809950. AFJ and JDS acknowledge support by the DFG under Grant No 406116891 within the Research Training Group RTG 2522/1. AFJ is grateful for the generous financial support by the MCQST via the seed funding Aost 862981-8 granted to Jibril Ben Achour by the DFG under Germany’s Excellence Strategy – EXC-2111 – 390814868.
 
 \appendix
-\input{app1}
+\section{Appendix}
 
 
 \bibliographystyle{JHEP}

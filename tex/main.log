@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.19)  9 OCT 2025 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.19)  9 OCT 2025 19:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -568,7 +568,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box81
 \@float@everytoks=\toks40
 \@floatcapt=\box82
-) (./physics.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/physics/physics.sty
 Package: physics 
  (/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2024-11-02 L3 programming layer (loader) 
@@ -624,175 +624,64 @@ Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@cntb=\count339
 \multirow@dima=\skip62
 \bigstrutjot=\dimen284
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/mathalpha/mathalfa.sty) (/usr/local/texlive/2024/texmf-dist/tex/latex/mathalpha/mathalpha.sty
-Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
- `mathalpha' v1.143, 2021/11/18, a renaming of mathalfa (msharpe) (/usr/local/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks46
-\XKV@tempa@toks=\toks47
-)
-\XKV@depth=\count340
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
-(Font)                  U/BOONDOX-scr/m/n --> U/BOONDOX-scr/b/n on input line 927.
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip63
 \enit@outerparindent=\dimen285
-\enit@toks=\toks48
+\enit@toks=\toks46
 \enit@inbox=\box84
-\enit@count@id=\count341
-\enitdp@description=\count342
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/todonotes/todonotes.sty
-Package: todonotes 2024/01/05 v1.1.7 Todonotes source and documentation.
-Package: todonotes 2024/01/05
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\enit@count@id=\count340
+\enitdp@description=\count341
 )
-\c@@todonotes@numberoftodonotes=\count343
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/braket/braket.sty) (/usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/dsfont.sty
-Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
-) (./tikzit.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
-File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@layerbox@background=\box85
-\pgf@layerboxsaved@background=\box86
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
-File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
-File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen286
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
-File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
-File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
-File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
-File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
-File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
-File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
-File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
-File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
-File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
-File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
-File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box87
-\pgfnodeparttwobox=\box88
-\pgfnodepartthreebox=\box89
-\pgfnodepartfourbox=\box90
-\pgfnodeparttwentybox=\box91
-\pgfnodepartnineteenbox=\box92
-\pgfnodeparteighteenbox=\box93
-\pgfnodepartseventeenbox=\box94
-\pgfnodepartsixteenbox=\box95
-\pgfnodepartfifteenbox=\box96
-\pgfnodepartfourteenbox=\box97
-\pgfnodepartthirteenbox=\box98
-\pgfnodeparttwelvebox=\box99
-\pgfnodepartelevenbox=\box100
-\pgfnodeparttenbox=\box101
-\pgfnodepartninebox=\box102
-\pgfnodeparteightbox=\box103
-\pgfnodepartsevenbox=\box104
-\pgfnodepartsixbox=\box105
-\pgfnodepartfivebox=\box106
-)))
-\pgf@layerbox@edgelayer=\box107
-\pgf@layerboxsaved@edgelayer=\box108
-\pgf@layerbox@nodelayer=\box109
-\pgf@layerboxsaved@nodelayer=\box110
-) (./Style.tikzstyles) (/usr/local/texlive/2024/texmf-dist/tex/latex/manfnt/manfnt.sty
-Package: manfnt 1999/07/010.2LaTeX2e manfnt package
-\dbend@height=\skip64
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
-File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
-File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen287
-\pgfdecoratedremainingdistance=\dimen288
-\pgfdecoratedinputsegmentcompleteddistance=\dimen289
-\pgfdecoratedinputsegmentremainingdistance=\dimen290
-\pgf@decorate@distancetomove=\dimen291
-\pgf@decorate@repeatstate=\count344
-\pgfdecorationsegmentamplitude=\dimen292
-\pgfdecorationsegmentlength=\dimen293
-)
-\tikz@lib@dec@box=\box111
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex))
-\boxsize=\skip65
-LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 70.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-Class revtex4-1 Info: Unrecognized LaTeX tabular. Please update this document class! (Proceeding with fingers crossed.) on input line 79.
+Class revtex4-1 Info: Unrecognized LaTeX tabular. Please update this document class! (Proceeding with fingers crossed.) on input line 32.
 
 
 Class revtex4-1 Warning: Repair the float package.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 79.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 79.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 79.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 32.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 32.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 32.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-Package hyperref Info: Link coloring OFF on input line 79.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+Package hyperref Info: Link coloring OFF on input line 32.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count345
-\scratchdimen=\dimen294
-\scratchbox=\box112
-\nofMPsegments=\count346
-\nofMParguments=\count347
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count348
-\MPscratchDim=\dimen295
-\MPnumerator=\count349
-\makeMPintoPDFobject=\count350
-\everyMPtoPDFconversion=\toks50
+\scratchcounter=\count342
+\scratchdimen=\dimen286
+\scratchbox=\box85
+\nofMPsegments=\count343
+\nofMParguments=\count344
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count345
+\MPscratchDim=\dimen287
+\MPnumerator=\count346
+\makeMPintoPDFobject=\count347
+\everyMPtoPDFconversion=\toks48
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -801,81 +690,52 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-
-
-Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 79.
-
-Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 79.
+Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 32.
 \openout3 = `mainNotes.bib'.
 
-
-Class revtex4-1 Warning: The \footnote command is not legal on the title page; using \thanks instead might suit you: consult the manual for details.
-
-(./chapters/intro.tex) (./chapters/sec2.tex
-
-Package natbib Warning: Citation `Barrett:1994nn' on page 1 undefined on input line 14.
-
-
-Package natbib Warning: Citation `Bahr:2017' on page 1 undefined on input line 18.
-
-
-LaTeX Warning: Reference `chapter:specdim' on page 1 undefined on input line 18.
-
-
-LaTeX Warning: Reference `app:Lorentzian frustum' on page 1 undefined on input line 23.
-
-
-LaTeX Warning: Reference `fig:regions' on page 1 undefined on input line 23.
-
-
-LaTeX Warning: Reference `chapter:specdim' on page 1 undefined on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 54.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+<figures/4frustum_high_res.png, id=72, 8030.25093pt x 5782.35281pt>
+File: figures/4frustum_high_res.png Graphic file (type png)
+<use figures/4frustum_high_res.png>
+Package pdftex.def Info: figures/4frustum_high_res.png  used on input line 96.
+(pdftex.def)             Requested size: 142.79938pt x 102.78967pt.
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 23--24
-\OT1/cmr/m/n/10 is de-tailed in Ap-pendix []. Most im-por-tantly, the
+LaTeX Warning: Reference `tab:' on page 1 undefined on input line 101.
+
+
+LaTeX Warning: Reference `tab:' on page 1 undefined on input line 103.
+
+[1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figures/4frustum_high_res.png (PNG copy)>]
+
+LaTeX Warning: Reference `' on page 2 undefined on input line 125.
+
+
+Underfull \hbox (badness 3098) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 4$-volume de-fined in Eq. [] as an equa-tion of
  []
 
 
-LaTeX Warning: Reference `app:Lorentzian angles' on page 1 undefined on input line 25.
-
-[1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (176.39276pt too wide) detected at line 35
-[][][][][]
- []
+Package hyperref Warning: Suppressing empty link on input line 129.
 
 
-LaTeX Warning: Reference `sec:Regge equations and deparametrisation' on page 2 undefined on input line 39.
+LaTeX Warning: Reference `sec:more time steps' on page 2 undefined on input line 129.
 
-
-Package natbib Warning: Citation `Bahr:2017eyi' on page 2 undefined on input line 41.
-
-
-LaTeX Warning: Reference `chapter:cBC' on page 2 undefined on input line 41.
-
-
-LaTeX Warning: Reference `chapter:3d cosmology' on page 2 undefined on input line 41.
-
-
-Package natbib Warning: Citation `Horowitz:1990qb' on page 2 undefined on input line 45.
-
-
-Package natbib Warning: Citation `Dowker:1999wu' on page 2 undefined on input line 45.
-
-
-LaTeX Warning: Reference `fig:regions' on page 2 undefined on input line 49.
-
-
-Overfull \hbox (188.64816pt too wide) detected at line 56
-[][][][][]
- []
-
-[2]) (./chapters/outro.tex) (./app1.tex) (./main.bbl)
+(./main.bbl [2])
 
 Class revtex4-1 Warning: Command \address is obsolete;
 Use \affiliation instead.
-
-
-Package natbib Warning: There were undefined citations.
 
 [3] (./main.aux)
  ***********
@@ -887,21 +747,21 @@ L3 programming layer <2024-11-02>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D95D51E88CB44F597C4A254760EE5A79;1314.
+(rerunfilecheck)             Checksum: C60019C0D8F5AD7089D1AD56FC1EEBDE;1495.
  ) 
 Here is how much of TeX's memory you used:
- 30900 strings out of 473330
- 607500 string characters out of 5719762
- 1109492 words of memory out of 5000000
- 53435 multiletter control sequences out of 15000+600000
+ 26921 strings out of 473330
+ 496655 string characters out of 5719762
+ 908201 words of memory out of 5000000
+ 49578 multiletter control sequences out of 15000+600000
  570082 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,10n,97p,2029b,571s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,10n,97p,749b,729s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (3 pages, 286141 bytes).
+Output written on main.pdf (3 pages, 752856 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 225 compressed objects within 3 object streams
- 37 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 290 PDF objects out of 1000 (max. 8388607)
+ 234 compressed objects within 3 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,50 +5,44 @@ The style file: JHEP.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: mainNotes.bib
 Database file #2: references.bib
-Warning--I didn't find a database entry for "Barrett:1994nn"
-Warning--I didn't find a database entry for "Bahr:2017"
-Warning--I didn't find a database entry for "Bahr:2017eyi"
-Warning--I didn't find a database entry for "Horowitz:1990qb"
-Warning--I didn't find a database entry for "Dowker:1999wu"
-You've used 14 entries,
+You've used 18 entries,
             2316 wiz_defined-function locations,
-            681 strings with 6301 characters,
-and the built_in function-call counts, 6093 in all, are:
-= -- 688
-> -- 145
+            702 strings with 6953 characters,
+and the built_in function-call counts, 7834 in all, are:
+= -- 875
+> -- 196
 < -- 0
-+ -- 44
-- -- 30
-* -- 551
-:= -- 758
-add.period$ -- 14
-call.type$ -- 14
-change.case$ -- 14
++ -- 59
+- -- 41
+* -- 719
+:= -- 978
+add.period$ -- 18
+call.type$ -- 18
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 463
-empty$ -- 536
-format.name$ -- 90
-if$ -- 1572
+cite$ -- 18
+duplicate$ -- 594
+empty$ -- 694
+format.name$ -- 123
+if$ -- 2010
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 55
-newline$ -- 46
-num.names$ -- 14
-pop$ -- 26
+int.to.str$ -- 18
+missing$ -- 70
+newline$ -- 58
+num.names$ -- 18
+pop$ -- 37
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 256
+skip$ -- 306
 stack$ -- 0
-substring$ -- 368
-swap$ -- 153
+substring$ -- 498
+swap$ -- 176
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 60
-width$ -- 16
-write$ -- 151
-(There were 5 warnings)
+while$ -- 81
+width$ -- 20
+write$ -- 190
