@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: JHEP.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: mainNotes.bib
+Database file #2: references.bib
+Warning--I didn't find a database entry for "Barrett:1994nn"
+Warning--I didn't find a database entry for "Bahr:2017"
+Warning--I didn't find a database entry for "Bahr:2017eyi"
+Warning--I didn't find a database entry for "Horowitz:1990qb"
+Warning--I didn't find a database entry for "Dowker:1999wu"
+You've used 14 entries,
+            2316 wiz_defined-function locations,
+            681 strings with 6301 characters,
+and the built_in function-call counts, 6093 in all, are:
+= -- 688
+> -- 145
+< -- 0
++ -- 44
+- -- 30
+* -- 551
+:= -- 758
+add.period$ -- 14
+call.type$ -- 14
+change.case$ -- 14
+chr.to.int$ -- 0
+cite$ -- 14
+duplicate$ -- 463
+empty$ -- 536
+format.name$ -- 90
+if$ -- 1572
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 55
+newline$ -- 46
+num.names$ -- 14
+pop$ -- 26
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 256
+stack$ -- 0
+substring$ -- 368
+swap$ -- 153
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 60
+width$ -- 16
+write$ -- 151
+(There were 5 warnings)

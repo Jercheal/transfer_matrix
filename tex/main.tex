@@ -1,0 +1,119 @@
+\documentclass[amsmath,amssymb,aps,prl,twocolumn,superscriptaddress,nofootinbib]{revtex4-1}
+\pdfoutput=1
+\usepackage{amsfonts, mathtools, mathrsfs,upgreek}
+\usepackage{hyperref, csquotes}
+\usepackage{graphicx, color}
+\usepackage{tikz,pgf,tikz-cd,float}
+\usepackage{physics,tensor,subcaption,multirow}
+\usepackage[scr=boondox]{mathalfa}
+\usepackage{enumitem}
+\usepackage{todonotes}
+\frenchspacing
+
+\newcommand{\diff}{\text{d}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\SUT}{\mathrm{SU}(2)}
+\newcommand{\SUO}{\mathrm{SU}(1,1)}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\f}{\mathrm{f}}
+\newcommand{\Sreg}{S_{\mathrm{R}}}
+\newcommand{\caj}[1]{\textcolor{purple}{#1}}
+\newcommand{\one}{\mathbb{1}}
+\newcommand{\GN}{G_{\mathrm{N}}}
+\newcommand{\bi}{\gamma_{\textsc{bi}}}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+\usepackage{braket}
+\usepackage{dsfont}
+
+%%%%%%%%%%%% tikzit %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikzit}
+\input{Style.tikzstyles}
+\usetikzlibrary{shapes.geometric}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{manfnt}
+\newcommand*\cube{\mbox{\mancube}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% better brakets %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\bra[1]{{\langle{#1}|}}
+\makeatletter
+\renewcommand\ket[1]{%
+  \@ifnextchar\bra{\k@t{#1}\!}{\k@t{#1}}%
+}
+\newcommand\k@t[1]{{|{#1}\rangle}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% for matrix annotations
+\usetikzlibrary{patterns}
+\usetikzlibrary{matrix,decorations.pathreplacing}
+\pgfkeys{tikz/mymatrixenv/.style={decoration={brace},every left delimiter/.style={xshift=8pt},every right delimiter/.style={xshift=-8pt}}}
+\pgfkeys{tikz/mymatrix/.style={matrix of math nodes,nodes in empty cells,left delimiter={(},right delimiter={)},inner sep=1pt,outer sep=4pt,column sep=8pt,row sep=8pt,nodes={minimum width=20pt,minimum height=10pt,anchor=center,inner sep=0,outer sep=0}}}
+\pgfkeys{tikz/mymatrixbrace/.style={decorate, thick, decoration={raise=3pt}}} 
+\newcommand*\mymatrixbraceright[4][m]{
+    \draw[mymatrixbrace] (#1.west|-#1-#3-1.south west) -- node[left=5pt] {#4} (#1.west|-#1-#2-1.north west);}
+\newcommand*\mymatrixbraceleft[4][m]{
+    \draw[mymatrixbrace] (#1.east|-#1-#3-1.north east) -- node[right=5pt] {#4} (#1.east|-#1-#3-1.south east);}
+\newcommand*\mymatrixbracetop[4][m]{
+    \draw[mymatrixbrace] (#1.north-|#1-1-#2.north west) -- node[above=5pt] {#4} (#1.north-|#1-1-#3.north east);}
+\newcommand*\mymatrixbracebottom[4][m]{
+    \draw[mymatrixbrace] (#1.south-|#1-1-#2.north east) -- node[below=5pt] {#4} (#1.south-|#1-1-#3.north west);}
+%% for matrix annotations
+
+\DeclareMathOperator*{\sumint}{%
+\mathchoice%
+  {\ooalign{$\displaystyle\sum$\cr\hidewidth$\displaystyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.14\height}{\scalebox{.7}{$\textstyle\sum$}}\cr\hidewidth$\textstyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+}
+
+\newlength{\boxsize}
+\settowidth{\boxsize}{$\Box$}
+
+\newcommand{\trap}{%
+  \begin{tikzpicture}[baseline=-0.05ex]
+    \draw (0,0) -- (0.8\boxsize,0) -- (0.5\boxsize,0.8\boxsize) -- (0.3\boxsize,0.8\boxsize) -- cycle;
+  \end{tikzpicture}%
+}
+
+
+\begin{document}
+
+\title{Title}
+
+
+\author{Alexander F. Jercher\footnote{blablabla}}
+\email{alexander.jercher@uni-jena.de}
+\affiliation{Theoretisch-Physikalisches Institut, Friedrich-Schiller-Universit\"{a}t Jena,\\ Max-Wien-Platz~1, 07743 Jena, Germany, EU
+}
+\address{corresponding author}
+\author{Sebastian Steinhaus}
+\email{sebastian.steinhaus@uni-jena.de}
+\affiliation{Theoretisch-Physikalisches Institut, Friedrich-Schiller-Universit\"{a}t Jena,\\ Max-Wien-Platz~1, 07743 Jena, Germany, EU
+}
+
+\date{\today}
+
+\begin{abstract}
+{
+.
+}
+\end{abstract}
+
+\maketitle
+
+\input{chapters/intro}
+\input{chapters/sec2}
+\input{chapters/outro}
+
+\paragraph{Acknowledgements}  The authors thank Seth Asante, Bianca Dittrich and Steffen Gielen for helpful discussions and Tim St\"{o}tzel for support with the numerical implementation. AFJ, JDS and SSt gratefully acknowledge support by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) Grant No 422809950. AFJ and JDS acknowledge support by the DFG under Grant No 406116891 within the Research Training Group RTG 2522/1. AFJ is grateful for the generous financial support by the MCQST via the seed funding Aost 862981-8 granted to Jibril Ben Achour by the DFG under Germany’s Excellence Strategy – EXC-2111 – 390814868.
+
+\appendix
+\input{app1}
+
+
+\bibliographystyle{JHEP}
+\bibliography{references}
+
+\end{document}
+
+
