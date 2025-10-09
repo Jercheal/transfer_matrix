@@ -1,2 +1,10 @@
 .DS_Store
 data/
+tex/main.aux
+tex/main.log
+tex/main/blg
+tex/main.bbl
+tex/main.out
+tex/main.fls
+tex/main.fdb_latexmk
+tex/main.synctex.gz
