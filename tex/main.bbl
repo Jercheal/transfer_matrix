@@ -55,4 +55,34 @@ J.~Louko and R.D.~Sorkin, \emph{{Complex actions in two-dimensional topology cha
 \bibitem{Dowker:1999wu}
 H.F.~Dowker, R.S.~Garcia and S.~Surya, \emph{{Morse index and causal continuity: A Criterion for topology change in quantum gravity}}, \href{https://doi.org/10.1088/0264-9381/17/3/308}{\emph{Class. Quant. Grav.} {\bfseries 17} (2000) 697} [\href{https://arxiv.org/abs/gr-qc/9910034}{{\ttfamily gr-qc/9910034}}].
 
+\bibitem{Rocek:1981ama}
+M.~Rocek and R.M.~Williams, \emph{{QUANTUM REGGE CALCULUS}}, \href{https://doi.org/10.1016/0370-2693(81)90848-0}{\emph{Phys. Lett. B} {\bfseries 104} (1981) 31}.
+
+\bibitem{Rocek:1982tj}
+M.~Rocek and R.M.~Williams, \emph{{The Quantization of Regge Calculus}}, \href{https://doi.org/10.1007/BF01581603}{\emph{Z. Phys. C} {\bfseries 21} (1984) 371}.
+
+\bibitem{Dittrich:2008pw}
+B.~Dittrich, \emph{{Diffeomorphism Symmetry in Quantum Gravity Models}}, {\emph{Adv. Sci. Lett.} {\bfseries 2} (2009) 151} [\href{https://arxiv.org/abs/0810.3594}{{\ttfamily 0810.3594}}].
+
+\bibitem{Bahr:2009qc}
+B.~Bahr and B.~Dittrich, \emph{{Improved and Perfect Actions in Discrete Gravity}}, \href{https://doi.org/10.1103/PhysRevD.80.124030}{\emph{Phys. Rev. D} {\bfseries 80} (2009) 124030} [\href{https://arxiv.org/abs/0907.4323}{{\ttfamily 0907.4323}}].
+
+\bibitem{Bahr:2015gxa}
+B.~Bahr and S.~Steinhaus, \emph{{Investigation of the Spinfoam Path integral with Quantum Cuboid Intertwiners}}, \href{https://doi.org/10.1103/PhysRevD.93.104029}{\emph{Phys. Rev. D} {\bfseries 93} (2016) 104029} [\href{https://arxiv.org/abs/1508.07961}{{\ttfamily 1508.07961}}].
+
+\bibitem{Weniger2003}
+E.J.~Weniger, \emph{Nonlinear sequence transformations for the acceleration of convergence and the summation of divergent series}, \href{https://doi.org/https://doi.org/10.1016/0167-7977(89)90011-7}{\emph{Computer Physics Reports} {\bfseries 10} (1989) 189} [\href{https://arxiv.org/abs/math/0306302}{{\ttfamily math/0306302}}].
+
+\bibitem{Dona:2023myv}
+P.~Don\`a and P.~Frisoni, \emph{{Summing bulk quantum numbers with Monte~Carlo in spin foam theories}}, \href{https://doi.org/10.1103/PhysRevD.107.106008}{\emph{Phys. Rev. D} {\bfseries 107} (2023) 106008} [\href{https://arxiv.org/abs/2302.00072}{{\ttfamily 2302.00072}}].
+
+\bibitem{Schmidt1941}
+R.J.~Schmidt, \emph{Xxxii. on the numerical solution of linear simultaneous equations by an iterative method}, {\emph{The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science} {\bfseries 32} (1941) 369}.
+
+\bibitem{Shanks1955}
+D.~Shanks, \emph{Non-linear transformations of divergent and slowly convergent sequences}, \href{https://doi.org/https://doi.org/10.1002/sapm19553411}{\emph{Journal of Mathematics and Physics} {\bfseries 34} (1955) 1} [\href{https://arxiv.org/abs/https://onlinelibrary.wiley.com/doi/pdf/10.1002/sapm19553411}{{\ttfamily https://onlinelibrary.wiley.com/doi/pdf/10.1002/sapm19553411}}].
+
+\bibitem{Wynn1956}
+P.~Wynn, \emph{On a device for computing the em(sn) transformation}, {\emph{Mathematical Tables and Other Aids to Computation} {\bfseries 10} (1956) 91}.
+
 \end{thebibliography}\endgroup

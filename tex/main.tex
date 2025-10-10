@@ -55,6 +55,8 @@
 
 \section{Introduction}
 
+$8\pi\GN = 1$?, spacetime signature $(+,-,-,-)$
+
 \section{Setup}
 
 \subsection{Lorentzian Regge calculus}
@@ -130,12 +132,56 @@ In the following, we study the discrete dynamics of spatially flat cosmology as 
 
 \section{Recap: One time step}\label{sec:recap}
 
-\begin{itemize}
-  \item discussed in previous works
-  \item number of equations, explicit form
-  \item only solutions for $\Lambda > 0$ comparison continuum 
-  \item dependence of $k$ on $\Lambda$
-\end{itemize}
+The classical and quantum dynamics of a single timestep in discrete Lorentzian cosmology have been studied extensively in~\cite{Dittrich:2021gww,Dittrich:2023rcr,Asante:2021phx} for spatial curvature with cosmological constant and in~\cite{Jercher:2023csk,Jercher:2024hlr} for spatially flat spacetimes with a free scalar field.
+In this chapter we extend these studies to spatially flat cosmology with a cosmological constant, before then focussing on the case of arbitrarily many time steps. 
+
+For $\mathcal{V}_T = 1$, the square areas $j_0,j_1$ are boundary data and only the trapezoid area $k_0$ is dynamical. Thus, the Regge equations are simply given by
+%
+\begin{equation}\label{eq:1step Regge equation}
+\pdv{S_{\textsc{iii}}}{k_0} = 0\,,
+\end{equation}
+%
+%\begin{widetext}
+%\begin{equation}\label{eq:1step Regge equation}
+%0 = \pdv{S_{\textsc{iii}}}{k_0} = 12k_0\left[\frac{\pi}{2}-\cos^{-1}\left(\frac{(j_0-j_{1})^2}{16k_0^2+(j_1-j_{1})^2}\right)\right] - \Lambda \frac{(j_0 + j_1)^2k}{4 V^{(4)}}\,.
+%\end{equation}
+%\end{widetext}
+%
+where due to the Schl\"{a}fli identity, the first term in Eq.~\eqref{eq:regular Regge action} drops out. 
+Notice that this equation is transcendental and can therefore only by tackled numerically.
+
+\paragraph{Vanishing cosmological constant.} 
+
+In the case of $\Lambda = 0$, the Regge action describes a spatially flat vacuum universe. 
+If the boundary data is non-stationary, i.e.~$j_0 \neq j_1$, Eq.~\eqref{eq:1step Regge equation} exhibits no solution for $k_0$. 
+In other words, a classical universe can neither expand nor contract if there is no matter present. 
+This is in accordance with the continuum Friedmann equations in vacuum, $\left(\frac{\dot{a}}{a}\right)^2 = 0$, with $a$ the scale factor, which are solved only by $a = \mathrm{const}$.
+On the other hand, if $j_0 = j_1$, Eq.~\eqref{eq:1step Regge equation}  is trivially satisfied and the trapezoid area $k_0$ is undetermined.
+In fact, the Regge action vanishes, $S_{\textsc{iii}} = 0$ for all $k_0$, and the $4$-frusta reduce to $4$-cuboids discretizing flat space. 
+The arbitrariness of $k$ is a common phenomenon for flat solutions in Regge calculus~\cite{Rocek:1981ama,Rocek:1982tj} and signifies the restoration of diffeomorphism symmetry in the discrete~\cite{Dittrich:2008pw,Bahr:2009qc}.
+This symmetry amounts to moving spacelike slices (instead of individual vertices), see also the discussion in~\cite{Bahr:2015gxa}.
+Note that for $4$-cuboids, $k = \sqrt{j}H$ with $H$ the height of the cuboid which is directly related to the lapse function $N$ in the continuum~\cite{Dittrich:2021gww,Jercher:2023csk}.
+The lapse is the gauge variable of the residual diffeomorphism symmetry after symmetry reduction, encoding time reparametrization invariance. 
+
+\paragraph{Non-vanishing cosmological constant.}
+
+For a non-vanishing cosmological constant, $\Lambda \neq 0$, and stationary boundary conditions, $j_0 = j_1$, the only solution to Eq.~\eqref{eq:1step Regge equation} is $k_0 = 0$, corresponding to degenerate $4$-frusta with vanishing height.
+Thus, a stationary universe for $\Lambda\neq 0$ only exists if no time passes, i.e. if there is no actual time evolution. 
+The more interesting case is $j_0 \neq j_1$ where a non-trivial solution $k_0^*$ for Eq.~\eqref{eq:1step Regge equation} exists. 
+More precisely, a unique solution $k_0^*$ is found for any $\Lambda > 0$ and any $j_0\neq j_1$. 
+The on-shell trapezoid area $k_0^*(\Lambda)$ as a function of $\Lambda$ behaves as a monomial decay $k_0^*\sim c\Lambda^{_\alpha}$ with $c,\alpha > 0$ constants depending on $j_0, j_1$. 
+For $\Lambda \neq 0$, the solution diverges and ceases to exist at $\Lambda = 0$ in lines with the discussion above.
+In the limit $\Lambda\rightarrow\infty$, Eq.~\eqref{eq:1step Regge equation} is dominated by the $\Lambda$-term, i.e.
+%
+\begin{equation}
+\Lambda \frac{(j_0 + j_1)^2k}{4 V^{(4)}} \approx 0\,,
+\end{equation}
+%
+solved by $k_0^* = 0$.
+
+Note that the restriction on the sign of $\Lambda$ is in accordance with the continuum Friedmann equations, $\left(\frac{\dot{a}}{a}\right)^2 = N^2\frac{\Lambda}{3}$, where real solutions for the scale factor require $\Lambda > 0$. 
+
+In the spatially spherical case in Lorentzian (Euclidean) signature, where \caj{scale factor is bounded from below (above), ... add contrasting info here.} 
 
 \section{Arbitrary number of time steps}\label{sec:more time steps}
 
@@ -150,7 +196,41 @@ In the following, we study the discrete dynamics of spatially flat cosmology as 
 \paragraph{Acknowledgements}  The authors thank Seth Asante, Bianca Dittrich and Steffen Gielen for helpful discussions and Tim St\"{o}tzel for support with the numerical implementation. AFJ, JDS and SSt gratefully acknowledge support by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) Grant No 422809950. AFJ and JDS acknowledge support by the DFG under Grant No 406116891 within the Research Training Group RTG 2522/1. AFJ is grateful for the generous financial support by the MCQST via the seed funding Aost 862981-8 granted to Jibril Ben Achour by the DFG under Germany’s Excellence Strategy – EXC-2111 – 390814868.
 
 \appendix
-\section{Appendix}
+\section{Frusta geometry}
+
+\section{Series convergence acceleration}
+
+Before we explicitly address the numerical evaluation of the partition function, let us digress briefly to introduce the Shanks transform and Wynn's $\epsilon$-algorithm which have been applied to effective spin-foams\footnote{A closely related series convergence acceleration, known as Aitken's $\Delta^2$-process~\cite{Weniger2003} has been applied to infinite bulk variable summations in~\cite{Dona:2023myv}.}  in~\cite{Dittrich:2023rcr}. In the subsequent sections, we will frequently encounter unbounded sums of the form
+%
+\begin{equation}
+\mathfrak{S} = \lim\limits_{n\rightarrow\infty}\mathfrak{S}_n = \lim\limits_{n\rightarrow\infty}\sum_{j = 1}^{n}a_j
+\end{equation}
+%
+for some complex sequence $\{a_j\}$. Assuming the partial sum $\mathfrak{S}_n$ to be known and of the form~\cite{Weniger2003}
+%
+\begin{equation}
+\mathfrak{S}_n = \mathfrak{S} + \sum_{j=0}^{k-1}c_j\lambda_j^n\,,
+\end{equation}
+%
+with $c_j$ coefficients and the $1 > \abs{\lambda_0} > \dots > \abs{\lambda_{k-1}}$ referred to as transients, there are $2k+1$ unknowns given by the limiting value $\mathfrak{S}$, the $c_j$ and the $\lambda_j$. In order to solve for $\mathfrak{S}$, one utilizes $2k+1$ consecutive sequence values $\mathfrak{S}_n,\mathfrak{S}_{n+1},\dots,\mathfrak{S}_{n+2k}$ to obtain the $k$-th Shanks transform~\cite{Schmidt1941,Shanks1955} $e_k(\mathfrak{S}_n)$ as a ratio of determinants. For sufficiently large $n$, the Shanks transform $e_k(\mathfrak{S}_n)$ approximates $\mathfrak{S}$ faster than taking the limit $n\rightarrow \infty$ of the partial sums $\mathfrak{S}_n$.
+
+In~\cite{Wynn1956}, Wynn introduced a non-linear recursive relation to efficiently compute the Shanks transform, commonly referred to as $\epsilon$-algorithm. Given the partial sums $\mathfrak{S}_1,\dots,\mathfrak{S}_n$, define~\cite{Weniger2003}
+%
+\begin{equation}
+\epsilon_{-1}^{(n)} = 0,\qquad \epsilon_0^{(n)} = \mathfrak{S}_n\,.
+\end{equation}
+%
+Then, $\epsilon$'s of higher $k$ are obtained via the relation
+%
+\begin{equation}
+\epsilon_{k+1}^{(n)} = \epsilon_{k-1}^{(n+1)} + \frac{1}{\epsilon_k^{(n+1)}-\epsilon_k^{(n)}}\,.
+\end{equation}
+%
+Wynn has shown~\cite{Wynn1956} that $\epsilon^{(n)}_{2k} = e_k(\mathfrak{S}_n)$ thus providing a fast algorithm for computing the $k$-th Shanks transform of a sequence $\mathfrak{S}_n$.\footnote{A Mathematica algorithm for convergence acceleration via Wynn's method can be found in the repository \href{https://resources.wolframcloud.com/FunctionRepository/resources/SequenceLimit/}{SequenceLimit}. An implementation in \textsc{Julia} can be found in \href{https://github.com/Jercheal/3d-cosmology/blob/master/wynn.jl}{https://github.com/Jercheal/3d-cosmology}.}
+
+%As noted in~\cite{Weniger2003}, once the acceleration is successful further applying Wynn's algorithm will necessarily lead to divisions by small numbers which can lead to wrong limiting points. Therefore, the algorithm is sensitive to the upper cutoff $n$ of the partial sum $\mathfrak{S}_n$ which should not be chosen too large. To not run into this issue, the algorithm needs to be terminated once the desired accuracy is reached, which can be straightforwardly implemented. 
+
+Note that Wynn's $\epsilon$-algorithm can be applied to sequences of more than one variable, which we discuss explicitly in Sec.~\ref{sec:Summation of bulk strut lengths}. 
 
 
 \bibliographystyle{JHEP}
