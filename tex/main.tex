@@ -1,4 +1,4 @@
-\documentclass[amsmath,amssymb,aps,prl,twocolumn,superscriptaddress,nofootinbib]{revtex4-1}
+\documentclass[amsmath,amssymb,aps,twocolumn,superscriptaddress,nofootinbib]{revtex4-1}
 \pdfoutput=1
 \usepackage{amsfonts, mathtools, mathrsfs,upgreek}
 \usepackage{hyperref, csquotes}
@@ -150,7 +150,7 @@ For $\mathcal{V}_T = 1$, the square areas $j_0,j_1$ are boundary data and only t
 where due to the Schl\"{a}fli identity, the first term in Eq.~\eqref{eq:regular Regge action} drops out. 
 Notice that this equation is transcendental and can therefore only by tackled numerically.
 
-\paragraph{Vanishing cosmological constant.} 
+\paragraph*{Vanishing cosmological constant.} 
 
 In the case of $\Lambda = 0$, the Regge action describes a spatially flat vacuum universe. 
 If the boundary data is non-stationary, i.e.~$j_0 \neq j_1$, Eq.~\eqref{eq:1step Regge equation} exhibits no solution for $k_0$. 
@@ -163,7 +163,7 @@ This symmetry amounts to moving spacelike slices (instead of individual vertices
 Note that for $4$-cuboids, $k = \sqrt{j}H$ with $H$ the height of the cuboid which is directly related to the lapse function $N$ in the continuum~\cite{Dittrich:2021gww,Jercher:2023csk}.
 The lapse is the gauge variable of the residual diffeomorphism symmetry after symmetry reduction, encoding time reparametrization invariance. 
 
-\paragraph{Non-vanishing cosmological constant.}
+\paragraph*{Non-vanishing cosmological constant.}
 
 For a non-vanishing cosmological constant, $\Lambda \neq 0$, and stationary boundary conditions, $j_0 = j_1$, the only solution to Eq.~\eqref{eq:1step Regge equation} is $k_0 = 0$, corresponding to degenerate $4$-frusta with vanishing height.
 Thus, a stationary universe for $\Lambda\neq 0$ only exists if no time passes, i.e. if there is no actual time evolution. 
@@ -182,18 +182,64 @@ solved by $k_0^* = 0$.
 Note that the restriction on the sign of $\Lambda$ is in accordance with the continuum Friedmann equations, $\left(\frac{\dot{a}}{a}\right)^2 = N^2\frac{\Lambda}{3}$, where real solutions for the scale factor require $\Lambda > 0$. 
 
 In the spatially spherical case in Lorentzian (Euclidean) signature, where \caj{scale factor is bounded from below (above), ... add contrasting info here.} 
-
+ 
 \section{Arbitrary number of time steps}\label{sec:more time steps}
+
+In this section, we study the Regge equations of spatially flat Lorentzian cosmology for an arbitrary number of time steps $\mathcal{V}_T$. 
+This amounts to solving $2\mathcal{V}_T-1$ coupled transcendental equations for the bulk variables $k_0,j_1,\dots,j_{\mathcal{V}_T-1},k_{\mathcal{V}_T-1}$ for given boundary data $j_0, j_{\mathcal{V}_T}$ and cosmological constant $\Lambda$,
+%
+\begin{equation}\label{eq:general Regge equations}
+\pdv{S_{\textsc{iii}}}{k_n} = 0\,,\qquad \pdv{S_{\textsc{iii}}}{j_m} = 0\,,
+\end{equation}
+%
+with $n\in\{0,\dots,\mathcal{V}_T-1\}$ and $m\in\{1,\dots,\mathcal{V}_T-1\}$.
+A priori, the number of cubes in each spacelike slice, $\mathcal{V}_S^3$, enters the total Regge action only as a multiplicative factor due to the symmetry restriction.
+Thus, in the following two sections, we consider $\mathcal{V}_S = 1$ for simplicity.
+However, let us mention here that in Sec.~\ref{sec:continuum limit}, the parameter $\mathcal{V}_S$ turns out to be crucial to obtain the correct continuum limit. 
+We tackle the problem of finding solutions to Eq.~\eqref{eq:general Regge equations} first analytically in the subsequent section and develop numerical methods thereafter.
 
 \subsection{Analytical considerations}
 
+For vanishing cosmological constant, $\Lambda = 0$, and stationary boundary data, $j_0=j_{\mathcal{V}_T}$, the results for a single time step obtained in the previous section straightforwardly generalize.
+That is, if $\Lambda = 0$, the Regge equations are satisfied if and only if the boundary data satisfies $j_0 = j_{\mathcal{V}_T}$.
+Then, the bulk areas $j_n = j_0$ for all $n\in\{1,\dots,\mathcal{V}_T-1\}$, and the trapezoid areas are undetermined, marking the restoration of time reparametrization invariance of flat space. 
+On the other hand, for $\Lambda \neq 0$ and boundary data $j_0 = j_{\mathcal{V}_T}$, no non-degenerate solution to the Regge equations is found.
+A unique solution exist for $j_0 \neq j_{\mathcal{V}_T}$ when $\Lambda > 0$ which is in accordance with the continuum Friedmann equations.
+To summarize, a spatially flat vacuum universe is flat and stationary while a positive cosmological will necessarily lead to curved non-stationary solutions. 
+For the remainder, we assume $\Lambda > 0$ and $j_0\neq j_{\mathcal{V}_T}$.
+
+Refer to~\cite{Jercher:2023csk} and explain the monotonicity in the height variable picture. 
+
+\begin{itemize}
+  \item monotonicity
+  \item analytical continuum limit 
+\end{itemize}
+
 \subsection{Numerical implementation}
 
-\subsection{Continuum limit}
+Solving the Regge equations explicitly requires numerical methods. In this work, we employ the package \texttt{NLsolve}\footnote{
+A documentation of the package can be found at \href{https://github.com/JuliaNLSolvers/NLsolve.jl}{github.com/JuliaNLSolvers/NLsolve.jl}. 
+Note that also the \texttt{NSolve} method in \texttt{Mathematica} can be used, but is expected have lower performance in terms of accuracy and computation time.
+}
+in \texttt{Julia}, designed for solving non-linear equations of the form $\vec{F}(\vec{x}) = \vec{0}$.
+Note that while Eqs.~\eqref{eq:general Regge equations} define a function $\vec{F}:\R^{2\mathcal{V}_T-1}\longrightarrow \R^{2\mathcal{V}_T-1}$, \texttt{NLsolve} can also be applied to complex numbers \caj{which may be relevant for the complex critical point method~\cite{}.}
+The algorithm we developed for this work specifically tailored to Eq.~\eqref{eq:general Regge equations} comprises the \texttt{solve\_eom}\footnote{See \href{https://github.com/Jercheal/transfer_matrix/blob/main/transfer_matrix.jl}{this github repository} for the source code.} method which we explain in the following.
+
+\begin{itemize}
+  \item input, output variables
+  \item generating initial guess
+  \item ignore $\mathcal{V}_S$ for the moment
+\end{itemize}
+
+To guarantee convergence and good performance of the solving algorithm , a good initial guess for the solutions needs to be provided. To that end,  
+
+\subsection{Continuum limit}\label{sec:continuum limit}
+
+blabla
 
 \section{Conclusion}
 
-\paragraph{Acknowledgements}  The authors thank Seth Asante, Bianca Dittrich and Steffen Gielen for helpful discussions and Tim St\"{o}tzel for support with the numerical implementation. AFJ, JDS and SSt gratefully acknowledge support by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) Grant No 422809950. AFJ and JDS acknowledge support by the DFG under Grant No 406116891 within the Research Training Group RTG 2522/1. AFJ is grateful for the generous financial support by the MCQST via the seed funding Aost 862981-8 granted to Jibril Ben Achour by the DFG under Germany’s Excellence Strategy – EXC-2111 – 390814868.
+\paragraph*{Acknowledgements}  The authors thank Seth Asante, Bianca Dittrich and Steffen Gielen for helpful discussions and Tim St\"{o}tzel for support with the numerical implementation. AFJ, JDS and SSt gratefully acknowledge support by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) Grant No 422809950. AFJ and JDS acknowledge support by the DFG under Grant No 406116891 within the Research Training Group RTG 2522/1. AFJ is grateful for the generous financial support by the MCQST via the seed funding Aost 862981-8 granted to Jibril Ben Achour by the DFG under Germany’s Excellence Strategy – EXC-2111 – 390814868.
 
 \appendix
 \section{Frusta geometry}
