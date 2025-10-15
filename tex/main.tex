@@ -169,7 +169,7 @@ For a non-vanishing cosmological constant, $\Lambda \neq 0$, and stationary boun
 Thus, a stationary universe for $\Lambda\neq 0$ only exists if no time passes, i.e. if there is no actual time evolution. 
 The more interesting case is $j_0 \neq j_1$ where a non-trivial solution $k_0^*$ for Eq.~\eqref{eq:1step Regge equation} exists. 
 More precisely, a unique solution $k_0^*$ is found for any $\Lambda > 0$ and any $j_0\neq j_1$. 
-The on-shell trapezoid area $k_0^*(\Lambda)$ as a function of $\Lambda$ behaves as a monomial decay $k_0^*\sim c\Lambda^{_\alpha}$ with $c,\alpha > 0$ constants depending on $j_0, j_1$. 
+The on-shell trapezoid area $k_0^*(\Lambda)$ as a function of $\Lambda$ behaves as a monomial decay $k_0^*\sim c\Lambda^{-\alpha}$ with $c,\alpha > 0$ constants depending on $j_0, j_1$. 
 For $\Lambda \neq 0$, the solution diverges and ceases to exist at $\Lambda = 0$ in lines with the discussion above.
 In the limit $\Lambda\rightarrow\infty$, Eq.~\eqref{eq:1step Regge equation} is dominated by the $\Lambda$-term, i.e.
 %
@@ -181,7 +181,14 @@ solved by $k_0^* = 0$.
 
 Note that the restriction on the sign of $\Lambda$ is in accordance with the continuum Friedmann equations, $\left(\frac{\dot{a}}{a}\right)^2 = N^2\frac{\Lambda}{3}$, where real solutions for the scale factor require $\Lambda > 0$. 
 
-In the spatially spherical case in Lorentzian (Euclidean) signature, where \caj{scale factor is bounded from below (above), ... add contrasting info here.} 
+For completeness, let us contrast these results with the existence of solutions in the spatially spherical case in Lorentzian~\cite{Dittrich:2021gww} and Euclidean~\cite{Hilpert2024,Collins:1973hw} signature.\footnote{The construction of the spatially spherical Regge action differs from the construction here, in particular because there exist only finitely many homogeneous triangulations of the $3$-sphere, see~\cite{Collins:1973hw,Dittrich:2021gww} for details.} 
+In the former setting, note first that for $\Lambda = 0$, no solutions exist. 
+Furthermore, for $\Lambda > 0$, solutions exist only if $j_0 > j_\Lambda$ and $j_1 > j_\Lambda$, where $j_\Lambda$ is a $\Lambda$-dependent minimal area. 
+This is in accordance with the continuum where the scale factor typically follows a $\cosh$-function, attaining a minimal value $a_\Lambda$.
+In Euclidean signature, solutions exist for $\Lambda = 0$. 
+These correspond, in the continuum, to solutions where $\dot{a} = \mathrm{const}$.
+For $\Lambda > 0$, solutions exist only if $j_0 < j_\Lambda$ and $j_1<j_\Lambda$ where $j_\Lambda$ is the same as in the Lorentzian case, however now representing an upper bound. 
+Again, this behavior agrees with continuum results where a Euclidean universe with positive spatial curvature can only reach a maximum value $a_\Lambda$.
  
 \section{Arbitrary number of time steps}\label{sec:more time steps}
 
@@ -192,11 +199,23 @@ This amounts to solving $2\mathcal{V}_T-1$ coupled transcendental equations for 
 \pdv{S_{\textsc{iii}}}{k_n} = 0\,,\qquad \pdv{S_{\textsc{iii}}}{j_m} = 0\,,
 \end{equation}
 %
-with $n\in\{0,\dots,\mathcal{V}_T-1\}$ and $m\in\{1,\dots,\mathcal{V}_T-1\}$.
+with $n\in\{0,\dots,\mathcal{V}_T-1\}$ and $m\in\{1,\dots,\mathcal{V}_T-1\}$. Since the Regge action $S_\textsc{iii}$ is additive with respect to the slices, i.e. $S_\textsc{iii} = \mathcal{V}_S^3\sum_n S_\textsc{iii}^{(n)}$, Eqs.~\eqref{eq:general Regge equations} simplify significantly,
+%
+\begin{equation}
+\begin{aligned}
+0 &= \pdv{S_\textsc{iii}}{k_n} = \mathcal{V}_S^3\pdv{S_\textsc{iii}^{(n)}}{k_n} \,,\\
+0 &= \pdv{S_\textsc{iii}}{j_n} = \mathcal{V}_S^3\left(\pdv{S_\textsc{iii}^{(n)}}{j_n} + \pdv{S_\textsc{iii}^{(n+1)}}{j_n}\right)\,.
+\end{aligned}
+\end{equation}
+%
+Thus, it is sufficient to consider the single slab action $S_\textsc{iii}$, given in Eq.~\eqref{eq:1step Regge equation}, and its derivatives. An explicit form of these equations is given in Appendix~\ref{}. 
+
 A priori, the number of cubes in each spacelike slice, $\mathcal{V}_S^3$, enters the total Regge action only as a multiplicative factor due to the symmetry restriction.
 Thus, in the following two sections, we consider $\mathcal{V}_S = 1$ for simplicity.
 However, let us mention here that in Sec.~\ref{sec:continuum limit}, the parameter $\mathcal{V}_S$ turns out to be crucial to obtain the correct continuum limit. 
 We tackle the problem of finding solutions to Eq.~\eqref{eq:general Regge equations} first analytically in the subsequent section and develop numerical methods thereafter.
+
+\caj{Add explicit equations to the appendix, mention simple dependence, additivity}
 
 \subsection{Analytical considerations}
 
@@ -208,7 +227,7 @@ A unique solution exist for $j_0 \neq j_{\mathcal{V}_T}$ when $\Lambda > 0$ whic
 To summarize, a spatially flat vacuum universe is flat and stationary while a positive cosmological will necessarily lead to curved non-stationary solutions. 
 For the remainder, we assume $\Lambda > 0$ and $j_0\neq j_{\mathcal{V}_T}$.
 
-Refer to~\cite{Jercher:2023csk} and explain the monotonicity in the height variable picture. 
+\caj{Refer to~\cite{Jercher:2023csk} and explain the monotonicity and continuum limit in the height variable picture.} 
 
 \begin{itemize}
   \item monotonicity
@@ -221,23 +240,61 @@ Solving the Regge equations explicitly requires numerical methods. In this work,
 A documentation of the package can be found at \href{https://github.com/JuliaNLSolvers/NLsolve.jl}{github.com/JuliaNLSolvers/NLsolve.jl}. 
 Note that also the \texttt{NSolve} method in \texttt{Mathematica} can be used, but is expected have lower performance in terms of accuracy and computation time.
 }
-in \texttt{Julia}, designed for solving non-linear equations of the form $\vec{F}(\vec{x}) = \vec{0}$.
-Note that while Eqs.~\eqref{eq:general Regge equations} define a function $\vec{F}:\R^{2\mathcal{V}_T-1}\longrightarrow \R^{2\mathcal{V}_T-1}$, \texttt{NLsolve} can also be applied to complex numbers \caj{which may be relevant for the complex critical point method~\cite{}.}
-The algorithm we developed for this work specifically tailored to Eq.~\eqref{eq:general Regge equations} comprises the \texttt{solve\_eom}\footnote{See \href{https://github.com/Jercheal/transfer_matrix/blob/main/transfer_matrix.jl}{this github repository} for the source code.} method which we explain in the following.
+in \texttt{Julia}, designed for solving non-linear equations.
+Note that while Eqs.~\eqref{eq:general Regge equations} define a real-valued function in real variables, \texttt{NLsolve} can also be applied to complex numbers \caj{which may be relevant for the complex critical point method~\cite{}.}
+The algorithm we developed for this work specifically tailored to Eq.~\eqref{eq:general Regge equations} amounts to the \texttt{solve\_eom}\footnote{See \href{https://github.com/Jercheal/transfer_matrix/blob/main/transfer_matrix.jl}{this github repository} for the source code.} method which we explain in the following.
+
+First, note that the method \texttt{nsolve} of the \texttt{NSolve} package takes as input a vector valued function $\vec{F}$, a vector of initial variables $\vec{x}_0$, and parameters for the number of iterations as well as the error tolerance for solutions. 
+If the problem is sufficiently well-behaved, \texttt{nsolve} finds a solution to the equation $\vec{F}(\vec{x}) = \vec{0}$ using $\vec{x}_0$ as a starting guess of the solving algorithm. 
+In our case, $\vec{F}:\R^{2\mathcal{V}_T-1}\longrightarrow \R^{2\mathcal{V}_T-1}$, with
+%
+\begin{align}
+\vec{F} &= \left(\pdv{S_{\textsc{iii}}}{k_0},\pdv{S_{\textsc{iii}}}{j_1},\dots,\pdv{S_{\textsc{iii}}}{j_{\mathcal{V}_T-1}},\pdv{S_{\textsc{iii}}}{k_{\mathcal{V}_T-1}}\right)\,,\\[7pt]
+\vec{x} &= \left(k_0,j_1,\dots,j_{\mathcal{V}_T-1},k_{\mathcal{V}_T-1}\right)\,.
+\end{align}
+%
+Therefore, adapting Eq.~\eqref{eq:general Regge equations} to be solved by \texttt{nsolve} is done in two steps: 1) set up the function $\vec{F}$ for fixed boundary areas $j_0,j_{\mathcal{V}_T}$ and cosmological constant $\Lambda$, and 2) propose a starting guess $\vec{x}_0$.
+While step 1) is straightforward, step 2) requires particular care because the starting guess $\vec{x}_0$ is crucial for convergence and good performance of the solving algorithm.
+In particular, as $\mathcal{V}_T$ grows, the number of variables and equation grows and the algorithm because more sensitive to a well-chosen $\vec{x}_0$. 
+
+By trial and error, one can find sufficient starting guesses for \texttt{nsolve} to converge given various small $\mathcal{V}_T$.\footnote{\caj{Tried using continuum, but didn't work as well.}} 
+For the solutions $\vec{x}^* = (k_0^*,j_1^*,\dots,j_{\mathcal{V}_T-1}^*,k_{\mathcal{V}_T-1}^*)$, the following patterns are being observed.
+First, the $j^*_n$ can be approximated as
+%
+\begin{equation}\label{eq:j_guess}
+j^*_n \approx j_0 + n\Delta j\,,\quad n\in\{1,\dots,\mathcal{V}_T-1\}\,,
+\end{equation}
+%
+with $\Delta j = (j_{\mathcal{V}_T} - j_0)/\mathcal{V}_T$.
+Second, let $\vb*{k}_0^*$ be the solution of the trapezoid area for $\mathcal{V}_T = 1$.
+Then, for $\mathcal{V}_T > 1$, the $k^*_n$ are approximated by 
+%
+\begin{equation}\label{eq:k guess}
+k^*_n \approx \vb*{k}^*_0/\mathcal{V}_T\,, \quad n\in\{0,\dots,\mathcal{V}_T-1\}\,.
+\end{equation}
+%
+That is, to find a good initial guess for the trapezoid areas, one only needs to find a solution $\vb*{k}_0^*$ for a single time step. 
+Crucially, for a single equation, \texttt{nsolve} converges for a broad range of initial guesses, so $\vb*{k}_0^*$ can be easily found.
+In summary, finding a good initial guess $\vec{x}_0$ amounts to finding the one time step solution $\vb*{k}_0^*$ and then setting
+%
+\begin{equation}
+\vec{x}_0 = \left(\frac{\vb*{k}_0^*}{\mathcal{V}_T},.......\right)
+\end{equation}
 
 \begin{itemize}
-  \item input, output variables
-  \item generating initial guess
-  \item ignore $\mathcal{V}_S$ for the moment
+\item convergence monitor
+\item scaling of computation time as function of $\mathcal{V}$
 \end{itemize}
 
-To guarantee convergence and good performance of the solving algorithm , a good initial guess for the solutions needs to be provided. To that end,  
+
 
 \subsection{Continuum limit}\label{sec:continuum limit}
 
 blabla
 
 \section{Conclusion}
+
+Extension to $k = \pm 1$. 
 
 \paragraph*{Acknowledgements}  The authors thank Seth Asante, Bianca Dittrich and Steffen Gielen for helpful discussions and Tim St\"{o}tzel for support with the numerical implementation. AFJ, JDS and SSt gratefully acknowledge support by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) Grant No 422809950. AFJ and JDS acknowledge support by the DFG under Grant No 406116891 within the Research Training Group RTG 2522/1. AFJ is grateful for the generous financial support by the MCQST via the seed funding Aost 862981-8 granted to Jibril Ben Achour by the DFG under Germany’s Excellence Strategy – EXC-2111 – 390814868.
 
