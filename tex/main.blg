@@ -7,45 +7,45 @@ Database file #1: mainNotes.bib
 Database file #2: references.bib
 Warning--I didn't find a database entry for "Jercher:2025def"
 Warning--I didn't find a database entry for ""
-You've used 31 entries,
+You've used 26 entries,
             2316 wiz_defined-function locations,
-            816 strings with 9412 characters,
-and the built_in function-call counts, 12380 in all, are:
-= -- 1382
-> -- 291
+            766 strings with 8179 characters,
+and the built_in function-call counts, 10596 in all, are:
+= -- 1181
+> -- 261
 < -- 0
-+ -- 91
-- -- 60
-* -- 1101
-:= -- 1578
-add.period$ -- 31
-call.type$ -- 31
-change.case$ -- 31
++ -- 80
+- -- 54
+* -- 951
+:= -- 1343
+add.period$ -- 26
+call.type$ -- 26
+change.case$ -- 26
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 910
-empty$ -- 1111
-format.name$ -- 180
-if$ -- 3197
+cite$ -- 26
+duplicate$ -- 792
+empty$ -- 945
+format.name$ -- 162
+if$ -- 2725
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 119
-newline$ -- 97
-num.names$ -- 31
-pop$ -- 62
+int.to.str$ -- 26
+missing$ -- 99
+newline$ -- 82
+num.names$ -- 26
+pop$ -- 53
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 500
+skip$ -- 419
 stack$ -- 0
-substring$ -- 743
-swap$ -- 282
+substring$ -- 642
+swap$ -- 239
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 131
-width$ -- 33
-write$ -- 325
+while$ -- 111
+width$ -- 28
+write$ -- 272
 (There were 2 warnings)

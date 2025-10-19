@@ -258,7 +258,7 @@ Introducing
 \mathcal{T} = \sum_{n=0}^{\mathcal{V}_T-1}H_n\,,
 \end{equation}
 %
-one can show that Eq.~\eqref{eq:length difference} implies
+\caj{use $\tau$ for proper time?} one can show that Eq.~\eqref{eq:length difference} implies
 %
 \begin{equation}
 \frac{s_{n+1}-s_n}{H_n} = \frac{s_{\mathcal{V}_T} - s_0}{\mathcal{T}}\,,
@@ -343,6 +343,7 @@ In summary, finding a good initial guess $\vec{x}_0$ amounts to finding the one 
 
 
 \begin{itemize}
+\item output
 \item convergence monitor
 \item scaling of computation time as function of $\mathcal{V}$
 \end{itemize}
@@ -351,7 +352,25 @@ In summary, finding a good initial guess $\vec{x}_0$ amounts to finding the one 
 
 \subsection{Continuum limit}\label{sec:continuum limit}
 
-blabla
+Facilitated by the numerical tools developed above, we study in this section the continuum limit of Regge calculus at the level of the solutions, rather than at the level of the equations.
+Quantifying whether the discrete solutions provide a satisfactory approximation to the continuum solutions requires two ingredients:
+1) For comparison, one needs to consider appropriate continuum quantities which serve as limiting points of the discrete solutions.
+2) One needs to identify the right parameters to tune. 
+Here, the discreteness is parametrized by the number of slices, $\mathcal{V}_T$, as well as the number of $3$-cubes per slice, $\mathcal{V}_S^3$.
+Thus, the continuum is expected to be reached by suitably scaling $\mathcal{V}_T,\mathcal{V}_S\rightarrow\infty$.
+
+Focussing on 1) first, one difficulty in comparing discrete and continuum solutions is that in the discrete, the trapezoid areas are dynamical while in the continuum, the lapse function $N$ is a gauge variable, and thus, any time parametrization corresponds to a gauge choice.
+That is, when performing the limit, which time parametrization in the continuum emerges?
+Clearly, the labels $n\in\{0,\dots,\mathcal{V}_T\}$ do not serve as a time as this would imply constant distance between any two neighboring spacelike slices.
+Instead, recall that the height of $4$-frusta was mapped to infinitesimal proper time in the analytical continuum limit of Sec.~\ref{}.
+Therefore, the sum of heights, $\mathcal{T} = \sum_n H_n$, serves as a discrete approximation of the continuum proper time elapsed, defined as $\int \dd{t}N(t)$.
+The advantage of considering proper time is that it is gauge invariant.
+Thus, one does not run into the issue of having to pick a parametrization in the continuum to compare to the discrete solutions.
+Using proper time, we will then compare the evolution of the square area $j^*_n$ as a function of the accumulated height $\sum_{m=0}^nH_{m}$ with the squared scale factor $A = a^2$ as a function of proper time.
+
+Regarding point 2) ...
+
+
 
 \section{Conclusion}
 
@@ -362,39 +381,7 @@ Extension to $k = \pm 1$.
 \appendix
 \section{Frusta geometry}
 
-\section{Series convergence acceleration}
 
-Before we explicitly address the numerical evaluation of the partition function, let us digress briefly to introduce the Shanks transform and Wynn's $\epsilon$-algorithm which have been applied to effective spin-foams\footnote{A closely related series convergence acceleration, known as Aitken's $\Delta^2$-process~\cite{Weniger2003} has been applied to infinite bulk variable summations in~\cite{Dona:2023myv}.}  in~\cite{Dittrich:2023rcr}. In the subsequent sections, we will frequently encounter unbounded sums of the form
-%
-\begin{equation}
-\mathfrak{S} = \lim\limits_{n\rightarrow\infty}\mathfrak{S}_n = \lim\limits_{n\rightarrow\infty}\sum_{j = 1}^{n}a_j
-\end{equation}
-%
-for some complex sequence $\{a_j\}$. Assuming the partial sum $\mathfrak{S}_n$ to be known and of the form~\cite{Weniger2003}
-%
-\begin{equation}
-\mathfrak{S}_n = \mathfrak{S} + \sum_{j=0}^{k-1}c_j\lambda_j^n\,,
-\end{equation}
-%
-with $c_j$ coefficients and the $1 > \abs{\lambda_0} > \dots > \abs{\lambda_{k-1}}$ referred to as transients, there are $2k+1$ unknowns given by the limiting value $\mathfrak{S}$, the $c_j$ and the $\lambda_j$. In order to solve for $\mathfrak{S}$, one utilizes $2k+1$ consecutive sequence values $\mathfrak{S}_n,\mathfrak{S}_{n+1},\dots,\mathfrak{S}_{n+2k}$ to obtain the $k$-th Shanks transform~\cite{Schmidt1941,Shanks1955} $e_k(\mathfrak{S}_n)$ as a ratio of determinants. For sufficiently large $n$, the Shanks transform $e_k(\mathfrak{S}_n)$ approximates $\mathfrak{S}$ faster than taking the limit $n\rightarrow \infty$ of the partial sums $\mathfrak{S}_n$.
-
-In~\cite{Wynn1956}, Wynn introduced a non-linear recursive relation to efficiently compute the Shanks transform, commonly referred to as $\epsilon$-algorithm. Given the partial sums $\mathfrak{S}_1,\dots,\mathfrak{S}_n$, define~\cite{Weniger2003}
-%
-\begin{equation}
-\epsilon_{-1}^{(n)} = 0,\qquad \epsilon_0^{(n)} = \mathfrak{S}_n\,.
-\end{equation}
-%
-Then, $\epsilon$'s of higher $k$ are obtained via the relation
-%
-\begin{equation}
-\epsilon_{k+1}^{(n)} = \epsilon_{k-1}^{(n+1)} + \frac{1}{\epsilon_k^{(n+1)}-\epsilon_k^{(n)}}\,.
-\end{equation}
-%
-Wynn has shown~\cite{Wynn1956} that $\epsilon^{(n)}_{2k} = e_k(\mathfrak{S}_n)$ thus providing a fast algorithm for computing the $k$-th Shanks transform of a sequence $\mathfrak{S}_n$.\footnote{A Mathematica algorithm for convergence acceleration via Wynn's method can be found in the repository \href{https://resources.wolframcloud.com/FunctionRepository/resources/SequenceLimit/}{SequenceLimit}. An implementation in \textsc{Julia} can be found in \href{https://github.com/Jercheal/3d-cosmology/blob/master/wynn.jl}{https://github.com/Jercheal/3d-cosmology}.}
-
-%As noted in~\cite{Weniger2003}, once the acceleration is successful further applying Wynn's algorithm will necessarily lead to divisions by small numbers which can lead to wrong limiting points. Therefore, the algorithm is sensitive to the upper cutoff $n$ of the partial sum $\mathfrak{S}_n$ which should not be chosen too large. To not run into this issue, the algorithm needs to be terminated once the desired accuracy is reached, which can be straightforwardly implemented. 
-
-Note that Wynn's $\epsilon$-algorithm can be applied to sequences of more than one variable, which we discuss explicitly in Sec.~\ref{sec:Summation of bulk strut lengths}. 
 
 
 \bibliographystyle{JHEP}
