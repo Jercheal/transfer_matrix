@@ -88,11 +88,18 @@ For the remainder, we study the classical dynamics of area Regge calculus which 
 \subsection{Lorentzian 4-frusta}\label{sec:Lorentzian frustum}
 
 Lorentzian $4$-dimensional frusta are ideal to capture spatially flat, homogeneous and isotropic discrete geometries~\cite{Bahr:2017bn,Jercher:2023csk}.
-The boundary of $4$-frusta, depicted in Fig.~\ref{fig:4frustum}, contains two spacelike $3$-cubes and six $3$-frusta that are either spacelike or timelike.
-Its entire geometry is captured by the area of squares contained in the $3$-cubes, $j_0$ and $j_1$, and the area of the trapezoids contained in the $3$-frusta, $k$.
-The general notions of Regge calculus introduced above are straightforwardly adapted to this setting.
+The boundary of a $4$-frustum, depicted in Fig.~\ref{fig:4frustum}, contains two spacelike $3$-cubes and six $3$-frusta that are either spacelike or timelike.
 Gluing $4$-frusta along boundary $3$-frusta in spatial direction and along boundary $3$-cubes in temporal direction, one obtains an extended cosmological spacetime of hypercubical combinatorics $\mathcal{X}^{(4)}_\mathcal{V}$ with slices labelled by $n\in\{0,...,\mathcal{V}_T\}$ discretized by $\mathcal{V}_S^3$ spacelike $3$-cubes.
 We say that a $4$-frustum lies in a \enquote{slab} between slices $n$ and $n+1$.
+
+The entire geometry of a slab is captured by three variables describing the $3$-cubes and $3$-frusta which can be either areas or lengths.
+The former set of variables consists of the area of squares contained in the $3$-cubes, $j_0$ and $j_1$, and the area of the trapezoids contained in the $3$-frusta, $k$.
+The latter consists of the edge length contained in the $3$-cubes, $s_0$ and $s_1$, and the height of the $4$-frustum, $H_0$, which implicitly determines the trapezoids and $3$-frusta.\footnote{Strictly speaking, the height $H_0$ is a derived quantity that is not a length associated to a $1$-dimensional sub-cell of the cellular complex. Such a quantity would instead be given by the length $l_0$ associated to the strut connecting two neighboring spacelike slices. However, the relation between strut length and height is invertible for non-null struts, which assume here.}
+In the highly symmetry restricted setting considered here, there is a one-to-one map between area variables, $(j_0,j_1,k_0)$, and length variables, $(s_0,s_1,H_0)$, given explicitly in Appendix~\ref{}.
+We will exploit this relation in Sec.~\ref{sec:more time steps} using length variables for analytical computations and clear interpretation, especially because the height is directly related to the lapse function $N$ in the continuum.
+When solving the Regge equations numerically thereafter, we will use area variables instead to provide a classical benchmark for the effective spin-foam calculations of~\cite{Jercher:2025def}.
+The general notions of Regge calculus introduced above are straightforwardly adapted to either of the two sets of variables.
+
 
 \begin{figure}
 \includegraphics[width=0.28\textwidth]{figures/4frustum_high_res}
@@ -208,7 +215,7 @@ with $n\in\{0,\dots,\mathcal{V}_T-1\}$ and $m\in\{1,\dots,\mathcal{V}_T-1\}$. Si
 \end{aligned}
 \end{equation}
 %
-Thus, it is sufficient to consider the single slab action $S_\textsc{iii}$, given in Eq.~\eqref{eq:1step Regge equation}, and its derivatives. An explicit form of these equations is given in Appendix~\ref{}. 
+Thus, it is sufficient to consider the single slab action $S^{(n)}_\textsc{iii}$, given in Eq.~\eqref{eq:1step Regge equation}, and its derivatives. An explicit form of these equations is given in Appendix~\ref{}. 
 
 A priori, the number of cubes in each spacelike slice, $\mathcal{V}_S^3$, enters the total Regge action only as a multiplicative factor due to the symmetry restriction.
 Thus, in the following two sections, we consider $\mathcal{V}_S = 1$ for simplicity.
@@ -227,12 +234,39 @@ A unique solution exist for $j_0 \neq j_{\mathcal{V}_T}$ when $\Lambda > 0$ whic
 To summarize, a spatially flat vacuum universe is flat and stationary while a positive cosmological will necessarily lead to curved non-stationary solutions. 
 For the remainder, we assume $\Lambda > 0$ and $j_0\neq j_{\mathcal{V}_T}$.
 
-\caj{Refer to~\cite{Jercher:2023csk} and explain the monotonicity and continuum limit in the height variable picture.} 
+Eq.~\eqref{eq:general Regge equations} has been analyzed further (coupling a scalar field rather than a cosmological constant) in~\cite{Jercher:2023csk}.
+Therein, the length variables $(s_n,s_{n+1},H_n)$ have been employed in which the monotonicity of solutions and the continuum limit are derived most easily.
+The results of~\cite{Jercher:2023csk} transferred to the present setting with $\Lambda\neq 0$ are briefly summarized in the following.
 
-\begin{itemize}
-  \item monotonicity
-  \item analytical continuum limit 
-\end{itemize}
+Combining the Regge equations
+%
+\begin{equation}
+\pdv{S_{\textsc{iii}}}{H_{n-1}} = 0\,,\quad \pdv{S_{\textsc{iii}}}{H_{n}} = 0\,,\quad \pdv{S_{\textsc{iii}}}{s_{n}} = 0\,,
+\end{equation}
+%
+one can straightforwardly derive the relation~\cite{Jercher:2023csk}
+%
+\begin{equation}\label{eq:length difference}
+\frac{s_n - s_{n-1}}{H_{n-1}} = \frac{s_{n+1} - s_n}{H_n}\,,
+\end{equation}
+%
+for all $n\in\{1,\dots, \mathcal{V}_T-1\}$.
+That is, the difference of spatial edge length with respect to the height of the $4$-frusta remains constant. 
+Introducing 
+%
+\begin{equation}
+\mathcal{T} = \sum_{n=0}^{\mathcal{V}_T-1}H_n\,,
+\end{equation}
+%
+one can show that Eq.~\eqref{eq:length difference} implies
+%
+\begin{equation}
+\frac{s_{n+1}-s_n}{H_n} = \frac{s_{\mathcal{V}_T} - s_0}{\mathcal{T}}\,,
+\end{equation}
+%
+for all $n$.
+
+
 
 \subsection{Numerical implementation}
 

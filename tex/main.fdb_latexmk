@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex main"] 1760523553.30651 "main.aux" "main.bbl" "main" 1760523791.54493 0
+["bibtex main"] 1760866026.14048 "main.aux" "main.bbl" "main" 1760866305.80233 0
   "./JHEP.bst" 1734875732.77685 20429 3af9df5ab4b7e808cdbb9d6b90a65a61 ""
-  "./mainNotes.bib" 1760523791.13769 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "./mainNotes.bib" 1760866305.4001 0 d41d8cd98f00b204e9800998ecf8427e ""
   "./references.bib" 1760522783.71855 291511 97cbc4e32de6737f97b73fb96de2ed2e ""
-  "main.aux" 1760523791.28359 6108 b05446a7b8624ee14414edf305734b2b "pdflatex"
+  "main.aux" 1760866305.54594 6247 709ce3b2bc6ba06aa08ee39c4adc725a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1760523790.78282 "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" "main.pdf" "main" 1760523791.54507 0
-  "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" 1760523790.71445 26510 3a4f94120ff34c2d03772de138174f07 ""
+["pdflatex"] 1760866305.03799 "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" "main.pdf" "main" 1760866305.80248 0
+  "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" 1760866304.94616 28952 088e5848cbddc2b710ba9bda83de078a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -238,10 +238,10 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1734635151 3343723 0fb6cf893b465fc6cff44c188644e803 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "figures/4frustum_high_res.png" 1734634092.56979 476290 6674546c724f10313211e3e1f3ffaa08 ""
-  "main.aux" 1760523791.28359 6108 b05446a7b8624ee14414edf305734b2b "pdflatex"
-  "main.bbl" 1760523553.38787 8192 13a58017ba2c8b4bb394cbc18a94044a "bibtex main"
-  "main.out" 1760523791.28408 2468 b03856e86e5dfc3c7877fbfd8db9a7c6 "pdflatex"
-  "main.tex" 1760523790.71445 26510 3a4f94120ff34c2d03772de138174f07 ""
+  "main.aux" 1760866305.54594 6247 709ce3b2bc6ba06aa08ee39c4adc725a "pdflatex"
+  "main.bbl" 1760866026.23189 8192 13a58017ba2c8b4bb394cbc18a94044a "bibtex main"
+  "main.out" 1760866305.54666 2468 b03856e86e5dfc3c7877fbfd8db9a7c6 "pdflatex"
+  "main.tex" 1760866304.94616 28952 088e5848cbddc2b710ba9bda83de078a ""
   (generated)
   "main.aux"
   "main.log"
