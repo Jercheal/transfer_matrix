@@ -265,8 +265,32 @@ one can show that Eq.~\eqref{eq:length difference} implies
 \end{equation}
 %
 for all $n$.
+Since $H_n,\mathcal{T} > 0$, this implies $\mathrm{sgn}(s_{n+1}-s_n) = \mathrm{sgn}(s_{\mathcal{V}_T}-s_0)$, that is, solutions evolve monotonically and the boundary data $s_0,s_{\mathcal{V}_T}$ selects whether the universe is expanding, $s_{\mathcal{V}_T}>s_0$, or contracting, $s_{\mathcal{V}_T} < s_0$.
 
+Following the procedure outlined in~\cite{Jercher:2023csk}, an analytical continuum limit of the Regge equations can be taken in two steps.
+First, one performs a linearization of $\pdv{S_{\textsc{iii}}}{H_n} = 0$ in the variable $\eta_n = \frac{s_{n+1} - s_n}{H_n}$.
+In this approximation, corresponding to small deficit angles, one finds
+%
+\begin{equation}\label{eq:discrete Friedmann}
+\frac{(s_n - s_{n+1})^2}{s_n^2+s_{n+1}^2}  = H_n^2\frac{\Lambda}{6}\,.
+\end{equation}
+%
+Then, the discrete variables $(s_n,s_{n+1},H_n)$ need to be identified with the continuum scale factor $a(t)$ and the lapse function $N(t)$ parametrized in some coordinate time $t$.
+In the continuum limit, the height $H_n$ corresponds to the infinitesimal proper time, $H_n\rightarrow N\mathrm{d}t$.
+The discrete length on a given slice is mapped to the scale factor, $s_n \rightarrow a(t)$, while the length of a neighboring edge attains an additional time derivative term, $s_{n+1}\rightarrow a(t) + \dot{a}\mathrm{d}t$.
+Then, at leading order in $\mathrm{d}t$, on finds indeed that Eq.~\eqref{eq:discrete Friedmann} approaches
+%
+\begin{equation}
+\left(\frac{\dot{a}}{a}\right)^2 = N^2\frac{\Lambda}{3}\,,
+\end{equation}
+%
+which is the Friedmann equation for a spatially flat universe with cosmological constant.
+Note that configurations with spacelike trapezoids or spacelike $3$-frusta satisfy $\eta_n^2>2$ and therefore bear no straightforward continuum limit~\cite{Jercher:2023csk}.
 
+The cosmological Regge equations have been shown to capture  the Friedmann equations in a suitable continuum limit in previous works~\cite{Jercher:2023csk,Dittrich:2021gww,Bahr:2017bn,Brewin1999}.
+Still, Eq.~\eqref{eq:general Regge equations} remain to be solved explicitly in the discrete for many time steps $\mathcal{V}_T$.
+This represents however an important step since the solutions serve as a classical and discrete benchmark for identifying a semi-classical continuum regime in discrete path integral approaches such as effective spin-foams.  
+In the following section, we tackle this issue employing numerical methods.
 
 \subsection{Numerical implementation}
 
@@ -291,7 +315,7 @@ Therefore, adapting Eq.~\eqref{eq:general Regge equations} to be solved by \text
 While step 1) is straightforward, step 2) requires particular care because the starting guess $\vec{x}_0$ is crucial for convergence and good performance of the solving algorithm.
 In particular, as $\mathcal{V}_T$ grows, the number of variables and equation grows and the algorithm because more sensitive to a well-chosen $\vec{x}_0$. 
 
-By trial and error, one can find sufficient starting guesses for \texttt{nsolve} to converge given various small $\mathcal{V}_T$.\footnote{\caj{Tried using continuum, but didn't work as well.}} 
+By trial and error, one can find sufficient starting guesses for \texttt{nsolve} to converge given various small $\mathcal{V}_T$.\footnote{We tried using the continuum solution to find a good initial guess. However, we found that the prescription given here ensures fast convergence more reliably.} 
 For the solutions $\vec{x}^* = (k_0^*,j_1^*,\dots,j_{\mathcal{V}_T-1}^*,k_{\mathcal{V}_T-1}^*)$, the following patterns are being observed.
 First, the $j^*_n$ can be approximated as
 %
@@ -312,8 +336,11 @@ Crucially, for a single equation, \texttt{nsolve} converges for a broad range of
 In summary, finding a good initial guess $\vec{x}_0$ amounts to finding the one time step solution $\vb*{k}_0^*$ and then setting
 %
 \begin{equation}
-\vec{x}_0 = \left(\frac{\vb*{k}_0^*}{\mathcal{V}_T},.......\right)
+\vec{x}_0 = \left(\frac{\vb*{k}_0^*}{\mathcal{V}_T},j_0+\Delta j,\dots, j_0+(\mathcal{V}_T-1)\Delta j, \frac{\vb*{k}_0^*}{\mathcal{V}_T}\right)\,.
 \end{equation}
+
+
+
 
 \begin{itemize}
 \item convergence monitor
