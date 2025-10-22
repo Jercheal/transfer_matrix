@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex main"] 1760888842.68022 "main.aux" "main.bbl" "main" 1760888930.78561 0
+["bibtex main"] 1761120087.54236 "main.aux" "main.bbl" "main" 1761120343.09619 0
   "./JHEP.bst" 1734875732.77685 20429 3af9df5ab4b7e808cdbb9d6b90a65a61 ""
-  "./mainNotes.bib" 1760888930.37453 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "./mainNotes.bib" 1761120342.66258 0 d41d8cd98f00b204e9800998ecf8427e ""
   "./references.bib" 1760522783.71855 291511 97cbc4e32de6737f97b73fb96de2ed2e ""
-  "main.aux" 1760888930.52462 5952 60a9f614ec68f937e71ba27b0e2db316 "pdflatex"
+  "main.aux" 1761120342.81655 6555 1e44984fbf5fcf42b49d2eee423b1665 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1760888930.01111 "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" "main.pdf" "main" 1760888930.78574 0
-  "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" 1760888929.91721 30230 76c5e999d598db009927ef01f6c0e800 ""
+["pdflatex"] 1761120342.29891 "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" "main.pdf" "main" 1761120343.09633 0
+  "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" 1761120342.20719 33304 9795ad8d0b80d40d8298474e9cd96dda ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -83,6 +83,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb" 1248133631 24287 6b803fa9eb1ddff9112e00519b09dd9e ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb" 1248133631 29078 718ea4567ceff944262b0f5b0800e1d9 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -233,10 +234,11 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1734635151 3343723 0fb6cf893b465fc6cff44c188644e803 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "figures/4frustum_high_res.png" 1734634092.56979 476290 6674546c724f10313211e3e1f3ffaa08 ""
-  "main.aux" 1760888930.52462 5952 60a9f614ec68f937e71ba27b0e2db316 "pdflatex"
-  "main.bbl" 1760888842.75934 6911 bb59cdbad5e5f5cd00b38de68e4ccc97 "bibtex main"
-  "main.out" 1760888930.52532 2251 1bf25091e1d4a87b421cd9f98ee5778d "pdflatex"
-  "main.tex" 1760888929.91721 30230 76c5e999d598db009927ef01f6c0e800 ""
+  "main.aux" 1761120342.81655 6555 1e44984fbf5fcf42b49d2eee423b1665 "pdflatex"
+  "main.bbl" 1761120087.63058 6911 bb59cdbad5e5f5cd00b38de68e4ccc97 "bibtex main"
+  "main.out" 1761120342.81729 2251 5f29586f1dccb07f632ff1fc29af8b9d "pdflatex"
+  "main.tex" 1761120342.20719 33304 9795ad8d0b80d40d8298474e9cd96dda ""
+  "plots/solver_timescaling.pdf" 1761114128.62302 121425 a403d0dd5e13bea8dcdb5ba931165006 ""
   (generated)
   "main.aux"
   "main.log"
