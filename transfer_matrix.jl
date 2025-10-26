@@ -30,6 +30,13 @@ function height(j0::Float64, j1::Float64, k::Float64)
     return real(res)
 end
 
+function k_from_height(j0::Float64, j1::Float64, H::Float64)
+    """
+    Trapezoid area of 4-frustum as a function of the square areas j0 and j1 and the height.
+    """
+    return sqrt(2 * H^2 - (sqrt(j0) - sqrt(j1))^2) * (sqrt(j0) + sqrt(j1)) / (2 * sqrt(2))
+end
+
 function height_sq(j0::Float64, j1::Float64, k::Float64)
     """
     Squared height of 4-frustum as a function of the square areas j0 and j1 and the trapezoid area k.

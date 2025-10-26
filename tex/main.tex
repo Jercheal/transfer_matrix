@@ -255,17 +255,17 @@ That is, the difference of spatial edge length with respect to the height of the
 Introducing 
 %
 \begin{equation}
-\mathcal{T} = \sum_{n=0}^{\mathcal{V}_T-1}H_n\,,
+\tau_0 = \sum_{n=0}^{\mathcal{V}_T-1}H_n\,,
 \end{equation}
 %
-\caj{use $\tau$ for proper time?} one can show that Eq.~\eqref{eq:length difference} implies
+which we will later identify as the discrete elapsed proper time,  one can show that Eq.~\eqref{eq:length difference} implies
 %
 \begin{equation}
-\frac{s_{n+1}-s_n}{H_n} = \frac{s_{\mathcal{V}_T} - s_0}{\mathcal{T}}\,,
+\frac{s_{n+1}-s_n}{H_n} = \frac{s_{\mathcal{V}_T} - s_0}{\tau_0}\,,
 \end{equation}
 %
 for all $n$.
-Since $H_n,\mathcal{T} > 0$, this implies $\mathrm{sgn}(s_{n+1}-s_n) = \mathrm{sgn}(s_{\mathcal{V}_T}-s_0)$, that is, solutions evolve monotonically and the boundary data $s_0,s_{\mathcal{V}_T}$ selects whether the universe is expanding, $s_{\mathcal{V}_T}>s_0$, or contracting, $s_{\mathcal{V}_T} < s_0$.
+Since $H_n,\tau_0 > 0$, this implies $\mathrm{sgn}(s_{n+1}-s_n) = \mathrm{sgn}(s_{\mathcal{V}_T}-s_0)$, that is, solutions evolve monotonically and the boundary data $s_0,s_{\mathcal{V}_T}$ selects whether the universe is expanding, $s_{\mathcal{V}_T}>s_0$, or contracting, $s_{\mathcal{V}_T} < s_0$.
 
 Following the procedure outlined in~\cite{Jercher:2023csk}, an analytical continuum limit of the Regge equations can be taken in two steps.
 First, one performs a linearization of $\pdv{S_{\textsc{iii}}}{H_n} = 0$ in the variable $\eta_n = \frac{s_{n+1} - s_n}{H_n}$.
@@ -412,8 +412,7 @@ Setting $j_0 = A_0$ and $j_{\mathcal{V}_T} = A_1$ and increasing $\mathcal{V}_S$
 $\mathcal{V}_T$ and $\mathcal{V}_S$ can be scaled to larger values individually.
 In particular, from Eq.~\eqref{eq:general Regge equations}, one can see that 
 
-
-
+\caj{Continuum limit also in the analytical sense? Consider $s_n\rightarrow s_n/\mathcal{V}_S$.}
 
 \section{Conclusion}
 
