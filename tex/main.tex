@@ -95,7 +95,7 @@ We say that a $4$-frustum lies in a \enquote{slab} between slices $n$ and $n+1$.
 The entire geometry of a slab is captured by three variables describing the $3$-cubes and $3$-frusta which can be either areas or lengths.
 The former set of variables consists of the area of squares contained in the $3$-cubes, $j_0$ and $j_1$, and the area of the trapezoids contained in the $3$-frusta, $k$.
 The latter consists of the edge length contained in the $3$-cubes, $s_0$ and $s_1$, and the height of the $4$-frustum, $H_0$, which implicitly determines the trapezoids and $3$-frusta.\footnote{Strictly speaking, the height $H_0$ is a derived quantity that is not a length associated to a $1$-dimensional sub-cell of the cellular complex. Such a quantity would instead be given by the length $l_0$ associated to the strut connecting two neighboring spacelike slices. However, the relation between strut length and height is invertible for non-null struts, which assume here.}
-In the highly symmetry restricted setting considered here, there is a one-to-one map between area variables, $(j_0,j_1,k_0)$, and length variables, $(s_0,s_1,H_0)$, given explicitly in Appendix~\ref{}.
+In the highly symmetry restricted setting considered here, there is a one-to-one map between area variables, $(j_0,j_1,k_0)$, and length variables, $(s_0,s_1,H_0)$, given explicitly in Appendix~\ref{app:frusta}.
 We will exploit this relation in Sec.~\ref{sec:more time steps} using length variables for analytical computations and clear interpretation, especially because the height is directly related to the lapse function $N$ in the continuum.
 When solving the Regge equations numerically thereafter, we will use area variables instead to provide a classical benchmark for the effective spin-foam calculations of~\cite{Jercher:2025def}.
 The general notions of Regge calculus introduced above are straightforwardly adapted to either of the two sets of variables.
@@ -107,9 +107,26 @@ The general notions of Regge calculus introduced above are straightforwardly ada
 \label{fig:4frustum}
 \end{figure}
 
-The squared volume of subcells connecting neighboring slices, i.e. 3-frusta, trapezoids and edges, which are detailed in Appendix~\ref{tab:}, carries information on the causal structure.
+The squared volume of subcells connecting neighboring slices, i.e. 3-frusta, trapezoids and edges, which are detailed in Appendix~\ref{app:frusta}, carries information on the causal structure.
 If it is positive (negative), the corresponding subcell is timelike (spacelike).
-In the symmetry reduced setting, the ratio $\frac{\abs{j_n-j_{n+1}}}{4k_n}$ fully characterizes the causal character of subcells suggesting separating the $4$-frusta configurations into three sectors summarized in Tab.~\ref{tab:}.
+In the symmetry reduced setting, the ratio $\frac{\abs{j_n-j_{n+1}}}{4k_n}$ fully characterizes the causal character of subcells suggesting separating the $4$-frusta configurations into three sectors summarized in Tab.~\ref{tab:sectors}.
+
+\begin{widetext}
+  \centering
+\begin{table}
+  \centering
+  \begin{tabular}{c || c | c | c | c}
+  sub-cells & $-\frac{\Delta j^2}{8} < \underline{k}^2 < -\frac{\Delta j^2}{16}$ & $-\frac{\Delta j^2}{16} < \underline{k}^2 < 0$ & $0 < \underline{k}^2 < \frac{\Delta j^2}{16}$ & $\frac{\Delta j^2}{16} <  \underline{k}^2$\\
+  \hline\hline  
+  \end{tabular}
+  \caption{...}
+  \label{tab:sectors}
+\end{table}
+\end{widetext}
+
+
+
+
 
 As discussed in~\cite{Dittrich:2021gww,Dittrich:2023rcr,Jercher:2023csk,Jercher:2024kig,Jercher:2024hlr}, two of these sectors I and II exhibit an irregular light cone structure, also referred to as causality violations, located at spacelike sub-cells.
 Examples of such irregularities are given by the trouser singularity and the yarmulke singularity associated to spatial topology change~\cite{Horowitz:1990qb,Louko:1995jw,Dowker:1999wu}. 
@@ -131,7 +148,7 @@ S_{\textsc{iii}}^{(n)} & = 6(j_n-j_{n+1})\sinh^{-1}\left(\frac{j_{n+1}-j_n}{\sqr
 \end{equation}  
 \end{widetext}
 %
-where $\Lambda$ is a cosmological constant and $V^{(4)}$ is the $4$-volume defined in Eq.~\eqref{} as an equation of $(j_n,j_{n+1},k_n)$.
+where $\Lambda$ is a cosmological constant and $V^{(4)}$ is the $4$-volume defined in Eq.~\eqref{eq:4-volume} as an equation of $(j_n,j_{n+1},k_n)$.
 By construction, the $4$-frustum action is additive such that on a discretization $\mathcal{X}^{(4)}_{\mathcal{V}}$ with $\mathcal{V}_S^3$ vertices in spatial direction and $\mathcal{V}_T+1$ spatial slices, the action is given by $S_{\mathrm{R}} = \mathcal{V}_S^3\sum_{n=0}^{\mathcal{V}_T-1}S_{\mathrm{R}}^{(n)}$.
 Additivity of the action per slab implies that the equations of motion for a given geometric quantity, being either $j_n$ or $k_n$, will only depend on neighboring geometric labels.
 
@@ -421,7 +438,137 @@ Extension to $k = \pm 1$.
 \paragraph*{Acknowledgements}  The authors thank Seth Asante, Bianca Dittrich and Steffen Gielen for helpful discussions and Tim St\"{o}tzel for support with the numerical implementation. AFJ, JDS and SSt gratefully acknowledge support by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) Grant No 422809950. AFJ and JDS acknowledge support by the DFG under Grant No 406116891 within the Research Training Group RTG 2522/1. AFJ is grateful for the generous financial support by the MCQST via the seed funding Aost 862981-8 granted to Jibril Ben Achour by the DFG under Germany’s Excellence Strategy – EXC-2111 – 390814868.
 
 \appendix
-\section{Frusta geometry}
+\section{Frusta geometry}\label{app:frusta}
+
+In area variables, the geometry of a slab is fully characterized by $(j_0, j_1,k)$, the square area of the cubes in slice $0$ and $1$, respectively, and the trapezoid area $k$.
+We provide the formulae of the squared volumes of relevant sub-cells in the following.
+Here, the square areas $j_0,j_1$ are assumed to be the absolute values of the signed areas and therefore positive.
+For the squared trapezoid area, we write $\underline{k}^2$ for the signed squared area and $k^2$ for its absolute value.
+
+A crucial quantity is the squared height of the $4$-frusta,
+%
+\begin{equation}
+H^2 = \frac{8\underline{k}^2 + (j_0-j_1)^2}{2(\sqrt{j_0} + \sqrt{j_1})^2}\,,
+\end{equation}
+%
+due to its direct relation to the proper time in the continuum.
+Furthermore, it gives a bound $8\underline{k}^2 > -(j_0 - j_1)^2$ for the $4$-frusta to be embeddable in Minkowski space.
+Configurations that violate this bound correspond to Euclidean frusta.
+
+The squared length of struts, which connect neighboring spacelike slices is
+%
+\begin{equation}
+l^2 = \frac{16\underline{k}^2-(j_0-j_1)^2}{4(\sqrt{j_0} + \sqrt{j_1})^2}\,.
+\end{equation}
+%
+Thus, configurations with $16\underline{k}^2 > (j_0-j_1)^2$ have timelike struts. 
+If equality holds instead, struts are lightlike. 
+Otherwise, they are spacelike.
+The squared height of $3$-frusta is
+%
+\begin{equation}
+h^2 = \frac{16\underline{k}^2 + (j_0-j_1)^2}{4(\sqrt{j_0} + \sqrt{j_1})^2}\,,
+\end{equation}
+%
+so $3$-frusta are timelike if $16\underline{k}^2>-(j_0-j_1)^2$, lightlike if equality holds and spacelike otherwise.
+
+The $4$-volume enters the Regge action with a cosmological constant and is the discrete analogon of the volume element $\dd[4]{x}\sqrt{-g}$,
+% 
+\begin{equation}\label{eq:4-volume}
+V_{(4)}^2 = \frac{(j_0+j_1)^2}{32}\left(8\underline{k}^2 + (j_0-j_1)^2\right)\,.
+\end{equation}
+%
+
+In this work, we focus exclusively on the causally regular sector, that is, timelike trapezoids, $\underline{k}^2 > 0$. 
+The two types of deficit angles, those located at trapezoids and those located at squares, are respectively given by
+%
+\begin{equation}
+\delta^{\mathrm{E}} = \frac{\pi}{2} - \cos^{-1}\left(\frac{(j_n - j_{n+1})^2}{16k^2 + (j_n - j_{n+1})^2}\right)\,,
+\end{equation}
+%
+and 
+%
+\begin{equation}
+\delta^{\mathrm{L}} = \sinh^{-1}\left(\frac{j_1-j_0}{\sqrt{16k^2 + (j_n - j_{n+1})^2}}\right)\,.
+\end{equation}
+%
+$\delta^{\mathrm{E}}$ is a Euclidean angle since the orthogonal subspace to a timelike trapezoid is $\R^2$.
+In contrast, $\delta^{\mathrm{L}}$ is a Lorentzian angle as the orthogonal subspace to a spacelike square is $\R^{1,1}$.
+
+Let us repeat here the Regge action of the causally regular sector,
+\begin{widetext}
+\begin{equation}
+\begin{aligned}
+S_{\textsc{iii}}^{(n)} & = 6(j_n-j_{n+1})\sinh^{-1}\left(\frac{j_{n+1}-j_n}{\sqrt{16k_n^2+(j_n-j_{n+1})^2}}\right) + 12k_n\left[\frac{\pi}{2}-\cos^{-1}\left(\frac{(j_n-j_{n+1})^2}{16k_n^2+(j_n-j_{n+1})^2}\right)\right] - \Lambda V^{(4)}\,.
+\end{aligned}
+\end{equation}  
+\end{widetext}
+The equations of motion are given by
+%
+\begin{equation}
+\pdv{S_{\textsc{iii}}}{k_n} = 0\,,\quad \pdv{S_{\textsc{iii}}}{j_n} = 0\,,
+\end{equation}
+%
+which can be simplified using the Schl\"{a}fli identity and the additivity of the action.
+That is, the above equations can be reformulated as
+%
+\begin{equation}
+\pdv{S_{\textsc{iii}}^{(n)}}{k_n} = 0\,,\quad \pdv{S_{\textsc{iii}}^{(n-1)}}{j_n} + \pdv{S_{\textsc{iii}}^{(n)}}{j_n} = 0\,,
+\end{equation}
+with the derivative terms explicitly given by
+\begin{widetext}
+\begin{equation}
+\begin{aligned}
+\pdv{S_{\textsc{iii}}^{(n)}}{k_n} &= 12\left[\frac{\pi}{2} - \cos^{-1}\left(\frac{(j_n - j_{n+1})^2}{16k^2 + (j_n - j_{n+1})^2}\right)\right] - \Lambda \frac{(j_n+j_{n+1})^2k_n}{4V_{(4)}}\,,\\
+\pdv{S_{\textsc{iii}}^{(n)}}{j_n} &= 6\sinh^{-1}\left(\frac{j_{n+1}-j_n}{\sqrt{16k_n^2 + (j_n - j_{n+1})^2}}\right) - \Lambda \frac{j_n(j_n - j_{n+1}) + 4k_n^2}{2\sqrt{(j_n - j_{n+1})^2+8k_n^2}}\,.
+\end{aligned}
+\end{equation}
+\end{widetext}
+
+\section{Cosmology in the continuum}
+
+The line element of a spatially flat, homogeneous and isotropic universe is given by
+%
+\begin{equation}
+\dd{s}^2 = N^2(t)\dd{t}^2 - a^2(t)\dd{\vb{x}}^2\,,
+\end{equation}
+%
+with $a(t)$ the scale factor and $\dd{\vb{x}}^2$ the 3-dimensional Euclidean line element. 
+The lapse function, $N(t)$, corresponds to a choice of gauge emerging from the time reparametrization invariance of the system. 
+
+Dynamics of the cosmological system are governed by the Friedmann equations which, in the case where matter only consists of a cosmological constant, are simply given by
+%
+\begin{equation}\label{eq:Friedmann}
+\left(\frac{\dot{a}}{a}\right)^2 = N^2\frac{\Lambda}{3}\,.
+\end{equation}
+%
+This is straightforwardly solved by
+%
+\begin{equation}
+a(t) = a_0 \exp\left(\pm\frac{\Lambda}{3}\int_{t_0}^{t}\dd{t'}N(t')\right)\,,
+\end{equation}
+%
+where we identify the gauge-invariant elapsed proper time as
+%
+\begin{equation}
+\tau^{\mathrm{cont}}(t_0,t) = \int_{t_0}^{t}\dd{t'}N(t')\,.
+\end{equation}
+%
+The proper time plays an important role in the comparison between discrete and continuum equations as the cumulative height of frusta converges to the proper time in an appropriate continuum limit.
+
+In the discrete, as well as for effective spin-foams in ensuing studies, one is not given an initial scale factor and an initial time but rather an initial and final scale factor (corresponding to $\sqrt{j_0}$ and $\sqrt{j_{\mathcal{V}_T}}$, respectively).
+If, in the continuum, $a_0,a_1$ and $\Lambda$ are given, the proper time is fixed to
+%
+\begin{equation}\label{eq:continuum prop time}
+\tau_0^{\mathrm{cont}} = \log\left(\frac{a_1}{a_0}\right)\sqrt{\frac{\Lambda}{3}}\,.
+\end{equation}
+%
+This quantity serves as a limiting value of $\tau = \sum_n H_n$ in the continuum limit described in Sec.~\ref{}.
+
+
+
+
+
 
 
 
