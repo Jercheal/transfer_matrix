@@ -13,7 +13,7 @@
 \citation{Bahr:2017bn,Jercher:2023csk}
 \citation{Jercher:2025def}
 \newlabel{FirstPage}{{}{1}{}{section*.1}{}}
-\@writefile{toc}{\contentsline {title}{Title}{1}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {title}{From discretuum to continuum}{1}{section*.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {abstract}{Abstract}{1}{section*.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section*.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {II}Setup}{1}{section*.4}\protected@file@percent }
@@ -27,8 +27,10 @@
 \citation{Jercher:2023csk,Dittrich:2021gww}
 \citation{Dittrich:2021gww,Dittrich:2023rcr,Asante:2021phx}
 \citation{Jercher:2023csk,Jercher:2024hlr}
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces ...}}{2}{table.caption.8}\protected@file@percent }
-\newlabel{tab:sectors}{{I}{2}{..}{table.caption.8}{}}
+\citation{Rocek:1981ama,Rocek:1982tj}
+\citation{Dittrich:2008pw,Bahr:2009qc}
+\citation{Bahr:2015gxa}
+\citation{Dittrich:2021gww,Jercher:2023csk}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Boundary of a $4$-frustum given by two $3$-cubes and six equal $3$-frusta.}}{2}{figure.caption.7}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:4frustum}{{1}{2}{Boundary of a $4$-frustum given by two $3$-cubes and six equal $3$-frusta}{figure.caption.7}{}}
@@ -38,19 +40,16 @@
 \@writefile{toc}{\contentsline {section}{\numberline {III}Recap: One time step}{2}{section*.10}\protected@file@percent }
 \newlabel{sec:recap}{{III}{2}{}{section*.10}{}}
 \newlabel{eq:1step Regge equation}{{3}{2}{}{equation.3}{}}
-\citation{Rocek:1981ama,Rocek:1982tj}
-\citation{Dittrich:2008pw,Bahr:2009qc}
-\citation{Bahr:2015gxa}
-\citation{Dittrich:2021gww,Jercher:2023csk}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {}Vanishing cosmological constant.}{2}{section*.11}\protected@file@percent }
 \citation{Dittrich:2021gww}
 \citation{Hilpert2024,Collins:1973hw}
 \citation{Collins:1973hw,Dittrich:2021gww}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {}Vanishing cosmological constant.}{3}{section*.11}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Causal characters of sub-cells as a function of $(j_0,j_1,k)$. The squared volumes demonstrating this are given in Appendix~\ref {app:frusta}.}}{3}{table.caption.8}\protected@file@percent }
+\newlabel{tab:sectors}{{I}{3}{Causal characters of sub-cells as a function of $(j_0,j_1,k)$. The squared volumes demonstrating this are given in Appendix~\ref {app:frusta}}{table.caption.8}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {}Non-vanishing cosmological constant.}{3}{section*.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Arbitrary number of time steps}{3}{section*.13}\protected@file@percent }
 \newlabel{sec:more time steps}{{IV}{3}{}{section*.13}{}}
 \newlabel{eq:general Regge equations}{{5}{3}{}{equation.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}Analytical considerations}{3}{section*.14}\protected@file@percent }
 \citation{Jercher:2023csk}
 \citation{Jercher:2023csk}
 \citation{Jercher:2023csk}
@@ -58,23 +57,34 @@
 \citation{Jercher:2023csk}
 \citation{Jercher:2023csk,Dittrich:2021gww,Bahr:2017bn,Brewin1999}
 \citation{}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}Analytical considerations}{4}{section*.14}\protected@file@percent }
+\newlabel{sec:analytics}{{IV\,A}{4}{}{section*.14}{}}
 \newlabel{eq:length difference}{{8}{4}{}{equation.8}{}}
 \newlabel{eq:discrete Friedmann}{{11}{4}{}{equation.11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {B}Numerical implementation}{4}{section*.15}\protected@file@percent }
+\citation{}
 \newlabel{eq:j_guess}{{15}{5}{}{equation.15}{}}
 \newlabel{eq:k guess}{{16}{5}{}{equation.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Fit with $\hat  {\beta } = 4.23$ and $\hat  {\alpha } = 6.67$. $t(V) = 10^\alpha V^\beta $.}}{5}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:time scaling}{{2}{5}{Fit with $\hat {\beta } = 4.23$ and $\hat {\alpha } = 6.67$. $t(V) = 10^\alpha V^\beta $}{figure.caption.16}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C}Continuum limit}{5}{section*.17}\protected@file@percent }
-\newlabel{sec:continuum limit}{{IV\,C}{5}{}{section*.17}{}}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {}1) Continuum quantities.}{6}{section*.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {}2) The right scaling.}{6}{section*.19}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusion}{6}{section*.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {}Acknowledgements}{6}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C}Numerical stability and time complexity}{5}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {}$\mathcal  {V}_T=1$.}{5}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {}$\mathcal  {V}_t > 1$.}{5}{section*.18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Logarithm of computation time as a function of $\log \mathcal  {V}_T$. The fit via linear regression yields $t(V) = 10^{\hat  {\alpha }} V^{\hat  {\beta }}$ with $\hat  {\alpha } = -6.67$ and $\hat  {\beta } = 4.23$. For demonstrative purposes, the boundary data and $\Lambda $ have been fixed to $j_0 = 50, j_{\mathcal  {V}_T} = 100$ and $\Lambda = 0.1$.}}{6}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:time scaling}{{2}{6}{Logarithm of computation time as a function of $\log \mathcal {V}_T$. The fit via linear regression yields $t(V) = 10^{\hat {\alpha }} V^{\hat {\beta }}$ with $\hat {\alpha } = -6.67$ and $\hat {\beta } = 4.23$. For demonstrative purposes, the boundary data and $\Lambda $ have been fixed to $j_0 = 50, j_{\mathcal {V}_T} = 100$ and $\Lambda = 0.1$}{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Solutions and the continuum limit}{6}{section*.20}\protected@file@percent }
+\newlabel{sec:continuum limit}{{V}{6}{}{section*.20}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {}1) Continuum quantities.}{6}{section*.21}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Refinement of frustum geometry with total initial square area $j_0$ and final square area $j_1$. Individual frusta are rescaled as $(j_0,j_1)\rightarrow (j_0/\mathcal  {V}_S^2, j_1/\mathcal  {V}_S^2)$. For illustrative purposes, one spatial dimension is suppressed.}}{6}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:spatial refinement}{{3}{6}{Refinement of frustum geometry with total initial square area $j_0$ and final square area $j_1$. Individual frusta are rescaled as $(j_0,j_1)\rightarrow (j_0/\mathcal {V}_S^2, j_1/\mathcal {V}_S^2)$. For illustrative purposes, one spatial dimension is suppressed}{figure.caption.23}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {}2) The right scaling.}{6}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}Perfect action for Lorentzian Regge cosmology}{6}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{6}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {}Acknowledgements}{6}{section*.27}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces .}}{7}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:continuum scalings}{{4}{7}{}{figure.caption.24}{}}
 \@writefile{toc}{\appendix }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Frusta geometry}{6}{section*.22}\protected@file@percent }
-\newlabel{app:frusta}{{A}{6}{}{section*.22}{}}
-\newlabel{eq:4-volume}{{A4}{6}{}{equation.A.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Frusta geometry}{7}{section*.28}\protected@file@percent }
+\newlabel{app:frusta}{{A}{7}{}{section*.28}{}}
+\newlabel{eq:4-volume}{{A4}{7}{}{equation.A.4}{}}
 \bibdata{mainNotes,references}
 \bibcite{Regge:1961ct}{{1}{}{{}}{{}}}
 \bibcite{Sorkin:2019llw}{{2}{}{{}}{{}}}
@@ -83,10 +93,6 @@
 \bibcite{Barrett:1994nn}{{5}{}{{}}{{}}}
 \bibcite{Dittrich:2008va}{{6}{}{{}}{{}}}
 \bibcite{Asante:2018wqy}{{7}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Cosmology in the continuum}{7}{section*.23}\protected@file@percent }
-\newlabel{eq:Friedmann}{{B2}{7}{}{equation.B.2}{}}
-\newlabel{eq:continuum prop time}{{B5}{7}{}{equation.B.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {}References}{7}{section*.24}\protected@file@percent }
 \bibcite{Makela:2000ej}{{8}{}{{}}{{}}}
 \bibcite{Barrett:1997tx}{{9}{}{{}}{{}}}
 \bibcite{Bahr:2017bn}{{10}{}{{}}{{}}}
@@ -98,6 +104,10 @@
 \bibcite{Jercher:2024hlr}{{16}{}{{}}{{}}}
 \bibcite{Horowitz:1990qb}{{17}{}{{}}{{}}}
 \bibcite{Louko:1995jw}{{18}{}{{}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Cosmology in the continuum}{8}{section*.29}\protected@file@percent }
+\newlabel{eq:Friedmann}{{B2}{8}{}{equation.B.2}{}}
+\newlabel{eq:continuum prop time}{{B5}{8}{}{equation.B.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{8}{section*.30}\protected@file@percent }
 \bibcite{Dowker:1999wu}{{19}{}{{}}{{}}}
 \bibcite{Rocek:1981ama}{{20}{}{{}}{{}}}
 \bibcite{Rocek:1982tj}{{21}{}{{}}{{}}}
@@ -109,6 +119,6 @@
 \bibcite{Brewin1999}{{27}{}{{}}{{}}}
 \bibstyle{JHEP}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\newlabel{LastBibItem}{{27}{8}{}{section*.24}{}}
-\newlabel{LastPage}{{}{8}{}{}{}}
-\gdef \@abspage@last{8}
+\newlabel{LastBibItem}{{27}{9}{}{section*.30}{}}
+\newlabel{LastPage}{{}{9}{}{}{}}
+\gdef \@abspage@last{9}
