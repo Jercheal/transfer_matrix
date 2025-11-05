@@ -7,6 +7,9 @@
 \usepackage{physics,tensor,subcaption,multirow}
 \usepackage{enumitem}
 
+\usepackage{array}
+\newcolumntype{?}[1]{!{\vrule width #1}}
+
 \newcommand{\diff}{\text{d}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\SUT}{\mathrm{SU}(2)}
@@ -33,15 +36,15 @@
 
 \title{From discretuum to continuum}
 
-\author{Alexander F. Jercher}
-\email{alexander.jercher@uni-jena.de}
-\affiliation{Theoretisch-Physikalisches Institut, Friedrich-Schiller-Universit\"{a}t Jena,\\ Max-Wien-Platz~1, 07743 Jena, Germany, EU
-}
-\address{corresponding author}
-\author{Sebastian Steinhaus}
-\email{sebastian.steinhaus@uni-jena.de}
-\affiliation{Theoretisch-Physikalisches Institut, Friedrich-Schiller-Universit\"{a}t Jena,\\ Max-Wien-Platz~1, 07743 Jena, Germany, EU
-}
+%\author{Alexander F. Jercher}
+%\email{alexander.jercher@uni-jena.de}
+%\affiliation{Theoretisch-Physikalisches Institut, Friedrich-Schiller-Universit\"{a}t Jena,\\ Max-Wien-Platz~1, 07743 Jena, Germany, EU
+%}
+%\address{corresponding author}
+%\author{Sebastian Steinhaus}
+%\email{sebastian.steinhaus@uni-jena.de}
+%\affiliation{Theoretisch-Physikalisches Institut, Friedrich-Schiller-Universit\"{a}t Jena,\\ Max-Wien-Platz~1, 07743 Jena, Germany, EU
+%}
 
 \date{\today}
 
@@ -55,13 +58,36 @@
 
 \section{Introduction}
 
+Regge calculus~\cite{Regge:1961ct} offers a discrete formulation of classical general relativity (GR) on simplicial manifolds and plays a central role in discrete approaches to quantum gravity such as (causal) dynamical triangulations~\cite{Loll:2019rdj,Ambjorn:2012jv}, quantum Regge calculus~\cite{Williams2009,Hamber2009} and spin-foam models~\cite{Perez:2012wv}. 
+In spin-foams in particular, the Regge action appears in the large-spin regime of the vertex amplitude, and therefore serves as a semi-classical limiting point.
+
+While originally formulated in terms of length variables and in Euclidean signature, recent developments highlight the importance of so-called area Regge calculus~\cite{Asante:2018wqy,Barrett:1997tx} in Lorentzian signature.
+Area variables for Regge calculus are particularly interesting because of their direct connection to the quantum geometric degrees of freedom of spin-foams, loop quantum gravity~\cite{Rovelli:2004tv,Thiemann2007a} and group field theories~\cite{Freidel:2005jy,Oriti:2012wt}.
+Furthermore, recent renormalization group studies~\cite{Borissova:2025frj} in continuum area-metric gravity~\cite{Schuller:2005yt,Borissova:2022clg,Borissova:2023yxs} suggests that GR is recovered from area variables in the infrared, i.e.~at the coarse-grained level.
+
+Area Regge calculus also forms the fundamental ingredient of effective spin-foam models~\cite{Asante:2020qpa,Asante:2020iwm,Asante:2021phx,Asante:2021zzh,Jercher:2024hlr} which are computationally feasible and facilitated studies concerning the causal structure~\cite{Asante:2025qbr}, quantum cosmology~\cite{Dittrich:2023rcr}, the de Sitter horizon entropy~\cite{Dittrich:2024awu}, and so-called spikes and spine configurations~\cite{Borissova:2024pfq,Borissova:2024txs}.
+Studies on the causal structure and the application of Regge calculus to cosmology are of particular interest here.
+
+Explicitly Lorentzian configurations in the form of spacelike, lightlike and timelike building blocks have only recently gained attention in Regge calculus and related quantum gravity approaches. 
+In~\cite{Dittrich:2021gww,Jercher:2023csk} \caj{importance of timelike building blocks on-shell, causality violations, effective spin-foams and suppression of causality violations}
+
+
+
+
+\begin{itemize}
+  \item Regge calculus important as it appears in the semi-classical limit of spin-foams
+  \item close connection to effective spin-foams
+  \item The continuum limit
+  \item Lorentzian signature
+\end{itemize}
+
 $8\pi\GN = 1$?, spacetime signature $(+,-,-,-)$
 
 \section{Setup}
 
 \subsection{Lorentzian Regge calculus}
 
-Regge calculus~\cite{Regge:1961ct} is a discrete gravitational theory on simplicial manifolds $\Delta$ with the length of edges $\{l_e\}$ dynamical.
+Regge calculus is a discrete gravitational theory on simplicial manifolds $\Delta$ with the length of edges $\{l_e\}$ dynamical.
 In a Lorentzian setting, a simplicial manifold consists of intrinsically flat Lorentzian $4$-simplices $\sigma\in\Delta$. Curvature is located at triangles $t\in\Delta$ and captured by deficit angles $\delta_t(\{l_e\})$, lying in the space orthogonal to $t$.
 For $t$ spacelike (timelike), this space is isomorphic to $\R^{1,1}$ ($\R^2$).\footnote{For the remainder, we neglect lightlike edges, triangles and tetrahedra.
 See~\cite{Sorkin:2019llw} for the definition of deficit angles associated to $(d-1)$-dimensional null cells.} 
@@ -89,12 +115,12 @@ For the remainder, we study the classical dynamics of area Regge calculus which 
 
 Lorentzian $4$-dimensional frusta are ideal to capture spatially flat, homogeneous and isotropic discrete geometries~\cite{Bahr:2017bn,Jercher:2023csk}.
 The boundary of a $4$-frustum, depicted in Fig.~\ref{fig:4frustum}, contains two spacelike $3$-cubes and six $3$-frusta that are either spacelike or timelike.
-Gluing $4$-frusta along boundary $3$-frusta in spatial direction and along boundary $3$-cubes in temporal direction, one obtains an extended cosmological spacetime of hypercubical combinatorics $\mathcal{X}^{(4)}_\mathcal{V}$ with slices labelled by $n\in\{0,...,\mathcal{V}_T\}$ discretized by $\mathcal{V}_S^3$ spacelike $3$-cubes.
+Gluing $4$-frusta along boundary $3$-frusta in spatial direction and along boundary $3$-cubes in temporal direction, one obtains an extended cosmological spacetime of hypercubical combinatorics with slices labelled by $n\in\{0,...,\mathcal{V}_T\}$ discretized by $\mathcal{V}_S^3$ spacelike $3$-cubes.
 We say that a $4$-frustum lies in a \enquote{slab} between slices $n$ and $n+1$.
 
 The entire geometry of a slab is captured by three variables describing the $3$-cubes and $3$-frusta which can be either areas or lengths.
 The former set of variables consists of the area of squares contained in the $3$-cubes, $j_0$ and $j_1$, and the area of the trapezoids contained in the $3$-frusta, $k$.
-The latter consists of the edge length contained in the $3$-cubes, $s_0$ and $s_1$, and the height of the $4$-frustum, $H_0$, which implicitly determines the trapezoids and $3$-frusta.\footnote{Strictly speaking, the height $H_0$ is a derived quantity that is not a length associated to a $1$-dimensional sub-cell of the cellular complex. Such a quantity would instead be given by the length $l_0$ associated to the strut connecting two neighboring spacelike slices. However, the relation between strut length and height is invertible for non-null struts, which assume here.}
+The latter consists of the edge length contained in the $3$-cubes, $s_0$ and $s_1$, and the height of the $4$-frustum, $H_0$, which implicitly determines the trapezoids and $3$-frusta.\footnote{Strictly speaking, the height $H_0$ is a derived quantity that is not a length associated to a $1$-dimensional sub-cell of the cellular complex. Such a quantity would instead be given by the length $l_0$ associated to the strut connecting two neighboring spacelike slices. However, the relation between strut length and height is invertible for non-null struts, which is assumed here.}
 In the highly symmetry restricted setting considered here, there is a one-to-one map between area variables, $(j_0,j_1,k_0)$, and length variables, $(s_0,s_1,H_0)$, given explicitly in Appendix~\ref{app:frusta}.
 We will exploit this relation in Sec.~\ref{sec:more time steps} using length variables for analytical computations and clear interpretation, especially because the height is directly related to the lapse function $N$ in the continuum.
 When solving the Regge equations numerically thereafter, we will use area variables instead to provide a classical benchmark for the effective spin-foam calculations of~\cite{Jercher:2025def}.
@@ -112,19 +138,24 @@ If it is positive (negative), the corresponding subcell is timelike (spacelike).
 In the symmetry reduced setting, the ratio $\frac{\abs{j_n-j_{n+1}}}{4k_n}$ fully characterizes the causal character of subcells suggesting separating the $4$-frusta configurations into three sectors summarized in Tab.~\ref{tab:sectors}.
 
 \setlength{\tabcolsep}{1.0em} % for the horizontal padding
-{\renewcommand{\arraystretch}{1.5}
+{\renewcommand{\arraystretch}{2.0}
 \begin{table*}
   \centering
-  \begin{tabular}{c || c | c | c | c}
+  \begin{tabular}{| c || c | c?{0.5mm}c | c |}
+  \hline
+  {} & Sector I &  Sector II & Sector III.1 & Sector III.2\\
+  \hline
+  \hline
   sub-cells & $-\frac{\Delta j^2}{8} < \underline{k}^2 < -\frac{\Delta j^2}{16}$ & $-\frac{\Delta j^2}{16} < \underline{k}^2 < 0$ & $0 < \underline{k}^2 < \frac{\Delta j^2}{16}$ & $\frac{\Delta j^2}{16} <  \underline{k}^2$\\
   \hline\hline
   struts & spacelike & spacelike & spacelike & timelike \\
   \hline
   trapezoids & spacelike & spacelike & timelike & timelike\\
   \hline
-  3-frusta & spacelike & timelike & timelike & timelike  
+  3-frusta & spacelike & timelike & timelike & timelike\\
+  \hline
   \end{tabular}
-  \caption{Causal characters of sub-cells as a function of $(j_0,j_1,k)$. The squared volumes demonstrating this are given in Appendix~\ref{app:frusta}.}
+  \caption{Causal characters of sub-cells as a function of $(j_0,j_1,k)$, computed from the squared volumes given in Appendix~\ref{app:frusta}. Sectors III.1 and III.2 represent the hinge causally regular sector of the theory where solutions to the equations of motion exist.}
   \label{tab:sectors}
 \end{table*}
 }
@@ -132,9 +163,9 @@ In the symmetry reduced setting, the ratio $\frac{\abs{j_n-j_{n+1}}}{4k_n}$ full
 As discussed in~\cite{Dittrich:2021gww,Dittrich:2023rcr,Jercher:2023csk,Jercher:2024kig,Jercher:2024hlr}, two of these sectors I and II exhibit an irregular light cone structure, also referred to as causality violations, located at spacelike sub-cells.
 Examples of such irregularities are given by the trouser singularity and the yarmulke singularity associated to spatial topology change~\cite{Horowitz:1990qb,Louko:1995jw,Dowker:1999wu}. 
 For causality violations at $(d-2)$-dimensional spacelike hinges the imaginary parts of the dihedral angles do not sum up to $\mp i2\pi$, leading to a complex valued Regge action.
-Choosing \enquote{$+$} in the convention of Lorentzian angles, the amplitude $\e^{i\Sreg}$ is exponentially suppressed for trouser and exponentially enhanced for yarmulke configurations, vice versa for \enquote{$-$}~\cite{Asante:2021zzh}.%\footnote{It has been shown in~\cite{Jercher:2024kig,Jercher:2024hlr} that such an exponential suppression does not arise from the semi-classical limit of a single spin-foam frustum amplitude.}
+In effective spin-foams, choosing \enquote{$+$} in the convention of Lorentzian angles, the amplitude $\e^{i\Sreg}$ is exponentially suppressed for trouser and exponentially enhanced for yarmulke configurations, vice versa for \enquote{$-$}~\cite{Asante:2021zzh}.%\footnote{It has been shown in~\cite{Jercher:2024kig,Jercher:2024hlr} that such an exponential suppression does not arise from the semi-classical limit of a single spin-foam frustum amplitude.}
 Without a complexification of the variables, the Regge equations of motion for causality violating configurations are complex equations with real variables and therefore overconstrained.
-Moreover, the results of~\cite{Jercher:2023csk,Dittrich:2021gww} show that in the respective settings, no real solutions exist.
+Moreover, the results of~\cite{Jercher:2023csk,Dittrich:2021gww} show that in the respective settings, no real solutions to the equations of motion exist.
 Since this applies also to the setting used in this work we henceforth focus on the causally regular sector III.
 
 \subsection{Lorentzian Regge action for spatially flat cosmology}\label{sec:Lorentzian Regge action for spatially flat cosmology}
@@ -150,7 +181,7 @@ S_{\textsc{iii}}^{(n)} & = 6(j_n-j_{n+1})\sinh^{-1}\left(\frac{j_{n+1}-j_n}{\sqr
 \end{widetext}
 %
 where $\Lambda$ is a cosmological constant and $V^{(4)}$ is the $4$-volume defined in Eq.~\eqref{eq:4-volume} as an equation of $(j_n,j_{n+1},k_n)$.
-By construction, the $4$-frustum action is additive such that on a discretization $\mathcal{X}^{(4)}_{\mathcal{V}}$ with $\mathcal{V}_S^3$ vertices in spatial direction and $\mathcal{V}_T+1$ spatial slices, the action is given by $S_{\mathrm{R}} = \mathcal{V}_S^3\sum_{n=0}^{\mathcal{V}_T-1}S_{\mathrm{R}}^{(n)}$.
+By construction, the $4$-frustum action is additive such that on a discretization with $\mathcal{V}_S^3$ vertices in spatial direction and $\mathcal{V}_T+1$ spatial slices, the action is given by $S_{\mathrm{R}} = \mathcal{V}_S^3\sum_{n=0}^{\mathcal{V}_T-1}S_{\mathrm{R}}^{(n)}$.
 Additivity of the action per slab implies that the equations of motion for a given geometric quantity, being either $j_n$ or $k_n$, will only depend on neighboring geometric labels.
 
 In the following, we study the discrete dynamics of spatially flat cosmology as governed by the Regge equations. To that end, we consider first the case of a single time step, $\mathcal{V}_T = 1$, in Sec.~\ref{sec:recap} and generalize then to an arbitrary number of time steps in Sec.~\ref{sec:more time steps}.
@@ -158,7 +189,7 @@ In the following, we study the discrete dynamics of spatially flat cosmology as 
 \section{Recap: One time step}\label{sec:recap}
 
 The classical and quantum dynamics of a single timestep in discrete Lorentzian cosmology have been studied extensively in~\cite{Dittrich:2021gww,Dittrich:2023rcr,Asante:2021phx} for spatial curvature with cosmological constant and in~\cite{Jercher:2023csk,Jercher:2024hlr} for spatially flat spacetimes with a free scalar field.
-In this chapter we extend these studies to spatially flat cosmology with a cosmological constant, before then focussing on the case of arbitrarily many time steps. 
+In this section we extend the classical studies to spatially flat cosmology with a cosmological constant.
 
 For $\mathcal{V}_T = 1$, the square areas $j_0,j_1$ are boundary data and only the trapezoid area $k_0$ is dynamical. Thus, the Regge equations are simply given by
 %
@@ -182,7 +213,7 @@ If the boundary data is non-stationary, i.e.~$j_0 \neq j_1$, Eq.~\eqref{eq:1step
 In other words, a classical universe can neither expand nor contract if there is no matter present. 
 This is in accordance with the continuum Friedmann equations in vacuum, $\left(\frac{\dot{a}}{a}\right)^2 = 0$, with $a$ the scale factor, which are solved only by $a = \mathrm{const}$.
 On the other hand, if $j_0 = j_1$, Eq.~\eqref{eq:1step Regge equation}  is trivially satisfied and the trapezoid area $k_0$ is undetermined.
-In fact, the Regge action vanishes, $S_{\textsc{iii}} = 0$ for all $k_0$, and the $4$-frusta reduce to $4$-cuboids discretizing flat space. 
+In fact, the Regge action vanishes for all $k_0$, and the $4$-frusta reduce to $4$-cuboids discretizing flat space. 
 The arbitrariness of $k$ is a common phenomenon for flat solutions in Regge calculus~\cite{Rocek:1981ama,Rocek:1982tj} and signifies the restoration of diffeomorphism symmetry in the discrete~\cite{Dittrich:2008pw,Bahr:2009qc}.
 This symmetry amounts to moving spacelike slices (instead of individual vertices), see also the discussion in~\cite{Bahr:2015gxa}.
 Note that for $4$-cuboids, $k = \sqrt{j}H$ with $H$ the height of the cuboid which is directly related to the lapse function $N$ in the continuum~\cite{Dittrich:2021gww,Jercher:2023csk}.
@@ -229,7 +260,7 @@ with $n\in\{0,\dots,\mathcal{V}_T-1\}$ and $m\in\{1,\dots,\mathcal{V}_T-1\}$. Si
 \begin{equation}
 \begin{aligned}
 0 &= \pdv{S_\textsc{iii}}{k_n} = \mathcal{V}_S^3\pdv{S_\textsc{iii}^{(n)}}{k_n} \,,\\
-0 &= \pdv{S_\textsc{iii}}{j_n} = \mathcal{V}_S^3\left(\pdv{S_\textsc{iii}^{(n)}}{j_n} + \pdv{S_\textsc{iii}^{(n+1)}}{j_n}\right)\,.
+0 &= \pdv{S_\textsc{iii}}{j_n} = \mathcal{V}_S^3\left(\pdv{S_\textsc{iii}^{(n-1)}}{j_n} + \pdv{S_\textsc{iii}^{(n)}}{j_n}\right)\,.
 \end{aligned}
 \end{equation}
 %
@@ -250,7 +281,7 @@ A unique solution exist for $j_0 \neq j_{\mathcal{V}_T}$ when $\Lambda > 0$ whic
 To summarize, a spatially flat vacuum universe is flat and stationary while a positive cosmological will necessarily lead to curved non-stationary solutions. 
 For the remainder, we assume $\Lambda > 0$ and $j_0\neq j_{\mathcal{V}_T}$.
 
-Eq.~\eqref{eq:general Regge equations} has been analyzed further (coupling a scalar field rather than a cosmological constant) in~\cite{Jercher:2023csk}.
+Eq.~\eqref{eq:general Regge equations} has been analyzed further in~\cite{Jercher:2023csk} (coupling a scalar field rather than a cosmological constant).
 Therein, the length variables $(s_n,s_{n+1},H_n)$ have been employed in which the monotonicity of solutions and the continuum limit are derived most easily.
 The results of~\cite{Jercher:2023csk} transferred to the present setting with $\Lambda\neq 0$ are briefly summarized in the following.
 
@@ -260,7 +291,7 @@ Combining the Regge equations
 \pdv{S_{\textsc{iii}}}{H_{n-1}} = 0\,,\quad \pdv{S_{\textsc{iii}}}{H_{n}} = 0\,,\quad \pdv{S_{\textsc{iii}}}{s_{n}} = 0\,,
 \end{equation}
 %
-one can straightforwardly derive the relation~\cite{Jercher:2023csk}
+in the variables $(s_n,s_{n+1},H_n)$, one can straightforwardly derive the relation~\cite{Jercher:2023csk}
 %
 \begin{equation}\label{eq:length difference}
 \frac{s_n - s_{n-1}}{H_{n-1}} = \frac{s_{n+1} - s_n}{H_n}\,,
@@ -271,19 +302,19 @@ That is, the difference of spatial edge length with respect to the height of the
 Introducing 
 %
 \begin{equation}
-\tau_0 = \sum_{n=0}^{\mathcal{V}_T-1}H_n\,,
+\tau_{\mathcal{V}_T} = \sum_{n=0}^{\mathcal{V}_T-1}H_n\,,
 \end{equation}
 %
 which we will later identify as the discrete elapsed proper time,  one can show that Eq.~\eqref{eq:length difference} implies
 %
 \begin{equation}
-\frac{s_{n+1}-s_n}{H_n} = \frac{s_{\mathcal{V}_T} - s_0}{\tau_0}\,,
+\frac{s_{n+1}-s_n}{H_n} = \frac{s_{\mathcal{V}_T} - s_0}{\tau_{\mathcal{V}_T}}\,,
 \end{equation}
 %
 for all $n$.
-Since $H_n,\tau_0 > 0$, this implies $\mathrm{sgn}(s_{n+1}-s_n) = \mathrm{sgn}(s_{\mathcal{V}_T}-s_0)$, that is, solutions evolve monotonically and the boundary data $s_0,s_{\mathcal{V}_T}$ selects whether the universe is expanding, $s_{\mathcal{V}_T}>s_0$, or contracting, $s_{\mathcal{V}_T} < s_0$.
+Since $H_n,\tau_{\mathcal{V}_T} > 0$, this implies $\mathrm{sgn}(s_{n+1}-s_n) = \mathrm{sgn}(s_{\mathcal{V}_T}-s_0)$, that is, solutions evolve monotonically and the boundary data $s_0,s_{\mathcal{V}_T}$ selects whether the universe is expanding, $s_{\mathcal{V}_T}>s_0$, or contracting, $s_{\mathcal{V}_T} < s_0$.
 
-Following the procedure outlined in~\cite{Jercher:2023csk}, an analytical continuum limit of the Regge equations can be taken in two steps.
+Following the procedure detailed in~\cite{Jercher:2023csk}, an analytical continuum limit of the Regge equations can be taken in two steps.
 First, one performs a linearization of $\pdv{S_{\textsc{iii}}}{H_n} = 0$ in the variable $\eta_n = \frac{s_{n+1} - s_n}{H_n}$.
 In this approximation, corresponding to small deficit angles, one finds
 %
@@ -301,25 +332,27 @@ Then, at leading order in $\mathrm{d}t$, on finds indeed that Eq.~\eqref{eq:disc
 \end{equation}
 %
 which is the Friedmann equation for a spatially flat universe with cosmological constant.
-Note that configurations with spacelike trapezoids or spacelike $3$-frusta satisfy $\eta_n^2>2$ and therefore bear no straightforward continuum limit~\cite{Jercher:2023csk}.
+Note that configurations with spacelike trapezoids or spacelike $3$-frusta satisfy $\eta_n^2>2$ and therefore exhibit no straightforward continuum limit~\cite{Jercher:2023csk}.
 
 The cosmological Regge equations have been shown to capture  the Friedmann equations in a suitable continuum limit in previous works~\cite{Jercher:2023csk,Dittrich:2021gww,Bahr:2017bn,Brewin1999}.
-Still, Eq.~\eqref{eq:general Regge equations} remain to be solved explicitly in the discrete for many time steps $\mathcal{V}_T$.
-This represents however an important step since the solutions serve as a classical and discrete benchmark for identifying a semi-classical continuum regime in discrete path integral approaches such as effective spin-foams.  
+Still, Eq.~\eqref{eq:general Regge equations} remains to be solved explicitly in the discrete for many time steps $\mathcal{V}_T$.
+This represents an important step since the solutions serve as a classical and discrete benchmark for identifying a semi-classical continuum regime in discrete path integral approaches such as effective spin-foams.  
 In the following section, we tackle this issue employing numerical methods.
 
-\subsection{Numerical implementation}
+\subsection{Numerical implementation}\label{sec:numerics}
+
+\caj{Consider turning the numerics section into its own section and putting the stuff before in the recap section. After all, the stuff before has already been discussed in~\cite{Jercher:2023csk}.}
 
 Solving the Regge equations explicitly requires numerical methods. In this work, we employ the package \texttt{NLsolve}\footnote{
 A documentation of the package can be found at \href{https://github.com/JuliaNLSolvers/NLsolve.jl}{github.com/JuliaNLSolvers/NLsolve.jl}. 
-Note that also the \texttt{NSolve} method in \texttt{Mathematica} can be used, but is expected have lower performance in terms of accuracy and computation time.
+Note that also the \texttt{NSolve} method in \texttt{Mathematica} can be used, but is expected to have lower performance in terms of accuracy and computation time.
 }
 in \texttt{Julia}, designed for solving non-linear equations.
-Note that while Eqs.~\eqref{eq:general Regge equations} define a real-valued function in real variables, \texttt{NLsolve} can also be applied to complex numbers \caj{which may be relevant for the complex critical point method~\cite{}.}
-The algorithm we developed for this work specifically tailored to Eq.~\eqref{eq:general Regge equations} amounts to the \texttt{solve\_eom}\footnote{See \href{https://github.com/Jercheal/transfer_matrix/blob/main/transfer_matrix.jl}{this github repository} for the source code.} method which we explain in the following.
+Note that while Eq.~\eqref{eq:general Regge equations} defines real-valued equations in real variables, \texttt{NLsolve} can also be applied to complex numbers \caj{which may be relevant for the complex critical point method~\cite{}.}
+The algorithm we developed for this work specifically tailored to Eq.~\eqref{eq:general Regge equations} amounts to the \texttt{solve\_eom}\footnote{See \href{https://github.com/Jercheal/transfer_matrix/blob/main/transfer_matrix.jl}{this github repository} for the source code.}-method, based on the \texttt{nlsolve}-function of \texttt{NLsolve}, which we explain in the following.
 
-First, note that the method \texttt{nlsolve} of the \texttt{NLsolve} package takes as input a vector valued function $\vec{F}$, a vector of initial variables $\vec{x}_0$, and parameters for the number of iterations as well as the error tolerance for solutions. 
-If the problem is sufficiently well-behaved, \texttt{nlsolve} finds a solution to the equation $\vec{F}(\vec{x}) = \vec{0}$ using $\vec{x}_0$ as a starting guess of the solving algorithm. 
+First, note that \texttt{nlsolve} takes as input a vector valued function $\vec{F}$, a vector of initial variables $\vec{x}_0$, and parameters for the number of iterations and the error tolerance for solutions. 
+If the problem is sufficiently well-behaved, \texttt{nlsolve} finds a solution to the equation $\vec{F}(\vec{x}) = \vec{0}$ using $\vec{x}_0$ as a starting guess. 
 In our case, $\vec{F}:\R^{2\mathcal{V}_T-1}\longrightarrow \R^{2\mathcal{V}_T-1}$, with
 %
 \begin{align}
@@ -327,7 +360,7 @@ In our case, $\vec{F}:\R^{2\mathcal{V}_T-1}\longrightarrow \R^{2\mathcal{V}_T-1}
 \vec{x} &= \left(k_0,j_1,\dots,j_{\mathcal{V}_T-1},k_{\mathcal{V}_T-1}\right)\,.
 \end{align}
 %
-Therefore, adapting Eq.~\eqref{eq:general Regge equations} to be solved by \texttt{nlsolve} is done in two steps: 1) set up the function $\vec{F}$ for fixed boundary areas $j_0,j_{\mathcal{V}_T}$ and cosmological constant $\Lambda$, and 2) propose a starting guess $\vec{x}_0$.
+Therefore, Eq.~\eqref{eq:general Regge equations} is adapted to \texttt{nlsolve} in two steps: 1) set up the function $\vec{F}$ for fixed boundary areas $j_0,j_{\mathcal{V}_T}$ and cosmological constant $\Lambda$, and 2) propose a starting guess $\vec{x}_0$.
 While step 1) is straightforward, step 2) requires particular care because the starting guess $\vec{x}_0$ is crucial for convergence and good performance of the solving algorithm.
 In particular, as $\mathcal{V}_T$ grows, the number of variables and equation grows and the algorithm becomes more sensitive to the choice of $\vec{x}_0$. 
 
@@ -348,70 +381,74 @@ k^*_n \approx \vb*{k}^*_0/\mathcal{V}_T\,, \quad n\in\{0,\dots,\mathcal{V}_T-1\}
 \end{equation}
 %
 That is, to find a good initial guess for the trapezoid areas, one only needs to find a solution $\vb*{k}_0^*$ for a single time step. 
-Crucially, for a single equation, \texttt{nsolve} converges for a broad range of initial guesses, so $\vb*{k}_0^*$ can be easily found.
+Crucially, for a single equation, \texttt{nsolve} converges for a broad range of initial guesses, so $\vb*{k}_0^*$ can be found easily.
 In summary, finding a good initial guess $\vec{x}_0$ amounts to finding the one time step solution $\vb*{k}_0^*$ and then setting
 %
-\begin{equation}
+\begin{equation}\label{eq:init guess}
 \vec{x}_0 = \left(\frac{\vb*{k}_0^*}{\mathcal{V}_T},j_0+\Delta j,\dots, j_0+(\mathcal{V}_T-1)\Delta j, \frac{\vb*{k}_0^*}{\mathcal{V}_T}\right)\,.
 \end{equation}
 
-Implementing this setup, the function \texttt{solve\_eom} takes as input the boundary data $j_0,j_{\mathcal{V}_T}$, the cosmological constant $\Lambda$, a parameter $\gamma = 1$\footnote{In future work, when comparing effective spin-foam results with the classical solutions, $\gamma\in\R$ will be allowed to vary, corresponding to the Barbero-Immirzi paramter~\cite{}.} and solver-specific arguments such as the maximum number of iterations or  error tolerances.
-The output of \texttt{solve\_eom} is a tuple consisting of four arrays: the $\mathcal{V}_T+1$ square area solutions $j^*_n$, including the boundary values, the $\mathcal{V}_T$ trapezoid areas $k^*_n$, the heights of $4$-frusta $H^*_n$ and the accumulated heights $\tau_n = \sum_{k=0}^nH^*_k$.
+Implementing this setup, the function \texttt{solve\_eom} takes as input the boundary data $j_0,j_{\mathcal{V}_T}$, the cosmological constant $\Lambda$, a parameter $\gamma = 1$\footnote{In future work, when comparing effective spin-foam results with the classical solutions, $\gamma\in\R$ will be allowed to vary, corresponding to the Barbero-Immirzi paramter~\cite{}.}, and solver-specific arguments such as the maximum number of iterations or  error tolerances.
+The output of \texttt{solve\_eom} is a tuple consisting of four arrays: the $\mathcal{V}_T+1$ square area solutions $j^*_n$, including the boundary values, the $\mathcal{V}_T$ trapezoid areas $k^*_n$, the heights of $4$-frusta $H^*_n$ and the accumulated heights $\tau_n = \sum_{k=0}^{n-1}H^*_k$.
 
 In the following, we discuss the numerical stability and time complexity of the algorithm before then applying \texttt{solve\_eom} to study the properties of discrete solutions and their continuum limit.
 
 \subsection{Numerical stability and time complexity}
 
-The performance of the solving algorithm is not only measured by its ability to find solutions but also by its stability and its time efficiency.
+Performance of the solving algorithm is not only measured by its ability to find solutions but also by its stability and its time efficiency.
 As discussed in the previous section, the initial guess $\vec{x}_0$ is crucial for the performance of \texttt{nlsolve}.
 Therefore, we will check first, whether \texttt{solve\_eom} is stable under perturbations $\vec{\delta}$ of $\vec{x}_0$.
 Second, we estimate the scaling of computation time with the number of time steps $\mathcal{V}_T$.
 This is particularly important for later studies of the continuum limit, where access to large $\mathcal{V}_T$ is of physical interest.
 
 To understand the behavior of the solver under perturbations of the initial guess $\vec{x}_0$, consider a vector $\vec{\delta} = \frac{1}{\sqrt{2\mathcal{V}_T - 1}}\left(\delta,\dots,\delta\right)\in\R^{2\mathcal{V}_T-1}$.
-Then, \texttt{solve\_eom} with initial guess $\vec{x}_0+\vec{\delta}$ is evaluated leading to the following results.
+Then, \texttt{solve\_eom} with initial guess $\vec{x}_0+\vec{\delta}$ is evaluated, the results of which are discussed separately for the cases if $\mathcal{V}_T=1$ and $\mathcal{V}_T>1$.
 \paragraph*{$\mathcal{V}_T=1$.} \texttt{solve\_eom} yields consistent results as long as the entries of $\vec{x}_0+\vec{\delta}$ are positive.
 For negative entries, there are non-trivial sign changes in the Regge equation, and in this case, it not clear if solutions even exist.
-Choosing $\delta$ such that the entries are positive, the solutions are stable even for large $\delta > 100$. 
+Choosing $\delta$ such that the entries are positive, the solutions are stable even for large $\delta$ that are the order of the boundary values $j_0,j_{\mathcal{V}_T}$. 
 Also, the number of iterations does only increase slightly.
 This is important since setting up $\vec{x}_0$ requires finding $\vb*{k}_0^*$ first.
-If this first step would be extremely sensitive, the proposal above would not be viable.
+If this first step would be extremely sensitive to the initial guess, the proposal above in Eq.~\eqref{eq:init guess} would not be viable.
 \paragraph*{$\mathcal{V}_t > 1$.} In this case, the number of iterations needed to find convergence is generically larger, even for $\delta = 0$.
-Choosing $\delta$ such that the entries of $\vec{x}_0+\vec{\delta}$ are positive, one finds that solutions are stable for small $\abs{\delta}$ ($\abs{\delta}\lesssim 10$ for $\mathcal{V}_T=2$) with little fluctuations in the required iterations.
+Choosing $\delta$ such that the entries of $\vec{x}_0+\vec{\delta}$ are positive, one finds that solutions are stable for small $\abs{\delta}$ with little fluctuations in the required iterations.
 However, for larger $\delta$, the solutions suddenly jump to unreasonably large or to negative values and the number of iterations increases.
 This effect worsens with $\mathcal{V}_T$.
-For the solver, this means that 1) the proposal of $\vec{x}_0$ given above is already optimal and one should stick with it, and 2) for very large $\mathcal{V}_T$, the region of trustworthy convergence might shrink to zero and one needs to come up with a refined proposal of initial guesses as $\vec{x}_0$.
-In this work, the values we consider for $\mathcal{V}_T$ are small enough for $\vec{x}_0$ to yield satisfactory results.
+For the solver, this means that 1) the proposal of $\vec{x}_0$ given above is already optimal and one should stick with it, and 2) for very large $\mathcal{V}_T$, the region of trustworthy convergence might shrink to zero and one needs to come up with a more refined proposal of initial guesses than $\vec{x}_0$ in Eq.~\eqref{eq:init guess}.
+In this work, the values we consider for $\mathcal{V}_T$ are large but still small enough for $\vec{x}_0$ to yield satisfactory results.
+
+\begin{figure}
+  \includegraphics[width=0.45\textwidth]{plots/solver_timescaling}
+  \caption{Logarithm of computation time as a function of $\log\mathcal{V}_T$. The fit via linear regression yields $t(V) = 10^{\hat{\alpha}} V^{\hat{\beta}}$ with $\hat{\alpha} = -6.67$ and $\hat{\beta} = 4.23$. For demonstrative purposes, the boundary data and $\Lambda$ have been fixed to $j_0 = 50, j_{\mathcal{V}_T} = 100$ and $\Lambda = 0.1$.} 
+  \label{fig:time scaling}
+  \end{figure}
 
 To measure how computation time scales with the number of time steps, $\mathcal{V}_T$ (and thus with the number of equations, $2\mathcal{V}_T-1$), we fix the boundary data $j_0,j_{\mathcal{V}_T}$ and $\Lambda$ and apply \texttt{solve\_eom} with increasing $\mathcal{V}_T$.
 In the $\log$-$\log$-plot of Fig.~\ref{fig:time scaling}, one observes a monomial scaling. 
-Performing a linear regression, one find that the computation time as a function $\mathcal{V}_T$ can be approximated as $t(\mathcal{V}_T) = 10^{\hat{\alpha}}V^{\hat{\beta}}$ with $\hat{\alpha} = -6.67$ and $\hat{\beta} = 4.23$.
+Performing a linear regression, one find that the computation time as a function $\mathcal{V}_T$ can be estimated as $t(\mathcal{V}_T) = 10^{\hat{\alpha}}V^{\hat{\beta}}$ with $\hat{\alpha} = -6.67$ and $\hat{\beta} = 4.23$.
 That is, the computation time for small $\mathcal{V}_T$ is very small, $\sim 10^{-6}\mathrm{s}$, but increases as a fourth-order polynomial in $\mathcal{V}_T$.
 Still, the times at $\mathcal{V}\sim 10^2$ are reasonably small so that the behavior of solutions in the continuum limit, tackled in the next section, can be studied without any computation time issues.  
 
-\begin{figure}
-\includegraphics[width=0.45\textwidth]{plots/solver_timescaling}
-\caption{Logarithm of computation time as a function of $\log\mathcal{V}_T$. The fit via linear regression yields $t(V) = 10^{\hat{\alpha}} V^{\hat{\beta}}$ with $\hat{\alpha} = -6.67$ and $\hat{\beta} = 4.23$. For demonstrative purposes, the boundary data and $\Lambda$ have been fixed to $j_0 = 50, j_{\mathcal{V}_T} = 100$ and $\Lambda = 0.1$.} 
-\label{fig:time scaling}
-\end{figure}
-
 \section{Solutions and the continuum limit}\label{sec:continuum limit}
 
-Facilitated by the numerical tools developed above, we study in this section the continuum limit of Regge calculus at the level of the solutions, rather than at the level of the equations.
+\subsection{Identifying the continuum}
+
+Facilitated by the numerical tools developed above, we study in this section the continuum limit of Regge calculus at the level of the solutions, rather than at the level of the equations. That is, we solve the Regge equations explicitly and study their behavior when increasing the number of building blocks.
+This approach to the continuum limit is new and has not been considered in previous studies, where instead, the analytical continuum time limit similar to Sec.~\ref{sec:analytics} has been performed.
+
 Quantifying whether the discrete solutions provide a satisfactory approximation to the continuum ones requires two ingredients:
 1) For comparison, one needs to consider appropriate continuum quantities which serve as limiting points of the discrete solutions.
 2) One needs to identify the right parameters to tune. 
 Here, the discreteness is parametrized by the number of slices, $\mathcal{V}_T$, as well as the number of $3$-cubes per slice, $\mathcal{V}_S^3$.
 Thus, the continuum is expected to be reached by scaling $\mathcal{V}_T,\mathcal{V}_S\rightarrow\infty$ in a suitably combined way.
 
-\paragraph*{1) Continuum quantities.} One difficulty in comparing discrete and continuum solutions is that in the discrete, the trapezoid areas are dynamical while in the continuum, the lapse function $N$ is a gauge variable, and thus, any time parametrization corresponds to a gauge choice.
-That is, when performing the limit, which time parametrization in the continuum emerges?
+\paragraph*{1) Continuum quantities.} One difficulty in comparing discrete and continuum solutions is that in the discrete, the trapezoid areas are dynamical while in the continuum, the lapse function $N$ is a gauge variable, and thus, any choice of $N$ corresponds to a time parametrization.
+Therefore, the following question arises: when performing the continuum limit, which time parametrization in the continuum emerges?
 Clearly, the labels $n\in\{0,\dots,\mathcal{V}_T\}$ do not serve as a time as this would imply constant distance between any two neighboring spacelike slices.
 Instead, recall that the height of $4$-frusta was mapped to infinitesimal proper time in the analytical continuum limit of Sec.~\ref{sec:analytics}.
-Therefore, the sum of heights, $\tau_0 = \sum_n H_n$, serves as a discrete approximation of the continuum proper time elapsed, defined as $\int \dd{t}N(t)$.
+Therefore, the sum of heights, $\tau_{\mathcal{V}_T} = \sum_n H_n$, serves as a discrete approximation of the continuum proper time elapsed, defined as $\int \dd{t}N(t)$.
 The advantage of considering proper time is that it is gauge invariant.
 Thus, one does not run into the issue of having to pick a parametrization in the continuum to compare to the discrete solutions.
-Using proper time, we will then compare the evolution of the square area $j^*_n$ as a function of the accumulated height $\sum_{m=0}^nH_{m}$ with the squared scale factor $A = a^2$ as a function of proper time, $A(\tau)$.
+Using proper time, we will then compare the evolution of the square area as a function of the accumulated height $\tau_n = \sum_{k=0}^{n-1}H_{k}$, i.e.~the pair $(\tau^*_n, j^*_n)$, with the squared scale factor $A = a^2$ as a function of proper time, $(\tau_{\mathrm{cont}}, A(\tau))$.
 
 \paragraph*{2) The right scaling.} A priori, the parameter $\mathcal{V}_S$ enters the Regge action only as a multiplicative factor.
 Therefore, it might be tempting to set $\mathcal{V}_S = 1$, as done in the analytical part in Sec.~\ref{sec:analytics}.
@@ -421,36 +458,117 @@ Note, however, that when describing the same total boundary area $j_0,j_{\mathca
 S_{\textsc{iii}}^{(n)}(j_n, j_{n+1}, k_n) \rightarrow \mathcal{V}_S^3 S_{\textsc{iii}}^{(n)}(j_n/\mathcal{V}_S^2, j_{n+1}/\mathcal{V}_S^2, k_n)\,.
 \end{equation}
 %
-This refinement in spacelike direction is depicted in Fig.~\ref{fig:spatial refinement}.
-Importantly, the Regge action and thus also the solutions, are not invariant under the procedure above.
-Thus, different combined scalings of $\mathcal{V}_S,\mathcal{V}_T\rightarrow \infty$ need to be considered to find convergence to continuum solutions.
+This spatial refinement is depicted in Fig.~\ref{fig:spatial refinement}.
+Importantly, the Regge action and thus also the solutions, are in general not invariant under the procedure above.
+Therefore, different combined scalings of $\mathcal{V}_S,\mathcal{V}_T\rightarrow \infty$ will a priori lead to different limiting points. 
+
 
 \begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{figures/refinement.pdf}
-\caption{Refinement of frustum geometry with total initial square area $j_0$ and final square area $j_1$. Individual frusta are rescaled as $(j_0,j_1)\rightarrow (j_0/\mathcal{V}_S^2, j_1/\mathcal{V}_S^2)$. For illustrative purposes, one spatial dimension is suppressed.}
-\label{fig:spatial refinement}
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/refinement.pdf}
+  \caption{Refinement of frustum geometry with total areas $j_0$ and $j_1$. Individual frusta are rescaled as $(j_0,j_1)\rightarrow (j_0/\mathcal{V}_S^2, j_1/\mathcal{V}_S^2)$. For illustrative purposes, one spatial dimension is suppressed.}
+  \label{fig:spatial refinement}
 \end{figure}
 
-However, Fig.~\ref{fig:continuum scalings} demonstrates that leaving $\mathcal{V}_S = 1$ while increasing $\mathcal{V}_T$, the accumulated height $\tau = \sum H$ does not converge to the value of the continuum proper time $\tau_0$.
-To obtain the correct $\tau_0$, one therefore needs to tune $\mathcal{V}_S$ and $\mathcal{V}_T$ simultaneously.
-Here, a second subtlety needs to be noticed.
-The continuum proper time only depends on $\Lambda$ and the initial and final squared scale factor $A_0, A_1$.
-Setting $j_0 = A_0$ and $j_{\mathcal{V}_T} = A_1$ and increasing $\mathcal{V}_S$ i
+To determine which of those points corresponds to the continuum, the ratio of discrete and continuum proper time, $\tau_{\mathcal{V}_T}/\tau_{\mathrm{cont}}$, is plotted in Fig.~\ref{fig:continuum scalings} as a function of building blocks $\mathcal{V}$.
+Clearly, continuum proper time is reached when this ratio equals $1$, indicated by the black horizontal line.
+One observes fast convergence, already at $\mathcal{V}\gtrsim 10$ for the given boundary data and $\Lambda$, to a limiting value.
+Note that the speed of convergence depends on the boundary data and will decrease for larger curvature, that is larger difference of $j_0$ and $j_{\mathcal{V}_T}$.
+Evidently, keeping either $\mathcal{V}_S$ or $\mathcal{V}_T$ fixed yields a non-vanishing deviation to the continuum proper time.
+Also other scalings where the ratio $\mathcal{V}_S/\mathcal{V}_T$ does not approach a constant value (such as $(\mathcal{V}_T,\mathcal{V}_S) = (\mathcal{V},\mathcal{V}^2)$ with $\mathcal{V}\rightarrow\infty$) lead to such deviations.
+Therefore, in order to approach continuum proper time, the pair $(\mathcal{V}_T, \mathcal{V}_S)$ must be scaled as $(\mathcal{V}, \kappa\mathcal{V}+\mathrm{const}.)$ with $\mathcal{V}\rightarrow\infty$, and $\kappa$ a constant.
+The constant shift can be set to zero as it becomes irrelevant for $\mathcal{V}\gg 1$ and slows down convergence, see Fig.~\ref{fig:continuum scalings}.
 
-$\mathcal{V}_T$ and $\mathcal{V}_S$ can be scaled to larger values individually.
-In particular, from Eq.~\eqref{eq:general Regge equations}, one can see that 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{plots/continuum_scalings.pdf}
+  \caption{Ratio of discrete and continuum proper time, $\tau_0$ and $\tau_{\mathrm{cont}}$, respectively, as a function of the number of building blocks, $\mathcal{V}$. $\mathcal{V}_T$ and $\mathcal{V}_S$ are related as indicated. The boundary data and $\Lambda$ have been fixed to $j_0 = 50$, $j_{\mathcal{V}_T}=100$, and $\Lambda=0.1$.}
+  \label{fig:continuum scalings}
+\end{figure}
+
+Choosing $\kappa = 1$ for the moment, discrete and continuum solutions are depicted in Fig.~\ref{fig:conv to cont} for some chosen boundary data and $\Lambda$.
+We observe that for increasing $\mathcal{V}$, the discrete solutions get closer to the continuum.
+Furthermore, mote that the deviations in proper time add up.
+This happens because the discrete proper time is a sum of heights, all of which show deviations to continuum proper time steps for small $\mathcal{V}$.
+For sufficiently large $\mathcal{V}$, e.g.~at $\mathcal{V}=10$ for the data of Fig.~\ref{fig:conv to cont}, the discrete solutions become a discretization of the continuum solutions.
+When discretizing and solving the equations of motion commutes, one has obtained a so-called \textit{perfect action}~\cite{}.
+Here, this means that the Regge action perfectly captures the dynamics of the continuum Einstein-Hilbert action in the symmetry-reduced cosmological setting.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{plots/conv_to_cont.pdf}
+  \caption{Continuum and discrete area of spacelike slices as a function of proper time $\tau$. The boundary data and $\Lambda$ have been fixed to $j_0 = 50$, $j_{\mathcal{V}_T}=100$, and $\Lambda=0.1$.}
+  \label{fig:conv to cont}
+\end{figure}
+
+In summary, we have identified proper time and the squared scale factor as a function of proper time as limiting points of the discrete solutions.
+Furthermore, we saw that the number of timelike and spacelike building blocks needs to be scaled as $(\mathcal{V}_T,\mathcal{V}_S) = (\mathcal{V}, \kappa\mathcal{V})$ with $\mathcal{V}\rightarrow\infty$ to reach the continuum.
+The convergence of $(\tau^*_n,j^*_n)$ to $(\tau,a^2(\tau))$ was demonstrated in Fig.~\ref{fig:conv to cont}.
+
+These results show for the first time how, at the level of solutions, discrete Regge calculus explicitly converges to continuum gravity, facilitated by the numerical solver developed in Sec.~\ref{sec:more time steps}.
+In the next section, we go one step further and show that there is in fact a choice of $\kappa$, relating $\mathcal{V}_T$ and $\mathcal{V}_S$, for which already at $\mathcal{V}_T=1$, the continuum is perfectly captured.
+
+\subsection{Perfect action for Lorentzian Regge cosmology}
+
+The previous section revealed that $(\mathcal{V}_T,\mathcal{V}_S)$ need to be scaled as $(\mathcal{V},\kappa\mathcal{V})$ with $\mathcal{V}\rightarrow\infty$ to reach the continuum.
+Fig.~\ref{fig:continuum scalings} demonstrates that $\kappa$ crucially influences the speed of convergence. 
+Therein, the brown pentagons, representing $\kappa=10$, clearly converge faster to $\tau_0/\tau_{\mathrm{cont}} = 1$ than the blue stars with $\kappa=1$. 
+If we allow for $\mathcal{V}_S\in\R$ rather than being integer-valued\footnote{Note that this is only possible in the present symmetry restricted setting. As soon as the assumption of spatial homogeneity is dropped, $\mathcal{V}_S$ determines the number of spatial variables and can therefore not be treated anymore like some tunable real parameter. We elaborate on this point again down below.}, and therefore consider $\kappa\in\R$, we can ask whether there is a $\kappa_*$ for which the continuum is obtained already at $\mathcal{V}=1$.
+
+This question can be formulated as an equation in $\kappa$ for which then, if existent, $\kappa_*$ is the solution.
+To that end, notice that the continuum is reached when $\tau_{\mathcal{V}_T} = \sum H = \tau_{\mathrm{cont}}$. But if $\mathcal{V}_T=1$, this is equivalent to 
+%
+\begin{equation}
+  H(j_0 / \kappa^2, j_1 / \kappa^2, k) = \tau_{\mathrm{cont}}\,.
+\end{equation}
+%
+By inverting the relation between $k$ and $H$, see Eq.~\eqref{eq:height}, one can thus consider the trapezoid area 
+%
+\begin{equation}
+k_\tau(j_0, j_1, \kappa) = k(j_0 / \kappa^2, j_1 / \kappa^2, \tau_{\mathrm{cont}})\,.
+\end{equation}
+%
+Then, the Regge equation $\pdv{S_\textsc{iii}}{k} = 0$ can be reformulated as an equation in $\kappa$, that is
+%
+\begin{widetext}
+\begin{equation}\label{eq:kappa eq}
+  12\left[\frac{\pi}{2} - \cos^{-1}\left(\frac{(j_0 - j_1)^2}{16k_\tau^2\kappa^4 + (j_0 - j_1)^2}\right)\right] - \sqrt{2}\Lambda \frac{(j_0+j_1)k_\tau}{\sqrt{8k_\tau^2\kappa^4+(j_0-j_1)^2}} = 0\,.
+\end{equation}
+\end{widetext}
+%
+Note that $k_\tau$ also implicitly depends on $\kappa$.
+
+The numerical methods developed in Sec.~\ref{sec:numerics} can be straightforwardly adjusted to find solutions of Eq.~\eqref{eq:kappa eq}.
+Indeed, one can find a unique solution $\kappa_*$ for any $j_0\neq j_1$ and $\Lambda > 0$.
+A good initial guess for the solver can be looked for graphically by creating a plot similar to Fig.~\ref{fig:continuum scalings} and varying $\kappa$ until all points lie on the horizontal line at $\tau_0/\tau_{\mathrm{cont}} = 1$.
+The dependence of the solution $\kappa_*$ on the boundary data and $\Lambda$ is: 
+1) For fixed boundary data, $\kappa_*$ depends on the square root of the cosmological constant, that is, $\kappa_*(\Lambda) = \beta\sqrt{\Lambda}$ for some $\beta$.
+2) For fixed $\Lambda$, re-scaling the boundary as $(j_0,j_1)\rightarrow (\lambda j_0, \lambda j_1)$, the solutions of Eq.~\eqref{eq:kappa eq} scale as $\kappa_*(\lambda) = \beta'\sqrt{\lambda}$.
+Points 1) and 2) imply that for sufficiently small $\Lambda$ or $\lambda$, $\kappa_*$ becomes smaller than one and so $\mathcal{V}_T > \mathcal{V}_S$.
+3) Fixing $\Lambda$ and varying the difference $\Delta j = j_1 - j_0$, $\kappa_*$ follows a monomial decay to some non-zero value as $\Delta j \gg 1$, that is, $\kappa_*(\Delta j)= (\Delta j)^{-\alpha} + c$ for some $\alpha > 0$ and some $c>0$. 
+
+The existence of $\kappa_*$ for the present curved discrete geometries is remarkable as it represents a form of \textit{fixed point} of the limit of increasing building blocks, $\mathcal{V}\rightarrow\infty$.
+That is, evaluated on $\kappa_*$, the Regge action and its solutions become independent of $\mathcal{V}$ and the discretization merely corresponds to a sampling of the continuum.
+Thus, already at a single time step $\mathcal{V}_T=1$, the Regge action is a perfect action, capturing the continuum dynamics without any discreteness artifacts.
+\caj{There are only few simple examples of discretized theories for which perfect actions have been found, including the free particle~\cite{}, the harmonic oscillator~\cite{} and Regge calculus for flat spacetime~\cite{}.}
+Our results here represent the first example of Regge calculus with curvature where the perfect action can be found explicitly.
+
+Generically, the solutions $\kappa_*$ will be real-valued, although there exist fine-tuned $j_0,j_1$ and $\Lambda$ such that $\kappa$ is an integer.
+Allowing $\kappa\in\R$ is only possible in the present setting of spatially flat and homogeneous cosmology. 
+As soon as spatial flatness or homogeneity are dropped, $\mathcal{V}_S$, and thus $\kappa$, can only take integer values.
+In the spatially spherical case~\cite{Dittrich:2021gww} in particular, the number of tetrahedra is fixed to a small subset of integers and cannot be simply played around with.
+Even if one considers non-integer $\kappa$ as unphysical, the discussion above is helpful to find continuum solutions for small $\mathcal{V}$.
+To that end, one simply considers $\mathrm{int}(\kappa)$, i.e.~the integer closest to $\kappa$.
+Then, convergence to the continuum in the limit $(\mathcal{V}_T,\mathcal{V}_S) = (\mathcal{V},\kappa\mathcal{V})$ with $\mathcal{V}\rightarrow\infty$ will be as fast as possible.
+
+
+
 
 \caj{Continuum limit also in the analytical sense? Consider $s_n\rightarrow s_n/\mathcal{V}_S$.}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{plots/continuum_scalings.pdf}
-\caption{.}
-\label{fig:continuum scalings}
-\end{figure}
 
-\subsection{Perfect action for Lorentzian Regge cosmology}
+
+
 
 
 
@@ -458,7 +576,7 @@ In particular, from Eq.~\eqref{eq:general Regge equations}, one can see that
 
 Extension to $k = \pm 1$. 
 
-\paragraph*{Acknowledgements}  The authors thank Seth Asante, Bianca Dittrich and Steffen Gielen for helpful discussions and Tim St\"{o}tzel for support with the numerical implementation. AFJ, JDS and SSt gratefully acknowledge support by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) Grant No 422809950. AFJ and JDS acknowledge support by the DFG under Grant No 406116891 within the Research Training Group RTG 2522/1. AFJ is grateful for the generous financial support by the MCQST via the seed funding Aost 862981-8 granted to Jibril Ben Achour by the DFG under Germany’s Excellence Strategy – EXC-2111 – 390814868.
+\paragraph*{Acknowledgements}  %The authors thank Seth Asante, Bianca Dittrich and Steffen Gielen for helpful discussions and Tim St\"{o}tzel for support with the numerical implementation. AFJ, JDS and SSt gratefully acknowledge support by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) Grant No 422809950. AFJ and JDS acknowledge support by the DFG under Grant No 406116891 within the Research Training Group RTG 2522/1. AFJ is grateful for the generous financial support by the MCQST via the seed funding Aost 862981-8 granted to Jibril Ben Achour by the DFG under Germany’s Excellence Strategy – EXC-2111 – 390814868.
 
 \appendix
 \section{Frusta geometry}\label{app:frusta}
@@ -470,7 +588,7 @@ For the squared trapezoid area, we write $\underline{k}^2$ for the signed square
 
 A crucial quantity is the squared height of the $4$-frusta,
 %
-\begin{equation}
+\begin{equation}\label{eq:height}
 H^2 = \frac{8\underline{k}^2 + (j_0-j_1)^2}{2(\sqrt{j_0} + \sqrt{j_1})^2}\,,
 \end{equation}
 %

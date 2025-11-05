@@ -6,45 +6,45 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: mainNotes.bib
 Database file #2: references.bib
 Warning--I didn't find a database entry for ""
-You've used 27 entries,
+You've used 46 entries,
             2316 wiz_defined-function locations,
-            769 strings with 8279 characters,
-and the built_in function-call counts, 10797 in all, are:
-= -- 1200
-> -- 271
+            905 strings with 11245 characters,
+and the built_in function-call counts, 17526 in all, are:
+= -- 1890
+> -- 474
 < -- 0
-+ -- 83
-- -- 56
-* -- 972
-:= -- 1371
-add.period$ -- 27
-call.type$ -- 27
-change.case$ -- 27
++ -- 145
+- -- 99
+* -- 1631
+:= -- 2223
+add.period$ -- 46
+call.type$ -- 46
+change.case$ -- 43
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 805
-empty$ -- 963
-format.name$ -- 168
-if$ -- 2772
+cite$ -- 46
+duplicate$ -- 1329
+empty$ -- 1615
+format.name$ -- 297
+if$ -- 4455
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 102
-newline$ -- 85
-num.names$ -- 27
-pop$ -- 53
+int.to.str$ -- 46
+missing$ -- 167
+newline$ -- 142
+num.names$ -- 48
+pop$ -- 109
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 422
+skip$ -- 615
 stack$ -- 0
-substring$ -- 650
-swap$ -- 239
+substring$ -- 1004
+swap$ -- 352
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 114
-width$ -- 29
-write$ -- 279
+while$ -- 189
+width$ -- 48
+write$ -- 466
 (There was 1 warning)
