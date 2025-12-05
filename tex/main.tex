@@ -186,7 +186,9 @@ Additivity of the action per slab implies that the equations of motion for a giv
 
 In the following, we study the discrete dynamics of spatially flat cosmology as governed by the Regge equations. To that end, we consider first the case of a single time step, $\mathcal{V}_T = 1$, in Sec.~\ref{sec:recap} and generalize then to an arbitrary number of time steps in Sec.~\ref{sec:more time steps}.
 
-\section{Recap: One time step}\label{sec:recap}
+\section{Recap}\label{sec:recap}
+
+\subsection{One time step}
 
 The classical and quantum dynamics of a single timestep in discrete Lorentzian cosmology have been studied extensively in~\cite{Dittrich:2021gww,Dittrich:2023rcr,Asante:2021phx} for spatial curvature with cosmological constant and in~\cite{Jercher:2023csk,Jercher:2024hlr} for spatially flat spacetimes with a free scalar field.
 In this section we extend the classical studies to spatially flat cosmology with a cosmological constant.
@@ -246,7 +248,7 @@ These correspond, in the continuum, to solutions where $\dot{a} = \mathrm{const}
 For $\Lambda > 0$, solutions exist only if $j_0 < j_\Lambda$ and $j_1<j_\Lambda$ where $j_\Lambda$ is the same as in the Lorentzian case, however now representing an upper bound. 
 Again, this behavior agrees with continuum results where a Euclidean universe with positive spatial curvature can only reach a maximum value $a_\Lambda$.
  
-\section{Arbitrary number of time steps}\label{sec:more time steps}
+\subsection{Arbitrary number of time steps}\label{sec:more time steps}
 
 In this section, we study the Regge equations of spatially flat Lorentzian cosmology for an arbitrary number of time steps $\mathcal{V}_T$. 
 This amounts to solving $2\mathcal{V}_T-1$ coupled transcendental equations for the bulk variables $k_0,j_1,\dots,j_{\mathcal{V}_T-1},k_{\mathcal{V}_T-1}$ for given boundary data $j_0, j_{\mathcal{V}_T}$ and cosmological constant $\Lambda$,
@@ -271,7 +273,7 @@ Thus, in the following two sections, we consider $\mathcal{V}_S = 1$ for simplic
 However, let us mention here that in Sec.~\ref{sec:continuum limit}, the parameter $\mathcal{V}_S$ turns out to be crucial to obtain the correct continuum limit. 
 We tackle the problem of finding solutions to Eq.~\eqref{eq:general Regge equations} first analytically in the subsequent section and develop numerical methods thereafter.
 
-\subsection{Analytical considerations}\label{sec:analytics}
+%\subsection{Analytical considerations}\label{sec:analytics}
 
 For vanishing cosmological constant, $\Lambda = 0$, and stationary boundary data, $j_0=j_{\mathcal{V}_T}$, the results for a single time step obtained in the previous section straightforwardly generalize.
 That is, if $\Lambda = 0$, the Regge equations are satisfied if and only if the boundary data satisfies $j_0 = j_{\mathcal{V}_T}$.
@@ -339,7 +341,7 @@ Still, Eq.~\eqref{eq:general Regge equations} remains to be solved explicitly in
 This represents an important step since the solutions serve as a classical and discrete benchmark for identifying a semi-classical continuum regime in discrete path integral approaches such as effective spin-foams.  
 In the following section, we tackle this issue employing numerical methods.
 
-\subsection{Numerical implementation}\label{sec:numerics}
+\section{Numerical implementation}\label{sec:numerics}
 
 \caj{Consider turning the numerics section into its own section and putting the stuff before in the recap section. After all, the stuff before has already been discussed in~\cite{Jercher:2023csk}.}
 
@@ -428,7 +430,7 @@ Performing a linear regression, one find that the computation time as a function
 That is, the computation time for small $\mathcal{V}_T$ is very small, $\sim 10^{-6}\mathrm{s}$, but increases as a fourth-order polynomial in $\mathcal{V}_T$.
 Still, the times at $\mathcal{V}\sim 10^2$ are reasonably small so that the behavior of solutions in the continuum limit, tackled in the next section, can be studied without any computation time issues.  
 
-\section{Solutions and the continuum limit}\label{sec:continuum limit}
+\section{Blocking from the continuum}\label{sec:continuum limit}
 
 \subsection{Identifying the continuum}
 
@@ -436,14 +438,14 @@ Facilitated by the numerical tools developed above, we study in this section the
 This approach to the continuum limit is new and has not been considered in previous studies, where instead, the analytical continuum time limit similar to Sec.~\ref{sec:analytics} has been performed.
 
 Quantifying whether the discrete solutions provide a satisfactory approximation to the continuum ones requires two ingredients:
-1) For comparison, one needs to consider appropriate continuum quantities which serve as limiting points of the discrete solutions.
-2) One needs to identify the right parameters to tune. 
+1) appropriate continuum quantities which serve as limiting points of the discrete solutions, and
+2) identifying the right parameters to tune. 
 Here, the discreteness is parametrized by the number of slices, $\mathcal{V}_T$, as well as the number of $3$-cubes per slice, $\mathcal{V}_S^3$.
 Thus, the continuum is expected to be reached by scaling $\mathcal{V}_T,\mathcal{V}_S\rightarrow\infty$ in a suitably combined way.
 
 \paragraph*{1) Continuum quantities.} One difficulty in comparing discrete and continuum solutions is that in the discrete, the trapezoid areas are dynamical while in the continuum, the lapse function $N$ is a gauge variable, and thus, any choice of $N$ corresponds to a time parametrization.
 Therefore, the following question arises: when performing the continuum limit, which time parametrization in the continuum emerges?
-Clearly, the labels $n\in\{0,\dots,\mathcal{V}_T\}$ do not serve as a time as this would imply constant distance between any two neighboring spacelike slices.
+Clearly, the labels $n\in\{0,\dots,\mathcal{V}_T\}$ do not serve as a time as this would imply constant temporal separation between any two neighboring spacelike slices.
 Instead, recall that the height of $4$-frusta was mapped to infinitesimal proper time in the analytical continuum limit of Sec.~\ref{sec:analytics}.
 Therefore, the sum of heights, $\tau_{\mathcal{V}_T} = \sum_n H_n$, serves as a discrete approximation of the continuum proper time elapsed, defined as $\int \dd{t}N(t)$.
 The advantage of considering proper time is that it is gauge invariant.
@@ -472,7 +474,7 @@ Therefore, different combined scalings of $\mathcal{V}_S,\mathcal{V}_T\rightarro
 
 To determine which of those points corresponds to the continuum, the ratio of discrete and continuum proper time, $\tau_{\mathcal{V}_T}/\tau_{\mathrm{cont}}$, is plotted in Fig.~\ref{fig:continuum scalings} as a function of building blocks $\mathcal{V}$.
 Clearly, continuum proper time is reached when this ratio equals $1$, indicated by the black horizontal line.
-One observes fast convergence, already at $\mathcal{V}\gtrsim 10$ for the given boundary data and $\Lambda$, to a limiting value.
+One observes fast convergence, already at $\mathcal{V}\gtrsim 10$ for the given boundary data and $\Lambda$ to a limiting value.
 Note that the speed of convergence depends on the boundary data and will decrease for larger curvature, that is larger difference of $j_0$ and $j_{\mathcal{V}_T}$.
 Evidently, keeping either $\mathcal{V}_S$ or $\mathcal{V}_T$ fixed yields a non-vanishing deviation to the continuum proper time.
 Also other scalings where the ratio $\mathcal{V}_S/\mathcal{V}_T$ does not approach a constant value (such as $(\mathcal{V}_T,\mathcal{V}_S) = (\mathcal{V},\mathcal{V}^2)$ with $\mathcal{V}\rightarrow\infty$) lead to such deviations.
@@ -491,8 +493,6 @@ We observe that for increasing $\mathcal{V}$, the discrete solutions get closer 
 Furthermore, mote that the deviations in proper time add up.
 This happens because the discrete proper time is a sum of heights, all of which show deviations to continuum proper time steps for small $\mathcal{V}$.
 For sufficiently large $\mathcal{V}$, e.g.~at $\mathcal{V}=10$ for the data of Fig.~\ref{fig:conv to cont}, the discrete solutions become a discretization of the continuum solutions.
-When discretizing and solving the equations of motion commutes, one has obtained a so-called \textit{perfect action}~\cite{}.
-Here, this means that the Regge action perfectly captures the dynamics of the continuum Einstein-Hilbert action in the symmetry-reduced cosmological setting.
 
 \begin{figure}
   \centering
@@ -508,7 +508,7 @@ The convergence of $(\tau^*_n,j^*_n)$ to $(\tau,a^2(\tau))$ was demonstrated in 
 These results show for the first time how, at the level of solutions, discrete Regge calculus explicitly converges to continuum gravity, facilitated by the numerical solver developed in Sec.~\ref{sec:more time steps}.
 In the next section, we go one step further and show that there is in fact a choice of $\kappa$, relating $\mathcal{V}_T$ and $\mathcal{V}_S$, for which already at $\mathcal{V}_T=1$, the continuum is perfectly captured.
 
-\subsection{Perfect action for Lorentzian Regge cosmology}
+\subsection{Blocking from the continuum}
 
 The previous section revealed that $(\mathcal{V}_T,\mathcal{V}_S)$ need to be scaled as $(\mathcal{V},\kappa\mathcal{V})$ with $\mathcal{V}\rightarrow\infty$ to reach the continuum.
 Fig.~\ref{fig:continuum scalings} demonstrates that $\kappa$ crucially influences the speed of convergence. 
@@ -518,11 +518,12 @@ If we allow for $\mathcal{V}_S\in\R$ rather than being integer-valued\footnote{N
 This question can be formulated as an equation in $\kappa$ for which then, if existent, $\kappa_*$ is the solution.
 To that end, notice that the continuum is reached when $\tau_{\mathcal{V}_T} = \sum H = \tau_{\mathrm{cont}}$. But if $\mathcal{V}_T=1$, this is equivalent to 
 %
-\begin{equation}
-  H(j_0 / \kappa^2, j_1 / \kappa^2, k) = \tau_{\mathrm{cont}}\,.
+\begin{equation}\label{eq:height=tau}
+  H(j_0 / \kappa^2, j_1 / \kappa^2, k) = \tau_{\mathrm{cont}}\,,
 \end{equation}
 %
-By inverting the relation between $k$ and $H$, see Eq.~\eqref{eq:height}, one can thus consider the trapezoid area 
+that is, the elapsed proper time is equivalent to the height of the single frustum. 
+By inverting the relation between $k$ and $H$, see Eq.~\eqref{eq:height}, one can thus consider the continuum-informed trapezoid area 
 %
 \begin{equation}
 k_\tau(j_0, j_1, \kappa) = k(j_0 / \kappa^2, j_1 / \kappa^2, \tau_{\mathrm{cont}})\,.
@@ -536,7 +537,7 @@ Then, the Regge equation $\pdv{S_\textsc{iii}}{k} = 0$ can be reformulated as an
 \end{equation}
 \end{widetext}
 %
-Note that $k_\tau$ also implicitly depends on $\kappa$.
+Note that $k_\tau$ also implicitly depends on $\kappa$ and that this equation is still transcendental.
 
 The numerical methods developed in Sec.~\ref{sec:numerics} can be straightforwardly adjusted to find solutions of Eq.~\eqref{eq:kappa eq}.
 Indeed, one can find a unique solution $\kappa_*$ for any $j_0\neq j_1$ and $\Lambda > 0$.
@@ -547,21 +548,47 @@ The dependence of the solution $\kappa_*$ on the boundary data and $\Lambda$ is:
 Points 1) and 2) imply that for sufficiently small $\Lambda$ or $\lambda$, $\kappa_*$ becomes smaller than one and so $\mathcal{V}_T > \mathcal{V}_S$.
 3) Fixing $\Lambda$ and varying the difference $\Delta j = j_1 - j_0$, $\kappa_*$ follows a monomial decay to some non-zero value as $\Delta j \gg 1$, that is, $\kappa_*(\Delta j)= (\Delta j)^{-\alpha} + c$ for some $\alpha > 0$ and some $c>0$. 
 
-The existence of $\kappa_*$ for the present curved discrete geometries is remarkable as it represents a form of \textit{fixed point} of the limit of increasing building blocks, $\mathcal{V}\rightarrow\infty$.
-That is, evaluated on $\kappa_*$, the Regge action and its solutions become independent of $\mathcal{V}$ and the discretization merely corresponds to a sampling of the continuum.
-Thus, already at a single time step $\mathcal{V}_T=1$, the Regge action is a perfect action, capturing the continuum dynamics without any discreteness artifacts.
-\caj{There are only few simple examples of discretized theories for which perfect actions have been found, including the free particle~\cite{}, the harmonic oscillator~\cite{} and Regge calculus for flat spacetime~\cite{}.}
-Our results here represent the first example of Regge calculus with curvature where the perfect action can be found explicitly.
+Equation~\eqref{eq:height=tau} describes the identification of the frustum height with the continuum proper time.
+Encoding continuum information in this way in the discrete theory can be seen as a form of \textit{blocking from the continuum}~\ref{}.
+In the present case, this can be done exactly by solving Eq.~\eqref{eq:kappa eq} numerically.
+Once $\kappa_*$ is found, it can be inserted into the solver of Sec.~\ref{sec:numerics} so that then, the discrete solutions are a sampling of the continuum, as depicted in Fig.~\ref{fig:sampling continuum}.
+Increasing $\mathcal{V}$ then simply corresponds to a finer sampling.
+Remarkably, that can be achieved by solving the single, though transcendental, equation~\eqref{eq:kappa eq} in contrast to the usual difficulty of obtaining continuum gravitational physics from discrete theories.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.45\textwidth]{plots/sampling_cont.pdf}
+\caption{Continuum and discrete area of spacelike slices as a function of proper time $\tau$ with $(\mathcal{V}_T,\mathcal{V}_S) = (\mathcal{V}, \kappa_*\mathcal{V})$. Evidently, increasing $\mathcal{V}$ only leads to a finer sampling of the continuum solution. The boundary data and $\Lambda$ have been fixed to $j_0 = 50$, $j_{\mathcal{V}_T}=100$, and $\Lambda=0.1$.}
+\label{fig:sampling continuum}
+\end{figure}
 
 Generically, the solutions $\kappa_*$ will be real-valued, although there exist fine-tuned $j_0,j_1$ and $\Lambda$ such that $\kappa$ is an integer.
 Allowing $\kappa\in\R$ is only possible in the present setting of spatially flat and homogeneous cosmology. 
 As soon as spatial flatness or homogeneity are dropped, $\mathcal{V}_S$, and thus $\kappa$, can only take integer values.
 In the spatially spherical case~\cite{Dittrich:2021gww} in particular, the number of tetrahedra is fixed to a small subset of integers and cannot be simply played around with.
 Even if one considers non-integer $\kappa$ as unphysical, the discussion above is helpful to find continuum solutions for small $\mathcal{V}$.
-To that end, one simply considers $\mathrm{int}(\kappa)$, i.e.~the integer closest to $\kappa$.
-Then, convergence to the continuum in the limit $(\mathcal{V}_T,\mathcal{V}_S) = (\mathcal{V},\kappa\mathcal{V})$ with $\mathcal{V}\rightarrow\infty$ will be as fast as possible.
+To that end, one simply considers $\mathrm{int}(\kappa)$, i.e.~the integer closest to $\kappa$, so that convergence to the continuum in the limit $(\mathcal{V}_T,\mathcal{V}_S) = (\mathcal{V},\kappa\mathcal{V})$ with $\mathcal{V}\rightarrow\infty$ will be as fast as possible.
+
+\subsection{A perfect action?}
 
 
+
+
+The existence of $\kappa_*$ for the present curved discrete geometries is remarkable as it represents a form of \textit{fixed point} of the limit of increasing building blocks, $\mathcal{V}\rightarrow\infty$.
+That is, evaluated on $\kappa_*$, the Regge action and its solutions become independent of $\mathcal{V}$ and the discretization merely corresponds to a sampling of the continuum.
+Thus, already at a single time step $\mathcal{V}_T=1$, the Regge action is a perfect action, capturing the continuum dynamics without any discreteness artifacts.
+\caj{There are only few simple examples of discretized theories for which perfect actions have been found, including the free particle~\cite{}, the harmonic oscillator~\cite{} and Regge calculus for flat spacetime~\cite{}.}
+Our results here represent the first example of Regge calculus with curvature where the perfect action can be found explicitly.
+
+
+
+
+
+\begin{itemize}
+  \item The action is not a perfect action
+  \item effective action just scales with $\lambda^{3/2}$.
+  \item only one equation required for $\kappa$.
+\end{itemize}
 
 
 \caj{Continuum limit also in the analytical sense? Consider $s_n\rightarrow s_n/\mathcal{V}_S$.}

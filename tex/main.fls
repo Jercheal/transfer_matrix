@@ -380,6 +380,11 @@ INPUT ./plots/conv_to_cont.pdf
 INPUT ./plots/conv_to_cont.pdf
 INPUT ./plots/conv_to_cont.pdf
 INPUT ./plots/conv_to_cont.pdf
+INPUT ./plots/sampling_cont.pdf
+INPUT ./plots/sampling_cont.pdf
+INPUT ./plots/sampling_cont.pdf
+INPUT ./plots/sampling_cont.pdf
+INPUT ./plots/sampling_cont.pdf
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
