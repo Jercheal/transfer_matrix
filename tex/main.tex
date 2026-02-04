@@ -430,7 +430,7 @@ Performing a linear regression, one find that the computation time as a function
 That is, the computation time for small $\mathcal{V}_T$ is very small, $\sim 10^{-6}\mathrm{s}$, but increases as a fourth-order polynomial in $\mathcal{V}_T$.
 Still, the times at $\mathcal{V}\sim 10^2$ are reasonably small so that the behavior of solutions in the continuum limit, tackled in the next section, can be studied without any computation time issues.  
 
-\section{Blocking from the continuum}\label{sec:continuum limit}
+\section{Continuum-informed discretization}\label{sec:continuum limit}
 
 \subsection{Identifying the continuum}
 
@@ -508,7 +508,7 @@ The convergence of $(\tau^*_n,j^*_n)$ to $(\tau,a^2(\tau))$ was demonstrated in 
 These results show for the first time how, at the level of solutions, discrete Regge calculus explicitly converges to continuum gravity, facilitated by the numerical solver developed in Sec.~\ref{sec:more time steps}.
 In the next section, we go one step further and show that there is in fact a choice of $\kappa$, relating $\mathcal{V}_T$ and $\mathcal{V}_S$, for which already at $\mathcal{V}_T=1$, the continuum is perfectly captured.
 
-\subsection{Blocking from the continuum}
+\subsection{Continuum-informed discretization}
 
 The previous section revealed that $(\mathcal{V}_T,\mathcal{V}_S)$ need to be scaled as $(\mathcal{V},\kappa\mathcal{V})$ with $\mathcal{V}\rightarrow\infty$ to reach the continuum.
 Fig.~\ref{fig:continuum scalings} demonstrates that $\kappa$ crucially influences the speed of convergence. 
@@ -549,8 +549,7 @@ Points 1) and 2) imply that for sufficiently small $\Lambda$ or $\lambda$, $\kap
 3) Fixing $\Lambda$ and varying the difference $\Delta j = j_1 - j_0$, $\kappa_*$ follows a monomial decay to some non-zero value as $\Delta j \gg 1$, that is, $\kappa_*(\Delta j)= (\Delta j)^{-\alpha} + c$ for some $\alpha > 0$ and some $c>0$. 
 
 Equation~\eqref{eq:height=tau} describes the identification of the frustum height with the continuum proper time.
-Encoding continuum information in this way in the discrete theory can be seen as a form of \textit{blocking from the continuum}~\ref{}.
-In the present case, this can be done exactly by solving Eq.~\eqref{eq:kappa eq} numerically.
+Inserting this continuum quantity and solving Eq.~\eqref{eq:kappa eq} for the ratio of building blocks in spatial and temporal direction therefore yields a \textit{continuum-informed} discretization.
 Once $\kappa_*$ is found, it can be inserted into the solver of Sec.~\ref{sec:numerics} so that then, the discrete solutions are a sampling of the continuum, as depicted in Fig.~\ref{fig:sampling continuum}.
 Increasing $\mathcal{V}$ then simply corresponds to a finer sampling.
 Remarkably, that can be achieved by solving the single, though transcendental, equation~\eqref{eq:kappa eq} in contrast to the usual difficulty of obtaining continuum gravitational physics from discrete theories.

@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex main"] 1764954313.09229 "main.aux" "main.bbl" "main" 1764954313.9956 0
+["bibtex main"] 1764956398.56261 "main.aux" "main.bbl" "main" 1764956399.47841 0
   "./JHEP.bst" 1734875732.77685 20429 3af9df5ab4b7e808cdbb9d6b90a65a61 ""
-  "./mainNotes.bib" 1764954313.53291 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "./mainNotes.bib" 1764956399.01123 0 d41d8cd98f00b204e9800998ecf8427e ""
   "./references.bib" 1761917741.0221 294890 28b417cbb6c2a22b22e98a06f5f8d59a ""
-  "main.aux" 1764954313.72659 13638 0e90d255a63d94c5bd61875012aecab5 "pdflatex"
+  "main.aux" 1764956399.2023 13650 163f537751f4e728d5f3439e692259e1 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1764954313.17623 "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" "main.pdf" "main" 1764954313.99573 0
-  "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" 1764954312.14929 57748 85f2e9db814ad2cdeb22138e344f15ff ""
+["pdflatex"] 1764956398.65292 "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" "main.pdf" "main" 1764956399.47854 0
+  "/Users/jercheal/Documents/Physics/Projects/transfer_matrix/tex/main.tex" 1764956397.57822 57730 73cc9685b8d901a1867c8052c028dd09 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -239,10 +239,10 @@
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "figures/4frustum_high_res.png" 1734634092.56979 476290 6674546c724f10313211e3e1f3ffaa08 ""
   "figures/refinement.pdf" 1761600773.97805 16994 1bcabec6729bb414544cc71a73e6a89a ""
-  "main.aux" 1764954313.72659 13638 0e90d255a63d94c5bd61875012aecab5 "pdflatex"
-  "main.bbl" 1764954313.17385 11956 24ad055c574f61412a0037ddbac3d30c "bibtex main"
-  "main.out" 1764954313.72761 3296 c309c0479dace561b1d7b07b6945f0b6 "pdflatex"
-  "main.tex" 1764954312.14929 57748 85f2e9db814ad2cdeb22138e344f15ff ""
+  "main.aux" 1764956399.2023 13650 163f537751f4e728d5f3439e692259e1 "pdflatex"
+  "main.bbl" 1764956398.65047 11956 24ad055c574f61412a0037ddbac3d30c "bibtex main"
+  "main.out" 1764956399.20306 3344 388e82be762d5d169dd20c8d69959ccf "pdflatex"
+  "main.tex" 1764956397.57822 57730 73cc9685b8d901a1867c8052c028dd09 ""
   "plots/continuum_scalings.pdf" 1761907295.5967 95345 05335236ea0ae98dcbc8f7730c996856 ""
   "plots/conv_to_cont.pdf" 1761836941.24002 89016 d9ae6ad41dada24c051ddeccf5ad776c ""
   "plots/sampling_cont.pdf" 1764953986.23041 79322 a3aeba390a6c95abbb22d788ac6598ad ""
